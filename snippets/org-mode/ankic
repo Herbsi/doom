@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# contributor: Herwig Hoehenberger
+# key: ankic
+# name: Anki Cloze Card
+# --
+
+* Item
+  :PROPERTIES:
+  :ANKI_DECK: ${1:Deck}
+  :ANKI_NOTE_TYPE: Cloze
+  :ANKI_TAGS: ${2:Tags}
+  :END:
+
+** Text
+  ${3:Shown} {{c1::${4:To be hidden}}}
+
+** Extra
+  ${0:Extra}

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: forr
+# key: forr
+# --
+for (auto& ${1:elem} : ${2:v}) {
+  ${0:}
+}

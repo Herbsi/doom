@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# contributor: Herwig Hoehenberger
+# key: ankiro
+# name: Anki Basic Optional Reversed Card
+# --
+
+* Item
+  :PROPERTIES:
+  :ANKI_DECK: ${1:Deck}
+  :ANKI_NOTE_TYPE: Basic (optional reversed card)
+  :ANKI_TAGS: ${2:Tags}
+  :END:
+
+** Front
+  ${3:Front}
+
+** Back
+  ${4:Back}
+
+** Add Reverse
+  ${0:Add Any Text to add reversed card}

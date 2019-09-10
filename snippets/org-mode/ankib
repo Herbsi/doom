@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# contributor: Herwig Hoehenberger
+# key: ankib
+# name: Anki Basic Card
+# --
+
+* Item
+  :PROPERTIES:
+  :ANKI_DECK: ${1:Interesting Facts}
+  :ANKI_NOTE_TYPE: Basic
+  :ANKI_TAGS: ${2:Tags}
+  :END:
+
+** Front
+  ${3:Front}
+
+** Back
+  ${0:Back}
+

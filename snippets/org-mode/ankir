@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# contributor: Herwig Hoehenberger
+# key: ankir
+# name: Anki Basic Reversed Card
+# --
+* Item
+  :PROPERTIES:
+  :ANKI_DECK: ${1:Deck}
+  :ANKI_NOTE_TYPE: Basic (and reversed card)
+  :ANKI_TAGS: ${2:Tags}
+  :END:
+
+** Front
+  ${3:Front}
+
+** Back
+  ${0:Back}

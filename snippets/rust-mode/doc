@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: doc
+# key: doc
+# condition: t
+# --
+
+/// ${0:comment}
