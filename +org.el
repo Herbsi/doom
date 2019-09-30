@@ -2,10 +2,21 @@
 
 (add-hook! org-mode (lambda ()
                       "Beautify Org Checkbox Symbol"
-                      (push '("[ ]" .  "☐") prettify-symbols-alist)
+                      (push '("[ ]" . "☐") prettify-symbols-alist)
                       (push '("[X]" . "☑" ) prettify-symbols-alist)
                       (push '("[-]" . "❍" ) prettify-symbols-alist)
                       (prettify-symbols-mode)))
+
+(defun setup-university-tasks ()
+  (interactive)
+  (let* ((tomorrow (time-add (current-time) (* 24 3600))))
+    (progn
+      (goto-char (point-max))
+      (org-insert-heading)
+      (org-insert-time-stamp tomorrow nil nil " " " [/]" nil)
+      (newline)
+      (insert "- [ ] ")
+      (evil-append 1))))
 
 ;; Org Journal
 (use-package! org-journal
