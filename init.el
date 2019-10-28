@@ -59,7 +59,6 @@
  :emacs
  (dired
   +icons)
-
  electric
  vc
 
@@ -97,7 +96,7 @@
 
  :lang
  ;;agda
- assembly
+ ;;assembly
  (cc
   +lsp)
  ;;clojure
@@ -139,9 +138,9 @@
  racket
  ;;rest
  ;;ruby
- ( rust +lsp)
+ (rust +lsp)
  ;;scala
- scheme
+ ;;scheme
  (sh +fish)
  ;;solidity
  ;;swift

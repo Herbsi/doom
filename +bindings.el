@@ -6,15 +6,15 @@
    "d"   #'delete-window
    "C-d" #'delete-window)
 
+ ;; Racket Major Mode
+ (:map racket-mode-map
+   :desc "racket-eval-last-sexp" "C-x C-e" #'racket-eval-last-sexp)
+
  ;; Rust Major Mode
  (:map rust-mode-map
    :localleader
    :prefix "b"
    :desc "cargo clippy" "C" (λ! (+rust-cargo-compile "cargo clippy --color always")))
-
- ;; Racket Major Mode
- (:map racket-mode-map
-   :desc "racket-eval-last-sexp" "C-x C-e" #'racket-eval-last-sexp)
 
  :leader ;; SPC
  (:prefix ("b" . "buffer")

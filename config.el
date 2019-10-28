@@ -25,24 +25,10 @@
 (setq default-input-method "german-postfix")
 
 ;; Packages
-;; Regex Replace
-(use-package! visual-regexp
-  :config
-  (map!
-   :leader
-   (:prefix ("/" . "search")
-     :desc "Regex Replace"      "r" #'vr/replace
-     :desc "Regex Query Replae" "q" #'vr/query-replace)))
-
+;; Company
 (after! company
-  (setq company-idle-delay 0.1
+  (setq company-idle-delay 0.01
         company-minimum-prefix-length 1))
-
-;; C++
-(after! c++-mode
-  (defvar +cc-default-header-file-mode 'c++-mode
-    "Fallback major mode for .h files if all other heuristics fail (in
-    `+cc-c-c++-objc-mode')."))
 
 ;; Editorconfig
 (use-package! editorconfig
@@ -57,6 +43,15 @@
 ;; Python
 (after! python-mode
   (setq python-shell-interpreter "python3"))
+
+;; Regex Replace
+(use-package! visual-regexp
+  :config
+  (map!
+   :leader
+   (:prefix ("/" . "search")
+     :desc "Regex Replace"      "r" #'vr/replace
+     :desc "Regex Query Replae" "q" #'vr/query-replace)))
 
 ;; Load snippets
 (after! yasnippet
