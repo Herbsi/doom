@@ -12,6 +12,10 @@
    :prefix "b"
    :desc "cargo clippy" "C" (λ! (+rust-cargo-compile "cargo clippy --color always")))
 
+ ;; Racket Major Mode
+ (:map racket-mode-map
+   :desc "racket-eval-last-sexp" "C-x C-e" #'racket-eval-last-sexp)
+
  :leader ;; SPC
  (:prefix ("b" . "buffer")
    :desc "ibuffer" "i" #'ibuffer)
