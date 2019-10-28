@@ -47,7 +47,8 @@
 ;; Editorconfig
 (use-package! editorconfig
   :config
-  (add-hook! before-save (editorconfig-format-buffer)))
+  (when (featurep! :editor format +onsave)
+    (add-hook! before-save (editorconfig-format-buffer))))
 
 ;; flyspell in text mode
 (when (featurep! :tools flyspell)
@@ -56,13 +57,6 @@
 ;; Python
 (after! python-mode
   (setq python-shell-interpreter "python3"))
-
-;; Scheme
-(use-package! geiser
-  :init
-  (append "mit" geiser-active-implementations)
-  (setq geiser-default-implementation "mit"
-        geiser-active-implementations '(mit)))
 
 ;; Load snippets
 (after! yasnippet

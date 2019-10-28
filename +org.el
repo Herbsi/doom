@@ -45,6 +45,8 @@
 (map!
  :map org-mode-map
  :localleader
+ "e" nil 
+ :localleader
  "i" nil)
 
 ;; bind and rebind stuff

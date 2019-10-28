@@ -130,13 +130,13 @@
  ( org
    +dragndrop
    +ipython)
- perl
+ ;;perl
  ;;php
  ;;plantuml
  ;;purescript
  python
  ;;qt
- ;;racket
+ racket
  ;;rest
  ;;ruby
  ( rust +lsp)
