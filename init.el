@@ -26,7 +26,7 @@
  hl-todo
  hydra
  indent-guides
- modeline
+ ;; modeline
  nav-flash
  ;;neotree
  ophints

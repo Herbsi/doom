@@ -13,12 +13,14 @@
 (setq doom-font (font-spec :family "Fira Code" :size 12.0)
       doom-unicode-font (font-spec :family "Fira Code" :size 12.0)
       doom-theme 'doom-nord
+      column-number-mode nil
       display-line-numbers-type nil
+      evil-echo-state nil
+      lsp-ui-sideline-enable nil
       frame-title-format "%b")
+(minions-mode)
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
-
-(setq lsp-ui-sideline-enable nil)
 
 ;; Text & Input
 (when (featurep! :editor evil)
@@ -35,7 +37,7 @@
 ;; Packages
 ;; Company
 (after! company
-  (setq company-idle-delay 0.01
+  (setq company-idle-delay 0.001
         company-minimum-prefix-length 1))
 
 ;; Editorconfig
