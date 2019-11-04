@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: define
+# key: def
+# condition: t
+# --
+
+(define $0)

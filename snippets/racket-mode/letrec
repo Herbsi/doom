@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: letrec
+# key: letrec
+# condition: t
+# --
+
+(letrec ([$1])
+  $0)

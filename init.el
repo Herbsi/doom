@@ -48,7 +48,7 @@
  file-templates
  fold
  (format +onsave)
- ;;lispy
+ lispy
  multiple-cursors
  ;;objed
  ;;parinfer

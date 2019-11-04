@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# group: file templates
+# condition: t
+# --
+
+${1:#! /usr/bin/env racket}
+
+#lang racket
+
+$0
