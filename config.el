@@ -26,11 +26,6 @@
 (when (featurep! :editor evil)
   (setq +evil-want-o/O-to-continue-comments nil))
 
-(when (featurep! :editor lispy)
-  (use-package! lispyville
-    :config
-    (lispyville-set-key-theme '(text-objects))))
-
 (setq sentence-end-double-space t) ; the only correct choice
 (setq default-input-method "german-postfix")
 
