@@ -18,9 +18,14 @@
       evil-echo-state nil
       lsp-ui-sideline-enable nil
       frame-title-format "%b")
-(minions-mode)
+(after! minions
+  (minions-mode))
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
+
+(after! fastscroll
+  (fast-scroll-config)
+  (fast-scroll-mode 1))
 
 ;; Text & Input
 (when (featurep! :editor evil)
