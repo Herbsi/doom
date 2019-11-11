@@ -5,6 +5,5 @@
 (package! fast-scroll)
 (package! org-journal)
 (package! org-noter)
-(package! minions)
 (package! visual-regexp)
 (package! visual-regexp-steroids)

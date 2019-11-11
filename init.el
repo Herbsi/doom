@@ -25,8 +25,8 @@
  ;;fill-column
  hl-todo
  hydra
- indent-guides
- ;; modeline
+ ;; indent-guides
+ modeline
  nav-flash
  ;;neotree
  ophints
@@ -46,7 +46,7 @@
  :editor
  (evil +everywhere)
  file-templates
- fold
+ ;; fold
  (format +onsave)
  lispy
  multiple-cursors
@@ -126,9 +126,9 @@
  ;;nim
  ;;nix
  ;;ocaml
- ( org
-   +dragndrop
-   +ipython)
+ (org
+  +dragndrop
+  +ipython)
  ;;perl
  ;;php
  ;;plantuml

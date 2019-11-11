@@ -18,8 +18,6 @@
       evil-echo-state nil
       lsp-ui-sideline-enable nil
       frame-title-format "%b")
-(after! minions
-  (minions-mode))
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 
@@ -37,8 +35,8 @@
 ;; Packages
 ;; Company
 (after! company
-  (setq company-idle-delay 0.001
-        company-minimum-prefix-length 1))
+  (setq) company-idle-delay 0.001
+  company-minimum-prefix-length 1)
 
 ;; Editorconfig
 (use-package! editorconfig
@@ -49,6 +47,10 @@
 ;; flyspell in text mode
 (when (featurep! :tools flyspell)
   (add-hook! text-mode #'flyspell-mode))
+
+;; Lispy
+(when (featurep! :editor lispy)
+  (setq lispyville-barf-stay-with-closing t))
 
 ;; Python
 (after! python-mode
