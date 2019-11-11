@@ -1,14 +1,23 @@
 ;;; .doom.d/+bindings.el -*- lexical-binding: t; -*-
 
 (map!
+ (:after racket-mode
+   (:map racket-mode-map
+     (:when (featurep! :editor lispy)
+       :i "[" nil))))
+
+(map!
  ;; window management (prefix "C-w")
  (:map evil-window-map
    "d"   #'delete-window
    "C-d" #'delete-window)
 
  ;; Racket Major Mode
- (:map racket-mode-map
-   :desc "racket-eval-last-sexp" "C-x C-e" #'racket-eval-last-sexp)
+ (:after racket-mode
+   (:map racket-mode-map
+     :desc "racket-eval-last-sexp" "C-x C-e" #'racket-eval-last-sexp
+     (:when (featurep! :editor lispy)
+       :i "[" #'lispyville-previous-opening)))
 
  ;; Rust Major Mode
  (:map rust-mode-map
