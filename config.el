@@ -40,8 +40,8 @@
     (add-hook! lisp-mode lispy-mode)))
 ;; Company
 (after! company
-  (setq) company-idle-delay 0.001
-  company-minimum-prefix-length 1)
+  (setq company-idle-delay 0.001
+        company-minimum-prefix-length 2))
 
 ;; Editorconfig
 (use-package! editorconfig
