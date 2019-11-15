@@ -100,7 +100,7 @@
  (cc
   +lsp)
  ;;clojure
- ;;common-lisp
+ common-lisp
  ;;coq
  ;;crystal
  ;;csharp

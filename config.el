@@ -33,6 +33,11 @@
 (setq default-input-method "german-postfix")
 
 ;; Packages
+
+;; Common Lisp
+(after! lisp-mode
+  (when (featurep! :editor lispy)
+    (add-hook! lisp-mode lispy-mode)))
 ;; Company
 (after! company
   (setq) company-idle-delay 0.001
