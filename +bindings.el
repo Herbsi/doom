@@ -1,12 +1,11 @@
 ;;; .doom.d/+bindings.el -*- lexical-binding: t; -*-
 
 (map!
- (:after org-mode
-   (:map org-mode-map
-     :localleader
-     "e" nil
-     :localleader
-     "i" nil))
+ (:map org-mode-map
+   :localleader
+   "e" nil
+   :localleader
+   "i" nil)
 
  (:after racket-mode
    (:map racket-mode-map
@@ -40,7 +39,7 @@
    "C-d" #'delete-window)
 
  ;; Org Mode
- (:after org-mode :map org-mode-map
+ (:map org-mode-map
    :localleader
    (:prefix ("c" . "clock")
      :desc "Report" "r" #'org-clock-report)
