@@ -61,15 +61,6 @@
 (after! python-mode
   (setq python-shell-interpreter "python3"))
 
-;; Regex Replace
-(use-package! visual-regexp
-  :config
-  (map!
-   :leader
-   (:prefix ("/" . "search")
-     :desc "Regex Replace"      "r" #'vr/replace
-     :desc "Regex Query Replae" "q" #'vr/query-replace)))
-
 ;; Load snippets
 (after! yasnippet
   (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))

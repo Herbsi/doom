@@ -4,7 +4,6 @@
  (:map org-mode-map
    :localleader
    "e" nil
-   :localleader
    "i" nil)
 
  (:after racket-mode
@@ -33,10 +32,10 @@
  (:prefix ("n" . "notes")
    :desc "Org Journal" "j" #'org-journal-new-entry)
 
- ;; window management (prefix "C-w")
- (:map evil-window-map
-   "d"   #'delete-window
-   "C-d" #'delete-window)
+ (:prefix ("s" . "search")
+   (:after visual-regexp
+     :desc "Regex Replace" "r" #'vr/replace
+     :desc "Regex Query Replae" "q" #'vr/query-replace))
 
  ;; Org Mode
  (:map org-mode-map
