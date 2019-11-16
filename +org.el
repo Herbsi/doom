@@ -1,4 +1,4 @@
-;;; ~/.doom.d/+org.el -*- lexical-binding: t; -*-
+;;; ~/.config/doom/+org.el -*- lexical-binding: t; -*-
 
 (add-hook! org-mode (lambda ()
                       "Beautify Org Checkbox Symbol"

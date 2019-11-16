@@ -1,4 +1,4 @@
-;;; .doom.d/+bindings.el -*- lexical-binding: t; -*-
+;;; ~/.config/doom/+bindings.el -*- lexical-binding: t; -*-
 
 (map!
  (:map org-mode-map
