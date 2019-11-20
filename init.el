@@ -22,20 +22,20 @@
  doom
  doom-dashboard
  doom-quit
- ;;fill-column
+ fill-column
  hl-todo
  hydra
- ;; ;; indent-guides
+ ;; indent-guides
  modeline
  nav-flash
- ;; ;;neotree
+ ;;neotree
  ophints
  ;; (popup
  ;;  +all
  ;;  +defaults)
  (pretty-code
   +fira)
- ;; ;;tabs
+ ;;tabs
  treemacs
  unicode
  vc-gutter
