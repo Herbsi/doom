@@ -23,11 +23,11 @@
  doom-dashboard
  doom-quit
  ;;fill-column
- ;; hl-todo
- ;; hydra
+ hl-todo
+ hydra
  ;; ;; indent-guides
- ;; modeline
- ;; nav-flash
+ modeline
+ nav-flash
  ;; ;;neotree
  ;; ophints
  ;; (popup
