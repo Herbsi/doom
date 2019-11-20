@@ -29,7 +29,7 @@
  modeline
  nav-flash
  ;; ;;neotree
- ;; ophints
+ ophints
  ;; (popup
  ;;  +all
  ;;  +defaults)
