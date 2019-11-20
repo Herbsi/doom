@@ -9,13 +9,13 @@
  ;;japanese
 
  :completion
- (company
-  +childframe)
+ ;; (company
+ ;;  +childframe)
  ;;helm
  ;;ido
- (ivy
-  +childframe
-  +fuzzy)
+ ;; (ivy
+ ;;  +childframe
+ ;;  +fuzzy)
 
  :ui
  ;;deft
