@@ -33,15 +33,15 @@
  ;; (popup
  ;;  +all
  ;;  +defaults)
- ;; (pretty-code
- ;;  +fira)
+ (pretty-code
+  +fira)
  ;; ;;tabs
- ;; treemacs
- ;; unicode
- ;; vc-gutter
- ;; vi-tilde-fringe
- ;; window-select
- ;; workspaces
+ treemacs
+ unicode
+ vc-gutter
+ vi-tilde-fringe
+ window-select
+ workspaces
 
  :editor
  (evil +everywhere)
