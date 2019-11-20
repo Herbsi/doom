@@ -23,25 +23,25 @@
  doom-dashboard
  doom-quit
  ;;fill-column
- hl-todo
- hydra
- ;; indent-guides
- modeline
- nav-flash
- ;;neotree
- ophints
- (popup
-  +all
-  +defaults)
- (pretty-code
-  +fira)
- ;;tabs
- treemacs
- unicode
- vc-gutter
- vi-tilde-fringe
- window-select
- workspaces
+ ;; hl-todo
+ ;; hydra
+ ;; ;; indent-guides
+ ;; modeline
+ ;; nav-flash
+ ;; ;;neotree
+ ;; ophints
+ ;; (popup
+ ;;  +all
+ ;;  +defaults)
+ ;; (pretty-code
+ ;;  +fira)
+ ;; ;;tabs
+ ;; treemacs
+ ;; unicode
+ ;; vc-gutter
+ ;; vi-tilde-fringe
+ ;; window-select
+ ;; workspaces
 
  :editor
  (evil +everywhere)
