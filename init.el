@@ -14,6 +14,8 @@
  ;;helm
  ;;ido
  (ivy
+  +prescient
+  +icons
   +childframe
   +fuzzy)
 
@@ -24,15 +26,15 @@
  doom-quit
  fill-column
  hl-todo
- hydra
+ ;; hydra
  ;; indent-guides
  modeline
  nav-flash
  ;;neotree
  ophints
- ;; (popup
- ;;  +all
- ;;  +defaults)
+ (popup
+  +all
+  +defaults)
  (pretty-code
   +fira)
  ;;tabs
@@ -48,11 +50,12 @@
  file-templates
  ;; fold
  (format +onsave)
+ ;; god
  lispy
  multiple-cursors
  ;;objed
  ;;parinfer
- rotate-text
+ ;; rotate-text
  snippets
  ;;word-wrap
 
@@ -60,6 +63,7 @@
  (dired
   +icons)
  electric
+ ibuffer
  vc
 
  :term
@@ -70,12 +74,12 @@
 
  :tools
  ;;ansible
- debugger
+ ;; debugger
  ;;direnv
  ;;docker
  editorconfig
  ;;ein
- eval
+ (eval +overlay)
  flycheck
  flyspell
  ;;gist
@@ -105,10 +109,10 @@
  ;;crystal
  ;;csharp
  data
- ;;erlang
  ;;elixir
  ;;elm
  emacs-lisp
+ ;;erlang
  ;;ess
  ;;fsharp
  ;;go
@@ -140,7 +144,7 @@
  ;;ruby
  (rust +lsp)
  ;;scala
- ;;scheme
+ ;; scheme
  (sh +fish)
  ;;solidity
  ;;swift
