@@ -5,14 +5,14 @@
 
 (doom!
  :input
- ;;chinese
- ;;japanese
+ ;; chinese
+ ;; japanese
 
  :completion
  (company
   +childframe)
- ;;helm
- ;;ido
+ ;; helm
+ ;; ido
  (ivy
   +prescient
   +icons
@@ -20,7 +20,7 @@
   +fuzzy)
 
  :ui
- ;;deft
+ ;; deft
  doom
  doom-dashboard
  doom-quit
@@ -30,14 +30,14 @@
  ;; indent-guides
  modeline
  nav-flash
- ;;neotree
+ ;; neotree
  ophints
  (popup
   +all
   +defaults)
  (pretty-code
   +fira)
- ;;tabs
+ ;; tabs
  treemacs
  unicode
  vc-gutter
@@ -53,11 +53,11 @@
  ;; god
  lispy
  multiple-cursors
- ;;objed
- ;;parinfer
+ ;; objed
+ ;; parinfer
  ;; rotate-text
  snippets
- ;;word-wrap
+ ;; word-wrap
 
  :emacs
  (dired
@@ -68,112 +68,112 @@
 
  :term
  eshell
- ;;shell
- ;;term
- ;;vterm
+ ;; shell
+ ;; term
+ ;; vterm
 
  :tools
- ;;ansible
+ ;; ansible
  ;; debugger
- ;;direnv
- ;;docker
+ ;; direnv
+ ;; docker
  editorconfig
- ;;ein
+ ;; ein
  (eval +overlay)
  flycheck
  flyspell
- ;;gist
+ ;; gist
  (lookup
   +docsets)
  lsp
  macos
  magit
- ;;make
- ;;password-store
- ;;pdf
- ;;prodigy
- ;;rgb
- ;;terraform
- ;;tmux
- ;;upload
- ;;wakatime
+ ;; make
+ ;; password-store
+ ;; pdf
+ ;; prodigy
+ ;; rgb
+ ;; terraform
+ ;; tmux
+ ;; upload
+ ;; wakatime
 
  :lang
- ;;agda
- ;;assembly
+ ;; agda
+ ;; assembly
  (cc
   +lsp)
- ;;clojure
+ ;; clojure
  common-lisp
- ;;coq
- ;;crystal
- ;;csharp
+ ;; coq
+ ;; crystal
+ ;; csharp
  data
- ;;elixir
- ;;elm
+ ;; elixir
+ ;; elm
  emacs-lisp
- ;;erlang
- ;;ess
- ;;fsharp
- ;;go
+ ;; erlang
+ ;; ess
+ ;; fsharp
+ ;; go
  (haskell +lsp)
- ;;hy
- ;;idris             ;
- ;;(java +meghanada)
- ;;javascript
- ;;julia
- ;;kotlin
+ ;; hy
+ ;; idris             ;
+ ;; (java +meghanada)
+ ;; javascript
+ ;; julia
+ ;; kotlin
  latex
- ;;ledger
- ;;lua
- ;;markdown
- ;;nim
- ;;nix
- ;;ocaml
+ ;; ledger
+ ;; lua
+ ;; markdown
+ ;; nim
+ ;; nix
+ ;; ocaml
  (org
   +dragndrop
   +gnuplot
   +ipython)
- ;;perl
- ;;php
- ;;plantuml
- ;;purescript
+ ;; perl
+ ;; php
+ ;; plantuml
+ ;; purescript
  python
- ;;qt
+ ;; qt
  racket
- ;;rest
- ;;ruby
+ ;; rest
+ ;; ruby
  (rust +lsp)
- ;;scala
+ ;; scala
  ;; scheme
  (sh +fish)
- ;;solidity
- ;;swift
- ;;terra
- ;;web
- ;;vala
+ ;; solidity
+ ;; swift
+ ;; terra
+ ;; web
+ ;; vala
 
  :email
- ;;(mu4e +gmail)
- ;;notmuch
- ;;(wanderlust +gmail)
+ ;; (mu4e +gmail)
+ ;; notmuch
+ ;; (wanderlust +gmail)
 
  ;; Applications are complex and opinionated modules that transform Emacs
  ;; toward a specific purpose. They may have additional dependencies and
  ;; should be loaded late.
  :app
- ;;calendar
- ;;irc
- ;;(rss +org)
- ;;twitter
- ;;(write
+ ;; calendar
+ ;; irc
+ ;; (rss +org)
+ ;; twitter
+ ;; (write
  ;; +wordnut
  ;; +langtool)
 
  :config
  ;; For literate config users. This will tangle+compile a config.org
  ;; literate config in your `doom-private-dir' whenever it changes.
- ;;literate
+ ;; literate
 
  ;; The default module sets reasonable defaults for Emacs. It also
  ;; provides a Spacemacs-inspired keybinding scheme and a smartparens
