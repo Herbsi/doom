@@ -1,6 +1,10 @@
 ;;; ~/.config/doom/+bindings.el -*- lexical-binding: t; -*-
 
 (map!
+ "C-SPC" nil
+ (:leader
+   "SPC" nil
+   ":" nil)
  (:map org-mode-map
    :localleader
    "e" nil
@@ -13,6 +17,7 @@
 
 (map!
  :leader ;; SPC
+ :desc "M-x" "SPC" #'counsel-M-x
  (:prefix ("b" . "buffer")
    :desc "ibuffer" "i" #'ibuffer)
 
