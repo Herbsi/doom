@@ -26,6 +26,11 @@
   (fast-scroll-config)
   (fast-scroll-mode 1))
 
+;; Emacs Calc, poor man's Mathematica
+(when (featurep! :editor evil)
+  (evil-set-initial-state 'calc-mode 'emacs))
+
+
 ;; Text & Input
 (setq mac-command-modifier 'control)
 (when (featurep! :editor evil)
