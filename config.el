@@ -41,8 +41,7 @@
 
 ;; Company
 (after! company
-  (setq company-idle-delay 0.001
-        company-minimum-prefix-length 2))
+  (setq company-idle-delay 0))
 
 ;; Editorconfig
 (use-package! editorconfig
