@@ -26,6 +26,7 @@
   (fast-scroll-mode 1))
 
 ;; Text & Input
+(setq mac-command-modifier 'control)
 (when (featurep! :editor evil)
   (setq +evil-want-o/O-to-continue-comments nil))
 
