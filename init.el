@@ -90,7 +90,7 @@
  magit
  ;; make
  ;; password-store
- ;; pdf
+ pdf
  ;; prodigy
  ;; rgb
  ;; terraform
