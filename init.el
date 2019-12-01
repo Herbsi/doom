@@ -132,6 +132,7 @@
  ;;ocaml
  (org
   +dragndrop
+  +gnuplot
   +ipython)
  ;;perl
  ;;php
