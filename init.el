@@ -16,7 +16,7 @@
  (ivy
   +prescient
   +icons
-  +childframe
+  ;; +childframe
   +fuzzy)
 
  :ui
