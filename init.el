@@ -35,8 +35,8 @@
  (popup
   +all
   +defaults)
- (pretty-code
-  +fira)
+ ;; (pretty-code
+ ;;  +fira)
  ;; tabs
  treemacs
  unicode
