@@ -6,9 +6,9 @@
    "SPC" nil
    ":" nil)
  (:map org-mode-map
-   :localleader
-   "e" nil
-   "i" nil)
+   (:localleader
+     "e" nil
+     "i" nil))
 
  (:after racket-mode
    (:map racket-mode-map
@@ -44,22 +44,22 @@
 
  ;; Org Mode
  (:map org-mode-map
-   :localleader
-   (:prefix ("c" . "clock")
-     :desc "Report" "r" #'org-clock-report)
+   (:localleader
+     (:prefix ("c" . "clock")
+       :desc "Report" "r" #'org-clock-report)
 
-   (:prefix ("C" . "checkbox")
-     :desc "org-toggle-checkbox" "t" #'org-toggle-checkbox
-     :desc "org-update-checkbox-count" "u" #'org-update-checkbox-count)
+     (:prefix ("C" . "checkbox")
+       :desc "org-toggle-checkbox" "t" #'org-toggle-checkbox
+       :desc "org-update-checkbox-count" "u" #'org-update-checkbox-count)
 
-   (:prefix ("e" . "export")
-     :desc "org-export-dispatch" "d" #'org-export-dispatch)
+     (:prefix ("e" . "export")
+       :desc "org-export-dispatch" "d" #'org-export-dispatch)
 
-   (:prefix ("i" . "insert")
-     :desc "org-timestamp" "t" #'org-time-stamp
-     :desc "org-insert-heading-after-current" "h" #'org-insert-heading-after-current
-     :desc "org-insert-heading" "H" #'org-insert-heading
-     :desc "org-insert-subheading" "s" #'org-insert-subheading))
+     (:prefix ("i" . "insert")
+       :desc "org-timestamp" "t" #'org-time-stamp
+       :desc "org-insert-heading-after-current" "h" #'org-insert-heading-after-current
+       :desc "org-insert-heading" "H" #'org-insert-heading
+       :desc "org-insert-subheading" "s" #'org-insert-subheading)))
 
  ;; Racket Major Mode
  (:after racket-mode
