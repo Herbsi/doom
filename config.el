@@ -66,17 +66,7 @@
   (after! lispyville
     (setq lispyville-barf-stay-with-closing t)
     (lispyville-set-key-theme
-     '((operators normal)
-       c-w
-       (prettify insert)
-       (atom-movement normal visual)
-       slurp/barf-lispy
-       (wrap normal insert)
-       additional
-       additional-movement
-       additional-insert
-       (additional-wrap normal insert)
-       (escape insert)))))
+     '(additional-movement))))
 
 ;; Python
 (after! python-mode

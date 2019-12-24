@@ -46,7 +46,7 @@
  workspaces
 
  :editor
- (evil +everywhere)
+ evil
  file-templates
  ;; fold
  (format +onsave)
