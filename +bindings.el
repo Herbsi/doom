@@ -37,11 +37,6 @@
  (:prefix ("n" . "notes")
    :desc "Org Journal" "j" #'org-journal-new-entry)
 
- (:prefix ("s" . "search")
-   (:after visual-regexp
-     :desc "Regex Replace" "r" #'vr/replace
-     :desc "Regex Query Replae" "q" #'vr/query-replace))
-
  ;; Org Mode
  (:map org-mode-map
    (:localleader

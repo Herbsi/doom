@@ -36,6 +36,8 @@
 (when (featurep! :editor evil)
   (setq +evil-want-o/O-to-continue-comments nil))
 
+(setq evil-magic 'very-magic)
+
 (setq sentence-end-double-space t) ; the only correct choice
 (setq default-input-method "german-postfix")
 
