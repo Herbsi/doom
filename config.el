@@ -27,14 +27,12 @@
   (fast-scroll-mode 1))
 
 ;; Emacs Calc, poor man's Mathematica
-(when (featurep! :editor evil)
-  (evil-set-initial-state 'calc-mode 'emacs))
+(evil-set-initial-state 'calc-mode 'emacs)
 
 
 ;; Text & Input
 (setq mac-command-modifier 'control)
-(when (featurep! :editor evil)
-  (setq +evil-want-o/O-to-continue-comments nil))
+(setq +evil-want-o/O-to-continue-comments nil)
 
 (setq evil-magic 'very-magic)
 
@@ -43,34 +41,33 @@
 
 ;; Packages
 ;; Common Lisp
-(after! lisp-mode
-  (when (featurep! :editor lispy)
-    (add-hook! lisp-mode lispy-mode)))
+(add-hook! lisp-mode lispy-mode)
 
 ;; Company
 (after! company
   (setq company-idle-delay 0))
 
 ;; Editorconfig
-(use-package! editorconfig
-  :config
-  (when (featurep! :editor format +onsave)
-    (add-hook! before-save (editorconfig-format-buffer))))
+(after! editorconfig-mode
+    (add-hook! before-save (editorconfig-format-buffer)))
 
 ;; flyspell in text mode
-(when (featurep! :tools flyspell)
-  (add-hook! text-mode #'flyspell-mode))
+(add-hook! text-mode #'flyspell-mode)
 
 ;; Lispy
-(when (featurep! :editor lispy)
-  (after! lispyville
-    (setq lispyville-barf-stay-with-closing t)
-    (lispyville-set-key-theme
-     '(additional-movement))))
+(after! lispyville
+  (setq lispyville-barf-stay-with-closing t)
+  (lispyville-set-key-theme
+    '(additional-movement)))
+
 
 ;; Python
 (after! python-mode
   (setq python-shell-interpreter "python3"))
+
+;; Scheme
+(setq geiser-active-implementations '(mit)
+      geiser-default-implementation 'mit)
 
 ;; Load snippets
 (after! yasnippet
