@@ -146,7 +146,7 @@
  ;; ruby
  (rust +lsp)
  ;; scala
- ;; scheme
+ scheme
  (sh +fish)
  ;; solidity
  ;; swift
