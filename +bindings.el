@@ -5,10 +5,6 @@
  (:leader
    "SPC" nil
    ":" nil)
- (:map org-mode-map
-   (:localleader
-     "e" nil
-     "i" nil))
 
  (:after racket-mode
    (:map racket-mode-map
@@ -37,33 +33,14 @@
  (:prefix ("n" . "notes")
    :desc "Org Journal" "j" #'org-journal-new-entry)
 
- ;; Org Mode
- (:map org-mode-map
-   (:localleader
-     (:prefix ("c" . "clock")
-       :desc "Report" "r" #'org-clock-report)
-
-     (:prefix ("C" . "checkbox")
-       :desc "org-toggle-checkbox" "t" #'org-toggle-checkbox
-       :desc "org-update-checkbox-count" "u" #'org-update-checkbox-count)
-
-     (:prefix ("e" . "export")
-       :desc "org-export-dispatch" "d" #'org-export-dispatch)
-
-     (:prefix ("i" . "insert")
-       :desc "org-timestamp" "t" #'org-time-stamp
-       :desc "org-insert-heading-after-current" "h" #'org-insert-heading-after-current
-       :desc "org-insert-heading" "H" #'org-insert-heading
-       :desc "org-insert-subheading" "s" #'org-insert-subheading)))
-
- ;; Racket Major Mode
+ ;; Racket Mode
  (:after racket-mode
    (:map racket-mode-map
      :desc "racket-eval-last-sexp" "C-x C-e" #'racket-eval-last-sexp
      (:when (featurep! :editor lispy)
        :i "[" #'lispyville-previous-opening)))
 
- ;; Rust Major Mode
+ ;; Rust Mode
  (:after rust-mode
    (:map rust-mode-map
      :localleader
