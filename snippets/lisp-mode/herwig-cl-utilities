@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: herwigs-cl-utilities
+# key: herwigs-cl-utilities
+# condition: t
+# --
+(ql:quickload :herwigs-cl-utilities)
+(use-package 'herwig)
+$0

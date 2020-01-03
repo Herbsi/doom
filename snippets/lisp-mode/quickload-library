@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: quickload-library
+# key: quickload-library
+# condition: t
+# --
+(ql:quickload :$1)
+(use-package '$2)
+$0
