@@ -45,6 +45,7 @@
  vi-tilde-fringe
  window-select
  workspaces
+ zen
 
  :editor
  (evil +everywhere)
@@ -90,14 +91,13 @@
  macos
  magit
  ;; make
- ;; password-store
+ ;; pass
  pdf
  ;; prodigy
  ;; rgb
  ;; terraform
  ;; tmux
  ;; upload
- ;; wakatime
 
  :lang
  ;; agda
@@ -115,9 +115,10 @@
  emacs-lisp
  ;; erlang
  ;; ess
+ ;; faust
  ;; fsharp
  ;; go
- (haskell +lsp)
+ ;; (haskell +lsp)
  ;; hy
  ;; idris             ;
  ;; (java +meghanada)
@@ -141,7 +142,7 @@
  ;; purescript
  python
  ;; qt
- racket
+ ;; racket
  ;; rest
  ;; ruby
  (rust +lsp)
@@ -152,16 +153,12 @@
  ;; swift
  ;; terra
  ;; web
- ;; vala
 
  :email
  ;; (mu4e +gmail)
  ;; notmuch
  ;; (wanderlust +gmail)
 
- ;; Applications are complex and opinionated modules that transform Emacs
- ;; toward a specific purpose. They may have additional dependencies and
- ;; should be loaded late.
  :app
  ;; calendar
  ;; irc
@@ -179,6 +176,6 @@
  ;; The default module sets reasonable defaults for Emacs. It also
  ;; provides a Spacemacs-inspired keybinding scheme and a smartparens
  ;; config. Use it as a reference for your own modules.
- (default +bindings +evil-commands)
+ (default +bindings)
 
  :private)
