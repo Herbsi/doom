@@ -1,11 +1,8 @@
 ;;; ~/.config/doom/+org.el -*- lexical-binding: t; -*-
 
-(add-hook! org-mode (lambda ()
-                      "Beautify Org Checkbox Symbol"
-                      (push '("[ ]" . "☐") prettify-symbols-alist)
-                      (push '("[X]" . "☑" ) prettify-symbols-alist)
-                      (push '("[-]" . "❍" ) prettify-symbols-alist)
-                      (prettify-symbols-mode)))
+(setq
+ org-ellipsis " ▼ "
+ org-bullets-bullet-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷"))
 
 (defun herwig/setup-university-tasks ()
   (interactive)
