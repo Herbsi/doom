@@ -19,8 +19,7 @@
       (evil-append 1))))
 
 ;; Org Journal
-(use-package! org-journal
-  :config
+(after! org-journal
   (setq org-journal-dir "~/Private/Journal/"
         org-journal-file-format "%Y/%m %B.org" ;; e.g. 2019/04 April.org
         org-journal-encrypt-journal t
@@ -36,7 +35,7 @@
       (company-mode)
       (evil-scroll-line-to-top (line-number-at-pos))
       (evil-scroll-line-up 2)))
-  (add-hook! org-journal-after-entry-create #'setup-entry))
+  (add-hook! org-journal-after-entry-create #'herwig/setup-entry))
 
 (after! org
   (map!

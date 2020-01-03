@@ -133,8 +133,8 @@
  ;; ocaml
  (org
   +dragndrop
-  +gnuplot
-  +ipython)
+  +ipython
+  +journal)
  ;; perl
  ;; php
  ;; plantuml
