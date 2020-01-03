@@ -25,24 +25,15 @@
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 
-(after! fastscroll
-  (fast-scroll-config)
-  (fast-scroll-mode 1))
-
-;; Emacs Calc, poor man's Mathematica
+;;; Emacs Calc, poor man's Mathematica
 (evil-set-initial-state 'calc-mode 'emacs)
 
+;;; Text & Input
+(setq mac-command-modifier 'control
+      sentence-end-double-space t       ; the only correct choice
+      default-input-method "german-postfix")
 
-;; Text & Input
-(setq mac-command-modifier 'control)
-(setq +evil-want-o/O-to-continue-comments nil)
-
-(setq evil-magic 'very-magic)
-
-(setq sentence-end-double-space t) ; the only correct choice
-(setq default-input-method "german-postfix")
-
-;; Packages
+;;; Packages
 ;; Common Lisp
 (add-hook! lisp-mode lispy-mode)
 
@@ -54,7 +45,18 @@
 (after! editorconfig-mode
     (add-hook! before-save (editorconfig-format-buffer)))
 
-;; flyspell in text mode
+;; Evil
+(setq evil-magic 'very-magic
+      evil-split-window-below t
+      evil-vsplit-window-right t
+      +evil-want-o/O-to-continue-comments nil)
+
+;; Fastscroll
+(after! fastscroll
+  (fast-scroll-config)
+  (fast-scroll-mode 1))
+
+;; Flyspell in text mode
 (add-hook! text-mode #'flyspell-mode)
 
 ;; Lispy
@@ -65,13 +67,14 @@
 
 
 ;; Python
-(after! python-mode
+(after! python
   (setq python-shell-interpreter "python3"))
 
 ;; Scheme
-(setq geiser-active-implementations '(mit)
-      geiser-default-implementation 'mit)
+(after! geiser
+  (setq geiser-active-implementations '(mit)
+        geiser-default-implementation 'mit))
 
-;; Load snippets
+;; Snippets
 (after! yasnippet
   (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
