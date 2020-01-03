@@ -6,18 +6,21 @@
 ;; General Configuration
 (setq user-full-name "Herwig Hoehenberger"
       user-mail-address "herwig.hoehenberger@gmail.com"
-      epa-file-encrypt-to user-mail-address)
+      epa-file-encrypt-to user-mail-address
+      confirm-kill-emacs nil)
 (server-start)
 
 ;; UI
 (setq doom-font (font-spec :family "Fira Code" :size 12.0)
       doom-unicode-font (font-spec :family "Fira Code" :size 12.0)
-      doom-theme 'doom-one
+      doom-theme 'doom-city-lights
       column-number-mode nil
       display-line-numbers-type nil
       evil-echo-state nil
       frame-title-format "%b"
       lsp-ui-sideline-enable nil
+      mode-line-default-help-echo nil
+      show-help-function nil
       show-paren-delay 0)
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
