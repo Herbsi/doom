@@ -48,14 +48,15 @@
 
 ;; Editorconfig
 (after! editorconfig-mode
-    (add-hook! before-save (editorconfig-format-buffer)))
+  (add-hook! before-save (editorconfig-format-buffer)))
 
 
 ;; Evil
-(setq evil-magic 'very-magic
-      evil-split-window-below t
-      evil-vsplit-window-right t
-      +evil-want-o/O-to-continue-comments nil)
+(after! evil
+  (setq evil-magic 'very-magic
+        evil-split-window-below t
+        evil-vsplit-window-right t
+        +evil-want-o/O-to-continue-comments nil))
 
 
 ;; Fastscroll
@@ -68,11 +69,17 @@
 (add-hook! text-mode #'flyspell-mode)
 
 
+;; Git
+(after! git-timemachine
+  (evil-make-overriding-map git-timemachine-mode-map 'normal)
+  (add-hook! git-timemachine-mode-hook #'evil-normalize-keymaps))
+
+
 ;; Lispy
 (after! lispyville
   (setq lispyville-barf-stay-with-closing t)
   (lispyville-set-key-theme
-    '(additional-movement)))
+   '(additional-movement)))
 
 
 ;; Python
