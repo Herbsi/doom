@@ -3,6 +3,4 @@
 # key: quickload-library
 # condition: t
 # --
-(ql:quickload :$1)
-(use-package '$2)
-$0
+(ql:quickload :$0)
