@@ -34,8 +34,7 @@
 
 
 ;;; Text & Input
-(setq mac-command-modifier 'control
-      sentence-end-double-space t       ; the only correct choice
+(setq sentence-end-double-space t       ; the only correct choice
       default-input-method "german-postfix")
 
 
@@ -46,7 +45,7 @@
 
 ;; Company
 (after! company
-  (setq company-idle-delay 0))
+  (setq company-idle-delay nil))
 
 
 ;; Editorconfig

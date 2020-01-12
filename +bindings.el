@@ -1,7 +1,6 @@
 ;;; ~/.config/doom/+bindings.el -*- lexical-binding: t; -*-
 
 (map!
- "C-SPC" nil
  (:leader
    "SPC" nil
    ":" nil)
