@@ -12,9 +12,9 @@
 
 
 ;;; UI
-(setq doom-font (font-spec :family "Fira Code" :size 12.0)
-      doom-unicode-font (font-spec :family "Fira Code" :size 12.0)
-      doom-variable-pitch-font (font-spec :family "Noto Sans" :size 13)
+(setq doom-font (font-spec :family "Fira Code" :size 13.0)
+      doom-unicode-font (font-spec :family "Fira Code" :size 13.0)
+      doom-variable-pitch-font (font-spec :family "Noto Sans" :size 15)
       doom-theme 'doom-city-lights
       column-number-mode nil
       display-line-numbers-type nil
@@ -24,8 +24,6 @@
       mode-line-default-help-echo nil
       show-help-function nil
       show-paren-delay 0)
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
 
 
 ;;; Emacs Calc, poor man's Mathematica
