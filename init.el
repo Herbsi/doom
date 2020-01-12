@@ -16,7 +16,7 @@
  (ivy
   +prescient
   +icons
-  ;; +childframe
+  +childframe
   +fuzzy)
 
  :ui
@@ -24,7 +24,7 @@
  doom
  doom-dashboard
  doom-quit
- fill-column
+ ;; fill-column
  hl-todo
  ;; hydra
  ;; indent-guides
@@ -42,15 +42,15 @@
  treemacs
  unicode
  vc-gutter
- vi-tilde-fringe
+ ;; vi-tilde-fringe
  window-select
  workspaces
- zen
+ ;; zen
 
  :editor
  (evil +everywhere)
  file-templates
- ;; fold
+ fold
  (format +onsave)
  ;; god
  lispy
@@ -74,6 +74,11 @@
  ;; term
  vterm
 
+ :checkers
+ syntax
+ spell
+ ;; grammar
+
  :tools
  ;; ansible
  ;; debugger
@@ -82,10 +87,9 @@
  editorconfig
  ;; ein
  (eval +overlay)
- flycheck
- flyspell
  ;; gist
  (lookup
+  +dictionary
   +docsets)
  lsp
  macos
@@ -102,8 +106,8 @@
  :lang
  ;; agda
  ;; assembly
- (cc
-  +lsp)
+ ;; (cc
+ ;;  +lsp)
  ;; clojure
  common-lisp
  ;; coq
@@ -118,7 +122,7 @@
  ;; faust
  ;; fsharp
  ;; go
- ;; (haskell +lsp)
+ ;; (haskell +dante)
  ;; hy
  ;; idris             ;
  ;; (java +meghanada)
@@ -140,7 +144,9 @@
  ;; php
  ;; plantuml
  ;; purescript
- python
+ (python
+  +pyenv
+  +lsp)
  ;; qt
  ;; racket
  ;; rest
@@ -164,18 +170,9 @@
  ;; irc
  ;; (rss +org)
  ;; twitter
- ;; (write
- ;; +wordnut
- ;; +langtool)
 
  :config
- ;; For literate config users. This will tangle+compile a config.org
- ;; literate config in your `doom-private-dir' whenever it changes.
  ;; literate
-
- ;; The default module sets reasonable defaults for Emacs. It also
- ;; provides a Spacemacs-inspired keybinding scheme and a smartparens
- ;; config. Use it as a reference for your own modules.
  (default +bindings +smartparens)
 
  :private)
