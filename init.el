@@ -14,10 +14,10 @@
  ;; helm
  ;; ido
  (ivy
-  +prescient
-  +icons
-  +childframe
-  +fuzzy)
+  ;; +prescient
+  ;; +fuzzy
+  ;; +childframe
+  +icons)
 
  :ui
  ;; deft
@@ -151,7 +151,7 @@
  ;; racket
  ;; rest
  ;; ruby
- (rust +lsp)
+ ;; (rust +lsp)
  ;; scala
  scheme
  (sh +fish)
