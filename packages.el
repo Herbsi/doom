@@ -4,4 +4,5 @@
 (package! anki-editor)
 (package! fast-scroll)
 (package! org-noter)
+(package! super-save)
 ;; (package! sly-quicklisp)

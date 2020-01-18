@@ -8,7 +8,6 @@
       user-mail-address "herwig.hoehenberger@gmail.com"
       epa-file-encrypt-to user-mail-address
       confirm-kill-emacs nil)
-(server-start)
 
 
 ;;; UI
@@ -96,3 +95,12 @@
 ;; Snippets
 (after! yasnippet
   (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
+
+
+;; Super Save
+(use-package! super-save
+  :hook (prog-mode . super-save-mode)
+  :config
+  (setq super-save-auto-save-when-idle t
+        super-save-remote-files nil
+        super-save-exclude '(".gpg")))
