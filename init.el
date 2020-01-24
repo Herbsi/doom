@@ -63,6 +63,7 @@
 
  :emacs
  (dired
+  +ranger
   +icons)
  electric
  ibuffer
@@ -106,8 +107,8 @@
  :lang
  ;; agda
  ;; assembly
- ;; (cc
- ;;  +lsp)
+ (cc
+  +lsp)
  ;; clojure
  common-lisp
  ;; coq
