@@ -9,21 +9,24 @@
       epa-file-encrypt-to user-mail-address
       confirm-kill-emacs nil)
 
+(toggle-frame-fullscreen)
+
 
 ;;; UI
-(setq doom-font (font-spec :family "Fira Code" :size 13.0)
-      doom-unicode-font (font-spec :family "Fira Code" :size 13.0)
-      doom-variable-pitch-font (font-spec :family "Noto Sans" :size 15)
-      doom-theme 'doom-city-lights
-      column-number-mode nil
+(setq column-number-mode nil
       display-line-numbers-type nil
+      doom-font (font-spec :family "Source Code Pro" :size 13.0)
+      doom-unicode-font (font-spec :family "Source Code Pro" :size 13.0)
+      doom-theme 'doom-nord
       evil-echo-state nil
       frame-title-format "%b"
       lsp-ui-sideline-enable nil
       mode-line-default-help-echo nil
+      scroll-bar-mode nil
       show-help-function nil
       show-paren-delay 0)
 
+(setq-default line-spacing 2)
 
 ;;; Emacs Calc, poor man's Mathematica
 (after! calc
