@@ -1,17 +1,9 @@
 ;;; ~/.config/doom/+bindings.el -*- lexical-binding: t; -*-
 
 (map!
- (:leader
-   "SPC" nil
-   ":" nil)
-
- (:after racket-mode
-   (:map racket-mode-map
-     (:when (featurep! :editor lispy)
-       :i "[" nil))))
-
-(map!
- :leader ;; SPC
+ :leader
+ "SPC" nil
+ ":" nil
  :desc "M-x" "SPC" #'counsel-M-x
  (:prefix ("b" . "buffer")
    :desc "ibuffer" "i" #'ibuffer)
@@ -37,7 +29,8 @@
    (:map racket-mode-map
      :desc "racket-eval-last-sexp" "C-x C-e" #'racket-eval-last-sexp
      (:when (featurep! :editor lispy)
-       :i "[" #'lispyville-previous-opening)))
+       (:after lispy
+         :i "[" #'lispyville-previous-opening))))
 
  ;; Rust Mode
  (:after rust-mode
