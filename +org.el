@@ -2,6 +2,7 @@
 
 (setq
  org-ellipsis " ▼ "
+ org-directory "~/Org/"
  org-bullets-bullet-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷"))
 
 (defun herwig/setup-university-tasks ()
@@ -17,7 +18,7 @@
 
 ;; Org Journal
 (after! org-journal
-  (setq org-journal-dir "~/Private/Journal/"
+  (setq org-journal-dir (expand-file-name "Journal" org-directory)
         org-journal-file-format "%Y/%m %B.org" ;; e.g. 2019/04 April.org
         org-journal-encrypt-journal t
         org-journal-file-type 'monthly
