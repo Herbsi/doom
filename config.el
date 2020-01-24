@@ -35,6 +35,7 @@
 
 ;;; Text & Input
 (setq sentence-end-double-space t       ; the only correct choice
+      mac-command-modifier 'control
       default-input-method "german-postfix")
 
 
