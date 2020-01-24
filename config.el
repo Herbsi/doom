@@ -50,7 +50,7 @@
 
 
 ;; Editorconfig
-(after! editorconfig-mode
+(after! editorconfig
   (add-hook! before-save (editorconfig-format-buffer)))
 
 
