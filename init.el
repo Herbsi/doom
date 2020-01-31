@@ -28,16 +28,15 @@
  hl-todo
  ;; hydra
  ;; indent-guides
- (modeline
-  +light)
+ modeline
  nav-flash
  ;; neotree
  ophints
  (popup
   +all
   +defaults)
- ;; (pretty-code
- ;;  +fira)
+ (pretty-code
+  +fira)
  ;; tabs
  treemacs
  unicode

@@ -15,8 +15,8 @@
 ;;; UI
 (setq column-number-mode nil
       display-line-numbers-type nil
-      doom-font (font-spec :family "Source Code Pro" :size 13.0)
-      doom-unicode-font (font-spec :family "Source Code Pro" :size 13.0)
+      doom-font (font-spec :family "Fira Code" :size 16.0)
+      doom-unicode-font (font-spec :family "Fira Code" :size 16.0)
       doom-theme 'doom-nord
       evil-echo-state nil
       frame-title-format "%b"
@@ -26,7 +26,7 @@
       show-help-function nil
       show-paren-delay 0)
 
-(setq-default line-spacing 2)
+(push '(lisp-mode ("lambda" . "λ") ("nil" . "∅")) +pretty-code-symbols-alist)
 
 ;;; Emacs Calc, poor man's Mathematica
 (after! calc
