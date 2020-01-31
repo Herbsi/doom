@@ -9,8 +9,6 @@
       epa-file-encrypt-to user-mail-address
       confirm-kill-emacs nil)
 
-(toggle-frame-fullscreen)
-
 
 ;;; UI
 (setq column-number-mode nil
@@ -26,6 +24,7 @@
       show-help-function nil
       show-paren-delay 0)
 
+;; Pretty Code
 (set-pretty-symbols! 'lisp-mode
   :and "and"
   :lambda "lambda"
@@ -34,9 +33,11 @@
   :null "nil"
   :true "t")
 
-(set-pretty-symbols! 'python-mode nil
-  :lambda "lambda")
+(set-pretty-symbols! 'python-mode nil)
+(set-pretty-symbols! 'python-mode :lambda "lambda")
 
+(when (featurep! +fira)
+  (delq! '(";;"     . #Xe129) +pretty-code-fira-code-font-ligatures))
 
 
 ;;; Emacs Calc, poor man's Mathematica
@@ -97,7 +98,7 @@
 
 
 ;; Python
-(after! python
+(add-hook! python-mode
   (setq python-shell-interpreter "ipython"))
 
 
