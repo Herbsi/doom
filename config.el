@@ -26,7 +26,18 @@
       show-help-function nil
       show-paren-delay 0)
 
-(push '(lisp-mode ("lambda" . "λ") ("nil" . "∅")) +pretty-code-symbols-alist)
+(set-pretty-symbols! 'lisp-mode
+  :and "and"
+  :lambda "lambda"
+  :or "or"
+  :not "not"
+  :null "nil"
+  :true "t")
+
+(set-pretty-symbols! 'python-mode nil
+  :lambda "lambda")
+
+
 
 ;;; Emacs Calc, poor man's Mathematica
 (after! calc
