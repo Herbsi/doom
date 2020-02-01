@@ -36,9 +36,9 @@
 (set-pretty-symbols! 'python-mode nil)
 (set-pretty-symbols! 'python-mode :lambda "lambda")
 
-(when (featurep! +fira)
-  (delq! '(";;"     . #Xe129) +pretty-code-fira-code-font-ligatures))
-
+(dolist (el '(("x" . #Xe16b) (";;" . #Xe129)))
+  (setf +pretty-code-fira-code-font-ligatures
+        (delete el +pretty-code-fira-code-font-ligatures)))
 
 ;;; Emacs Calc, poor man's Mathematica
 (after! calc
