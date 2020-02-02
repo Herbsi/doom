@@ -145,7 +145,6 @@
  ;; plantuml
  ;; purescript
  (python
-  +pyenv
   +lsp)
  ;; qt
  ;; racket
