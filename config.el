@@ -6,9 +6,7 @@
 ;;; General Configuration
 (setq user-full-name "Herwig Hoehenberger"
       user-mail-address "herwig.hoehenberger@gmail.com"
-      epa-file-encrypt-to user-mail-address
-      confirm-kill-emacs nil)
-
+      epa-file-encrypt-to user-mail-address)
 
 ;;; UI
 (setq column-number-mode nil
