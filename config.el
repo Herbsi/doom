@@ -23,14 +23,13 @@
       show-paren-delay 0)
 
 ;; Pretty Code
-(after! common-lisp
-  (set-pretty-symbols! 'lisp-mode
-    :and "and"
-    :lambda "lambda"
-    :or "or"
-    :not "not"
-    :null "nil"
-    :true "t"))
+(set-pretty-symbols! 'lisp-mode
+  :and "and"
+  :lambda "lambda"
+  :or "or"
+  :not "not"
+  :null "nil"
+  :true "t")
 
 ;; TODO not working
 (after! python
