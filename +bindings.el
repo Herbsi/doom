@@ -5,6 +5,7 @@
  "SPC" nil
  ":" nil
  :desc "M-x" "SPC" #'counsel-M-x
+
  (:prefix ("b" . "buffer")
    :desc "ibuffer" "i" #'ibuffer)
 
@@ -15,6 +16,8 @@
  (:prefix ( "c" . "code")
    (:prefix ("n" . "narrow")
      :desc "Current Function" "f" #'narrow-to-defun
+     :desc "Page" "p" #'narrow-to-page
+     :desc "Selected Region" "r" #'narrow-to-region
      :desc "Widen" "w" #'widen))
 
  (:prefix ("f" . "file")
