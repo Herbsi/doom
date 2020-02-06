@@ -3,6 +3,6 @@
 
 (package! anki-editor)
 (package! fast-scroll)
-(package! org-noter)
+(package! hercules :recipe (:host gitlab :repo "jjzmajic/hercules.el"))
+(package! sly-quicklisp)
 (package! super-save)
-;; (package! sly-quicklisp)
