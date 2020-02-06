@@ -123,3 +123,6 @@
   (setq super-save-auto-save-when-idle t
         super-save-remote-files nil
         super-save-exclude '(".gpg")))
+
+(use-package! which-key
+  :init (setq which-key-idle-delay 0.05))
