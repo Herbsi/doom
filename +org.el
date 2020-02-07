@@ -43,7 +43,7 @@
      "i" nil))
   (map!
    (:map org-mode-map
-   :localleader
+     :localleader
      (:prefix ("c" . "clock")
        :desc "Report" "r" #'org-clock-report)
 

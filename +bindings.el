@@ -1,17 +1,19 @@
 ;;; ~/.config/doom/+bindings.el -*- lexical-binding: t; -*-
-
+;; unmappings
 (map!
  :leader
  "SPC" nil
  ":" nil
+ (:map lisp-mode-map
+   :localleader
+   "m" nil))
+
+(map!
+ :leader
  :desc "M-x" "SPC" #'counsel-M-x
 
  (:prefix ("b" . "buffer")
    :desc "ibuffer" "i" #'ibuffer)
-
- (:prefix ("B" . "bookmarks")
-   :desc "List Bookmarks" "l" #'bookmark-bmenu-list
-   :desc "Set Bookmark" "s" #'bookmark-set)
 
  (:prefix ( "c" . "code")
    (:prefix ("n" . "narrow")
@@ -26,6 +28,11 @@
 
  (:prefix ("n" . "notes")
    :desc "Org Journal" "j" #'org-journal-new-entry)
+
+ ;; Common Lisp
+ (:map lisp-mode-map
+   :localleader
+   :desc "Macrostep" "m" #'macrostep-expand)
 
  ;; Racket Mode
  (:after racket-mode
