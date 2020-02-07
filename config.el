@@ -90,6 +90,13 @@
   (add-hook! git-timemachine-mode-hook #'evil-normalize-keymaps))
 
 
+;; Hercules
+(hercules-def
+ :show-funs #'macrostep-expand
+ :hide-funs 'macrostep-collapse-all
+ :keymap 'macrostep-keymap)
+
+
 ;; Lispy
 (after! lispyville
   (setq lispyville-barf-stay-with-closing t)
