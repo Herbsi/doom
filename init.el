@@ -15,8 +15,8 @@
  ;; ido
  (ivy
   ;; +prescient
-  ;; +fuzzy
-  ;; +childframe
+  +fuzzy
+  +childframe
   +icons)
 
  :ui
