@@ -31,11 +31,6 @@
   :null "nil"
   :true "t")
 
-;; TODO not working
-(after! python
-  (set-pretty-symbols! 'python-mode nil)
-  (set-pretty-symbols! 'python-mode :lambda "lambda"))
-
 (dolist (el '(("x" . #Xe16b) (";;" . #Xe129)))
   (setf +pretty-code-fira-code-font-ligatures
         (delete el +pretty-code-fira-code-font-ligatures)))

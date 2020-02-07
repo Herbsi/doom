@@ -144,8 +144,8 @@
  ;; php
  ;; plantuml
  ;; purescript
- (python
-  +lsp)
+ ;; (python
+ ;;  +lsp)
  ;; qt
  ;; racket
  ;; rest
