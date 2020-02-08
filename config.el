@@ -22,6 +22,10 @@
       show-help-function nil
       show-paren-delay 0)
 
+(add-to-list 'default-frame-alist '(height . 49))
+(add-to-list 'default-frame-alist '(width . 126))
+
+
 ;; Pretty Code
 (set-pretty-symbols! 'lisp-mode
   :and "and"
