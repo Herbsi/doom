@@ -129,7 +129,7 @@
  ;; javascript
  ;; julia
  ;; kotlin
- latex
+ (latex +cdlatex)
  ;; ledger
  ;; lua
  ;; markdown
