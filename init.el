@@ -1,7 +1,7 @@
 ;;; ~/.config/doom/init.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here
-(setq doom-localleader-key ",")
+(put 'narrow-to-region 'disabled nil)
 
 (doom!
  :input

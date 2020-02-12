@@ -1,15 +1,10 @@
 ;;; ~/.config/doom/+bindings.el -*- lexical-binding: t; -*-
-;; unmappings
-(map!
- :leader
- "SPC" nil
- ":" nil
- (:map lisp-mode-map
-   :localleader
-   "m" nil))
+
+(setq doom-localleader-key ",")
 
 (map!
  :leader
+ ":" nil
  :desc "M-x" "SPC" #'counsel-M-x
 
  (:prefix ("b" . "buffer")
@@ -30,21 +25,19 @@
    :desc "Org Journal" "j" #'org-journal-new-entry)
 
  ;; Common Lisp
- (:map lisp-mode-map
-   :localleader
-   :desc "Macrostep" "m" #'macrostep-expand)
+ :map lisp-mode-map
+ :localleader
+ :desc "Macrostep" "m" #'macrostep-expand
 
  ;; Racket Mode
- (:after racket-mode
-   (:map racket-mode-map
-     :desc "racket-eval-last-sexp" "C-x C-e" #'racket-eval-last-sexp
-     (:when (featurep! :editor lispy)
-       (:after lispy
-         :i "[" #'lispyville-previous-opening))))
+ :map racket-mode-map
+ :desc "racket-eval-last-sexp" "C-x C-e" #'racket-eval-last-sexp
+ (:when (featurep! :editor lispy)
+   (:after lispy
+     :i "[" #'lispyville-previous-opening))
 
- ;; Rust Mode
- (:after rust-mode
-   (:map rust-mode-map
-     :localleader
-     :prefix "b"
-     :desc "cargo clippy" "C" (λ! (+rust-cargo-compile "cargo clippy --color always")))))
+ ;; Rust
+ :map rust-mode-map
+ :localleader
+ :prefix "b"
+ :desc "cargo clippy" "C" (λ! (+rust-cargo-compile "cargo clippy --color always")))
