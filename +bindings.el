@@ -25,10 +25,6 @@
    :desc "Org Journal" "j" #'org-journal-new-entry)
 
  ;; Common Lisp
- :map lisp-mode-map
- :localleader
- :desc "Macrostep" "m" #'macrostep-expand
-
  ;; Racket Mode
  :map racket-mode-map
  :desc "racket-eval-last-sexp" "C-x C-e" #'racket-eval-last-sexp
@@ -41,3 +37,7 @@
  :localleader
  :prefix "b"
  :desc "cargo clippy" "C" (λ! (+rust-cargo-compile "cargo clippy --color always")))
+ (:after sly
+   :map lisp-mode-map
+   :localleader
+   :desc "Macrostep" "m" #'macrostep-expand))
