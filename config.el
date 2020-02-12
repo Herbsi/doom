@@ -35,6 +35,9 @@
   :null "nil"
   :true "t")
 
+(set-pretty-symbols! 'c-mode nil)
+(set-pretty-symbols! 'c++-mode nil)
+
 (dolist (el '(("x" . #Xe16b) (";;" . #Xe129)))
   (setf +pretty-code-fira-code-font-ligatures
         (delete el +pretty-code-fira-code-font-ligatures)))

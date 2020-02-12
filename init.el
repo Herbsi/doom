@@ -106,8 +106,8 @@
  :lang
  ;; agda
  ;; assembly
- ;; (cc
- ;;  +lsp)
+ (cc
+  +lsp)
  ;; clojure
  common-lisp
  ;; coq
