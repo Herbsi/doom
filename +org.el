@@ -29,17 +29,18 @@
         org-journal-time-format "")
   (defun herwig/setup-entry ()
     (progn
-      (toggl-start-time-entry "Journal" (toggl-get-pid "Solitue") "Journal Timer Started!")
+      (toggl-start-time-entry "Journal" (toggl-get-pid "Solitude") "Journal Timer Started!")
       (doom/window-maximize-buffer)
       (company-mode)
       (evil-scroll-line-to-top (line-number-at-pos))
       (evil-scroll-line-up 2)))
   (add-hook! org-journal-after-entry-create #'herwig/setup-entry))
 
+
+;; Org Toggl
 (use-package! org-toggl
-  :after f
   :config
-  (setq toggl-auth-token (string-trim (f-read-text "toggl-auth-token.gpg")))
+  (setq toggl-auth-token "5e48e18d607c8512c580f4dc4d303cc6")
   (setq org-toggl-inherit-toggl-properties t)
   (toggl-get-projects))
 
