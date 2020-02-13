@@ -19,11 +19,11 @@
 ;; Org Journal
 (after! org-journal
   (setq org-journal-dir (expand-file-name "Journal" org-directory)
-        org-journal-file-format "%Y/%m %B.org" ;; e.g. 2019/04 April.org
+        org-journal-file-format "1%Y/%m %B.org" ;; e.g. 12019/04 April.org
         org-journal-encrypt-journal t
         org-journal-file-type 'monthly
         org-journal-date-prefix "* "
-        org-journal-date-format "%F %a" ;; e.g. 2019-04-01 Fri
+        org-journal-date-format "1%F %a" ;; e.g. 12019-04-01 Fri
         ;; see here for formatting symbols: https://www.gnu.org/software/emacs/manual/html_node/elisp/Time-Parsing.html
         org-journal-time-prefix "** "
         org-journal-time-format "")
