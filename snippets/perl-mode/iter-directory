@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: iter directory
+# key: iter
+# condition: t
+# --
+opendir(DIR, ${1:"."}) or die "Cannot open directory $!\n";
+for (grep { $2 } readdir(DIR)) {
+    $0
+} 
+closedir(DIR);
