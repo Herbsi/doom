@@ -94,10 +94,12 @@
 
 
 ;; Hercules
-(hercules-def
- :show-funs #'macrostep-expand
- :hide-funs 'macrostep-collapse-all
- :keymap 'macrostep-keymap)
+(use-package! hercules
+  :config
+  (hercules-def
+   :show-funs #'macrostep-expand
+   :hide-funs 'macrostep-collapse-all
+   :keymap 'macrostep-keymap))
 
 
 ;; Lispy
@@ -132,4 +134,4 @@
         super-save-exclude '(".gpg")))
 
 (use-package! which-key
-  :init (setq which-key-idle-delay 0.05))
+  :init (setq which-key-idle-delay 0.5))
