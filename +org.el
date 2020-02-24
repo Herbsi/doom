@@ -3,7 +3,7 @@
 (setq
  org-ellipsis " ▼ "
  org-directory "~/Org/"
- org-bullets-bullet-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷"))
+ org-bullets-bullet-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷"))
 
 (defun herwig/setup-university-tasks ()
   (interactive)
