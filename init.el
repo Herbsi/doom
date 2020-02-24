@@ -10,14 +10,16 @@
 
  :completion
  (company
-  +childframe)
+  ;; +childframe
+  )
  ;; helm
  ;; ido
  (ivy
   ;; +prescient
-  +fuzzy
-  +childframe
-  +icons)
+  ;; +fuzzy
+  ;; +childframe
+  ;; +icons
+  )
 
  :ui
  ;; deft
@@ -31,15 +33,15 @@
  (modeline +light)
  nav-flash
  ;; neotree
- ophints
+ ;; ophints
  (popup
-  +all
+  ;; +all
   +defaults)
- (pretty-code
-  +fira)
+ ;; (pretty-code
+ ;;  +fira)
  ;; tabs
  treemacs
- unicode
+ ;; unicode
  vc-gutter
  ;; vi-tilde-fringe
  window-select
@@ -64,7 +66,7 @@
  (dired
   +ranger
   +icons)
- electric
+ ;; electric
  ibuffer
  vc
 
@@ -76,7 +78,7 @@
 
  :checkers
  syntax
- spell
+ (spell +aspell)
  ;; grammar
 
  :tools
@@ -140,7 +142,7 @@
   +dragndrop
   +ipython
   +journal)
- ;; perl
+ perl
  ;; php
  ;; plantuml
  ;; purescript
