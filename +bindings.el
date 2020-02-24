@@ -26,6 +26,5 @@
 
  ;; Common Lisp
  (:after sly
-   :map lisp-mode-map
-   :localleader
-   :desc "Macrostep" "m" #'macrostep-expand))
+   :map sly-mrepl-mode-map
+   "," nil))
