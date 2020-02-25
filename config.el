@@ -58,7 +58,7 @@
 
 ;; Company
 (after! company
-  (setq company-idle-delay nil))
+  (setq company-idle-delay 0))
 
 
 ;; Editorconfig
