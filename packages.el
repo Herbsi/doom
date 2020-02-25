@@ -7,3 +7,4 @@
 (package! org-toggl :recipe (:host github :repo "mbork/org-toggl"))
 (package! sly-quicklisp)
 (package! super-save)
+(package! zenburn-emacs :recipe (:host github :repo "bbatsov/zenburn-emacs"))

@@ -8,12 +8,12 @@
       user-mail-address "herwig.hoehenberger@gmail.com"
       epa-file-encrypt-to user-mail-address)
 
+
 ;;; UI
 (setq column-number-mode nil
       display-line-numbers-type nil
-      doom-font (font-spec :family "Fira Code" :size 16.0)
-      doom-unicode-font (font-spec :family "Fira Code" :size 16.0)
-      doom-theme 'doom-nord
+      doom-font (font-spec :family "Fira Code" :size 14.0)
+      doom-theme 'zenburn
       evil-echo-state nil
       frame-title-format "%b"
       lsp-ui-sideline-enable nil
@@ -21,9 +21,6 @@
       scroll-bar-mode nil
       show-help-function nil
       show-paren-delay 0)
-
-;; (add-to-list 'default-frame-alist '(height . 49))
-;; (add-to-list 'default-frame-alist '(width . 126))
 
 
 ;; Pretty Code
