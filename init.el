@@ -140,7 +140,6 @@
  ;; ocaml
  (org
   +dragndrop
-  +ipython
   +journal)
  perl
  ;; php
