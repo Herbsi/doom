@@ -97,7 +97,7 @@
   :config
   (hercules-def
    :show-funs #'macrostep-expand
-   :hide-funs 'macrostep-collapse-all
+   :hide-funs #'macrostep-collapse-all
    :keymap 'macrostep-keymap))
 
 
