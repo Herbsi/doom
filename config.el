@@ -67,6 +67,9 @@
 (after! editorconfig
   (add-hook! before-save (editorconfig-format-buffer)))
 
+;; Emacs Anywhere
+(add-hook! ea-popup
+  (latex-mode))
 
 ;; Emacs Anywhere
 (add-hook! ea-popup
