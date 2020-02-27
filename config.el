@@ -68,6 +68,11 @@
   (add-hook! before-save (editorconfig-format-buffer)))
 
 
+;; Emacs Anywhere
+(add-hook! ea-popup
+  (latex-mode))
+
+
 ;; Evil
 (after! evil
   (setq evil-magic 'very-magic
