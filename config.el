@@ -7,6 +7,7 @@
 (setq user-full-name "Herwig Hoehenberger"
       user-mail-address "herwig.hoehenberger@gmail.com"
       epa-file-encrypt-to user-mail-address)
+(server-start)
 
 
 ;;; UI
