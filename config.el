@@ -23,23 +23,6 @@
       show-help-function nil
       show-paren-delay 0)
 
-;; Pretty Code
-(when (featurep! pretty-code)
-  (set-pretty-symbols! 'lisp-mode
-                       :and "and"
-                       :lambda "lambda"
-                       :or "or"
-                       :not "not"
-                       :null "nil"
-                       :true "t")
-
-  (set-pretty-symbols! 'c-mode nil)
-  (set-pretty-symbols! 'c++-mode nil)
-
-  (dolist (el '(("x" . #Xe16b) (";;" . #Xe129)))
-    (setf +pretty-code-fira-code-font-ligatures
-          (delete el +pretty-code-fira-code-font-ligatures))))
-
 ;;; Emacs Calc, poor man's Mathematica
 (after! calc
   (evil-set-initial-state 'calc-mode 'emacs))
