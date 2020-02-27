@@ -24,7 +24,7 @@
  :ui
  ;; deft
  doom
- doom-dashboard
+ ;; doom-dashboard
  doom-quit
  ;; fill-column
  hl-todo
@@ -52,7 +52,7 @@
  (evil +everywhere)
  file-templates
  fold
- (format +onsave)
+ format
  ;; god
  lispy
  multiple-cursors
@@ -66,7 +66,7 @@
  (dired
   +ranger
   +icons)
- ;; electric
+ electric
  ibuffer
  vc
 

@@ -6,4 +6,7 @@
 (package! hercules :recipe (:host gitlab :repo "jjzmajic/hercules.el"))
 (package! org-toggl :recipe (:host github :repo "mbork/org-toggl"))
 (package! super-save)
-(package! zenburn-emacs :recipe (:host github :repo "bbatsov/zenburn-emacs"))
+
+;; Themes
+(package! gruber-darker :recipe (:host github :repo "rexim/gruber-darker-theme"))
+(package! zenburn :recipe (:host github :repo "bbatsov/zenburn-emacs"))
