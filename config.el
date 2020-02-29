@@ -97,7 +97,7 @@
 
 
 ;; Python
-(add-hook! python-mode
+(after! python
   (setq python-shell-interpreter "ipython"))
 
 
