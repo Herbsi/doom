@@ -30,7 +30,6 @@
 
 ;;; Text & Input
 (setq sentence-end-double-space t       ; the only correct choice
-      mac-command-modifier 'control
       ispell-aspell-dict-dir (expand-file-name "aspell" (getenv "XDG_DATA_HOME"))
       ispell-personal-dictionary (expand-file-name "aspell/en.pws" (getenv "XDG_DATA_HOME"))
       default-input-method "german-postfix")
@@ -53,7 +52,8 @@
 
 ;; Emacs Anywhere
 (add-hook! ea-popup
-  (latex-mode))
+  (latex-mode)
+  (set-input-method "german-postfix"))
 
 
 ;; Evil

@@ -43,7 +43,7 @@
  treemacs
  ;; unicode
  vc-gutter
- ;; vi-tilde-fringe
+ vi-tilde-fringe
  window-select
  workspaces
  ;; zen
@@ -84,7 +84,7 @@
  :tools
  ;; ansible
  ;; debugger
- ;; direnv
+ direnv
  ;; docker
  editorconfig
  ;; ein
