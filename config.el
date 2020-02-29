@@ -96,6 +96,17 @@
    '(additional-movement)))
 
 
+;; imenu-list
+;; FIXME this does not prevent :ui popup from interferring with imenu-list
+(set-popup-rule! "^\\*Ilist" :side 'right :size 0.3 :quit 'other :select t)
+(use-package! imenu-list
+  :config
+  (map!
+   :leader
+   (:prefix ("b" . "buffer")
+     :desc "imenu-list" "I" #'imenu-list-smart-toggle)))
+
+
 ;; Python
 (after! python
   (setq python-shell-interpreter "ipython"))
