@@ -140,7 +140,7 @@
  (org
   +dragndrop
   +journal)
- perl
+ ;; perl
  ;; php
  ;; plantuml
  ;; purescript
