@@ -13,7 +13,7 @@
 ;;; UI
 (setq column-number-mode nil
       display-line-numbers-type nil
-      doom-font (font-spec :family "Fira Code" :size 14.0)
+      doom-font (font-spec :family "Fira Code" :size 16.0)
       doom-theme 'zenburn
       evil-echo-state nil
       frame-title-format "%b"
@@ -97,7 +97,6 @@
 
 
 ;; imenu-list
-;; FIXME this does not prevent :ui popup from interferring with imenu-list
 (set-popup-rule! "^\\*Ilist" :side 'right :size 0.3 :quit 'other :select t)
 (use-package! imenu-list
   :config
