@@ -106,6 +106,17 @@
      :desc "imenu-list" "I" #'imenu-list-smart-toggle)))
 
 
+;; Matlab Mode
+(use-package! matlab
+  :config
+  (setq matlab-server-executable "/Applicatios/MATLAB_R2018b.app/bin/matlab")
+  (map!
+   :localleader
+   :map matlab-mode-map
+   "o" #'matlab-shell
+   "r" #'matlab-shell-run-region
+   "s" #'matlab-shell-save-and-go))
+
 ;; Python
 (after! python
   (setq python-shell-interpreter "ipython"))

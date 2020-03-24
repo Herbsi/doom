@@ -5,6 +5,7 @@
 (package! hercules :recipe (:host gitlab :repo "jjzmajic/hercules.el"))
 (package! imenu-list)
 (package! org-toggl :recipe (:host github :repo "mbork/org-toggl"))
+(package! matlab-mode)
 (package! super-save)
 
 ;; Themes
