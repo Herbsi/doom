@@ -108,7 +108,7 @@
  :lang
  ;; agda
  ;; assembly
- ;; (cc +lsp)
+ (cc +lsp)
  ;; clojure
  common-lisp
  ;; coq
@@ -149,7 +149,7 @@
  ;; racket
  ;; rest
  ;; ruby
- ;; (rust +lsp)
+ (rust +lsp)
  ;; scala
  scheme
  (sh +fish)
