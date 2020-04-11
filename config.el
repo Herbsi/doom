@@ -35,10 +35,6 @@
 
 
 ;;; Packages
-;; Common Lisp
-(add-hook! lisp-mode lispy-mode)
-
-
 ;; Company
 (after! company
   (setq company-idle-delay 0))

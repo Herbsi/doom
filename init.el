@@ -123,14 +123,14 @@
  ;; faust
  ;; fsharp
  ;; go
- ;; (haskell +dante)
+ (haskell +dante)
  ;; hy
  ;; idris             ;
  ;; (java +meghanada)
  ;; javascript
  ;; julia
  ;; kotlin
- (latex +cdlatex)
+ (latex +cdlatex +fold)
  ;; ledger
  ;; lua
  ;; markdown
