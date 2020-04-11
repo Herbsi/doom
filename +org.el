@@ -33,7 +33,8 @@
       (doom/window-maximize-buffer)
       (company-mode -1)
       (evil-scroll-line-to-top (line-number-at-pos))
-      (evil-scroll-line-up 2)))
+      (evil-scroll-line-up 2)
+      (flyspell-mode)))
   (add-hook! org-journal-after-entry-create #'herwig/setup-entry))
 
 

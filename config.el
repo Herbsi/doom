@@ -65,10 +65,6 @@
   (fast-scroll-mode 1))
 
 
-;; Flyspell in text mode
-(add-hook! text-mode #'flyspell-mode)
-
-
 ;; Git
 (after! git-timemachine
   (evil-make-overriding-map git-timemachine-mode-map 'normal)
