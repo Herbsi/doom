@@ -32,17 +32,13 @@
       ispell-aspell-dict-dir (expand-file-name "aspell" (getenv "XDG_DATA_HOME"))
       ispell-personal-dictionary (expand-file-name "aspell/en.pws" (getenv "XDG_DATA_HOME"))
       default-input-method "german-postfix")
+(delete-selection-mode 1)
 
 
 ;;; Packages
 ;; Company
 (after! company
   (setq company-idle-delay 0))
-
-
-;; Editorconfig
-(after! editorconfig
-  (add-hook! before-save (editorconfig-format-buffer)))
 
 
 ;; Emacs Anywhere
@@ -56,6 +52,7 @@
   (setq evil-magic 'very-magic
         evil-split-window-below t
         evil-vsplit-window-right t
+        evil-want-fine-undo t
         +evil-want-o/O-to-continue-comments nil))
 
 

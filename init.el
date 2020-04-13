@@ -52,7 +52,7 @@
  (evil +everywhere)
  file-templates
  fold
- format
+ ;; format
  ;; god
  lispy
  multiple-cursors
@@ -78,7 +78,7 @@
 
  :checkers
  syntax
- (spell +aspell)
+ ;; (spell +aspell)
  ;; grammar
 
  :tools
@@ -94,7 +94,7 @@
   +dictionary
   +docsets)
  lsp
- macos
+ ;; macos
  magit
  ;; make
  ;; pass
@@ -115,6 +115,7 @@
  ;; crystal
  ;; csharp
  data
+ ;; (dart +flutter)
  ;; elixir
  ;; elm
  emacs-lisp
@@ -131,6 +132,7 @@
  ;; julia
  ;; kotlin
  (latex +cdlatex +fold)
+ ;; lean
  ;; ledger
  ;; lua
  ;; markdown
@@ -148,6 +150,7 @@
  ;; qt
  ;; racket
  ;; rest
+ ;; rst
  ;; ruby
  (rust +lsp)
  ;; scala
@@ -171,6 +174,4 @@
 
  :config
  ;; literate
- (default +bindings +smartparens)
-
- :private)
+ (default +bindings +smartparens))
