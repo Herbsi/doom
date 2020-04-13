@@ -38,7 +38,11 @@
 ;;; Packages
 ;; Company
 (after! company
-  (setq company-idle-delay 0))
+  (setq company-idle-delay nil))
+
+
+;; Direnv
+(setq direnv-always-show-summary nil)
 
 
 ;; Emacs Anywhere
@@ -56,16 +60,15 @@
         +evil-want-o/O-to-continue-comments nil))
 
 
-;; Fastscroll
-(after! fastscroll
-  (fast-scroll-config)
-  (fast-scroll-mode 1))
-
-
 ;; Git
 (after! git-timemachine
   (evil-make-overriding-map git-timemachine-mode-map 'normal)
   (add-hook! git-timemachine-mode-hook #'evil-normalize-keymaps))
+
+
+;; Haskell
+(after! haskell
+  (setq haskell-interactive-popup-errors nil))
 
 
 ;; Hercules
@@ -94,17 +97,6 @@
      :desc "imenu-list" "I" #'imenu-list-smart-toggle)))
 
 
-;; Matlab Mode
-(use-package! matlab
-  :config
-  (setq matlab-server-executable "/Applicatios/MATLAB_R2018b.app/bin/matlab")
-  (map!
-   :localleader
-   :map matlab-mode-map
-   "o" #'matlab-shell
-   "r" #'matlab-shell-run-region
-   "s" #'matlab-shell-save-and-go))
-
 ;; Python
 (after! python
   (setq python-shell-interpreter "ipython"))
@@ -119,12 +111,3 @@
 ;; Snippets
 (after! yasnippet
   (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
-
-
-;; Super Save
-(use-package! super-save
-  :hook (prog-mode . super-save-mode)
-  :config
-  (setq super-save-auto-save-when-idle t
-        super-save-remote-files nil
-        super-save-exclude '(".gpg")))

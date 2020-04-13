@@ -9,9 +9,7 @@
  ;; japanese
 
  :completion
- (company
-  ;; +childframe
-  )
+ (company +childframe)
  ;; helm
  ;; ido
  (ivy
