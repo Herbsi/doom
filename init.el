@@ -67,12 +67,13 @@
  electric
  ibuffer
  vc
+ (undo +tree)
 
  :term
- ;; eshell
+ eshell
  ;; shell
  ;; term
- vterm
+ ;; vterm
 
  :checkers
  syntax
