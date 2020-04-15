@@ -3,7 +3,7 @@
 (setq
  org-ellipsis " ▼ "
  org-directory (expand-file-name "Org" (getenv "HOME"))
- org-bullets-bullet-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷"))
+ org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷"))
 
 (defun herwig/setup-university-tasks ()
   (interactive)
