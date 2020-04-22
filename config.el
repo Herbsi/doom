@@ -12,7 +12,7 @@
 ;;; UI
 (setq column-number-mode nil
       display-line-numbers-type nil
-      doom-font (font-spec :family "Fira Code" :size 11.0)
+      doom-font (font-spec :family "Fira Code Nerd Font" :size 11.0)
       doom-theme 'doom-monokai-spectrum
       evil-echo-state nil
       frame-title-format "%b"
@@ -58,6 +58,9 @@
         evil-vsplit-window-right t
         evil-want-fine-undo t
         +evil-want-o/O-to-continue-comments nil))
+
+(after! evil-tex
+  (add-hook! latex-mode #'evil-tex-mode))
 
 
 ;; Git
