@@ -66,8 +66,8 @@
   +icons)
  electric
  ibuffer
- vc
  (undo +tree)
+ vc
 
  :term
  eshell
@@ -122,10 +122,11 @@
  ;; ess
  ;; faust
  ;; fsharp
+ ;; fstar
  ;; go
  (haskell +dante)
  ;; hy
- ;; idris             ;
+ ;; idris
  ;; (java +meghanada)
  ;; javascript
  ;; julia
@@ -155,6 +156,7 @@
  ;; scala
  scheme
  (sh +fish)
+ ;; sml
  ;; solidity
  ;; swift
  ;; terra

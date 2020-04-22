@@ -20,35 +20,46 @@
       mode-line-default-help-echo nil
       scroll-bar-mode nil
       show-help-function nil
-      show-paren-delay 0)
+      show-paren-delay 0
+      uniquify-buffer-name-style 'forward
+      window-combination-resize t
+      x-stretch-cursor t
+      +ivy-buffer-preview t)
 
 ;;; Emacs Calc, poor man's Mathematica
 (after! calc
+  (setq calc-angle-mode 'rad
+        calc-algebraic-mode t
+        calc-symbolic-mode t)
   (evil-set-initial-state 'calc-mode 'emacs))
+(after! calctex
+  (setq calctex-format-latex-header (concat calctex-format-latex-header
+                                            "\n\\usepackage{arevmath}")))
+(add-hook! calc-mode #'calctex-mode)
+
 
 
 ;;; Text & Input
 (setq sentence-end-double-space t       ; the only correct choice
-      ispell-aspell-dict-dir (expand-file-name "aspell" (getenv "XDG_DATA_HOME"))
-      ispell-personal-dictionary (expand-file-name "aspell/en.pws" (getenv "XDG_DATA_HOME"))
-      default-input-method "german-postfix")
+      default-input-method "german-postfix"
+      undo-limit 80000000
+      evil-want-fine-undo t
+      auto-save-default t
+      inhibit-compacting-font-caches t)
 (delete-selection-mode 1)
+(global-subword-mode)
 
 
 ;;; Packages
 ;; Company
 (after! company
-  (setq company-idle-delay nil))
+  (setq company-idle-delay nil
+        company-show-numbers t))
+(add-hook 'evil-normal-state-entry-hook #'company-abort)
 
 
 ;; Direnv
 (setq direnv-always-show-summary nil)
-
-
-;; Emacs Anywhere
-(add-hook! ea-popup
-  (latex-mode)
-  (set-input-method "german-postfix"))
 
 
 ;; Evil
@@ -114,3 +125,14 @@
 ;; Snippets
 (after! yasnippet
   (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
+
+
+;; Which Key
+(after! which-key
+  (setq which-key-idle-delay 0.5)
+  (setq which-key-allow-multiple-replacements t)
+  (pushnew!
+   which-key-replacement-alist
+   '(("" . "\\`+?evil[-:]?\\(?:a-\\)?\\(.*\\)") . (nil . "◂\\1"))
+   '(("\\`g s" . "\\`evilem--?motion-\\(.*\\)") . (nil . "◃\\1"))
+   ))
