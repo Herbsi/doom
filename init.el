@@ -15,8 +15,8 @@
  (ivy
   ;; +prescient
   ;; +fuzzy
-  ;; +childframe
-  ;; +icons
+  +childframe
+  +icons
   )
 
  :ui
@@ -52,13 +52,13 @@
  fold
  ;; format
  ;; god
- lispy
+ ;; lispy
  multiple-cursors
  ;; objed
  ;; parinfer
  ;; rotate-text
  snippets
- word-wrap
+ ;; word-wrap
 
  :emacs
  (dired
@@ -106,7 +106,6 @@
 
  :lang
  ;; agda
- ;; assembly
  (cc +lsp)
  ;; clojure
  common-lisp
@@ -129,6 +128,7 @@
  ;; idris
  ;; (java +meghanada)
  ;; javascript
+ ;; json
  ;; julia
  ;; kotlin
  (latex +cdlatex +fold)
@@ -161,6 +161,7 @@
  ;; swift
  ;; terra
  ;; web
+ ;; yaml
 
  :email
  ;; (mu4e +gmail)
@@ -175,4 +176,4 @@
 
  :config
  ;; literate
- (default +bindings +smartparens))
+ (default +bindings))
