@@ -38,7 +38,7 @@
  ;; (pretty-code
  ;;  +fira)
  ;; tabs
- treemacs
+ ;; treemacs
  ;; unicode
  vc-gutter
  vi-tilde-fringe
