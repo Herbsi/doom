@@ -6,4 +6,4 @@
 (package! org-toggl :recipe (:host github :repo "mbork/org-toggl") :pin "40b5353")
 
 ;; Themes
-(package! zenburn :recipe (:host github :repo "bbatsov/zenburn-emacs" :pin "7dd7968"))
+(package! zenburn :recipe (:host github :repo "bbatsov/zenburn-emacs") :pin "7dd7968")
