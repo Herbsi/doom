@@ -26,17 +26,13 @@
       x-stretch-cursor t
       +ivy-buffer-preview t)
 
+
 ;;; Emacs Calc, poor man's Mathematica
 (after! calc
   (setq calc-angle-mode 'rad
         calc-algebraic-mode t
         calc-symbolic-mode t)
   (evil-set-initial-state 'calc-mode 'emacs))
-(after! calctex
-  (setq calctex-format-latex-header (concat calctex-format-latex-header
-                                            "\n\\usepackage{arevmath}")))
-(add-hook! calc-mode #'calctex-mode)
-
 
 
 ;;; Text & Input
@@ -55,7 +51,6 @@
 (after! company
   (setq company-idle-delay nil
         company-show-numbers t))
-(add-hook 'evil-normal-state-entry-hook #'company-abort)
 
 
 ;; Direnv
