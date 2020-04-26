@@ -49,8 +49,7 @@
 ;;; Packages
 ;; Company
 (after! company
-  (setq company-idle-delay nil
-        company-show-numbers t))
+  (setq company-idle-delay nil))
 
 
 ;; Direnv
@@ -94,16 +93,6 @@
   (setq lispyville-barf-stay-with-closing t)
   (lispyville-set-key-theme
    '(additional-movement)))
-
-
-;; imenu-list
-(set-popup-rule! "^\\*Ilist" :side 'right :size 0.3 :quit 'other :select t)
-(use-package! imenu-list
-  :config
-  (map!
-   :leader
-   (:prefix ("b" . "buffer")
-     :desc "imenu-list" "I" #'imenu-list-smart-toggle)))
 
 
 ;; Python
