@@ -58,8 +58,7 @@
 
 ;; Evil
 (after! evil
-  (setq evil-magic 'very-magic
-        evil-split-window-below t
+  (setq evil-split-window-below t
         evil-vsplit-window-right t
         evil-want-fine-undo t
         +evil-want-o/O-to-continue-comments nil))
@@ -111,5 +110,4 @@
   (pushnew!
    which-key-replacement-alist
    '(("" . "\\`+?evil[-:]?\\(?:a-\\)?\\(.*\\)") . (nil . "◂\\1"))
-   '(("\\`g s" . "\\`evilem--?motion-\\(.*\\)") . (nil . "◃\\1"))
-   ))
+   '(("\\`g s" . "\\`evilem--?motion-\\(.*\\)") . (nil . "◃\\1"))))
