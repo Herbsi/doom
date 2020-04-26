@@ -88,13 +88,6 @@
    :keymap 'macrostep-keymap))
 
 
-;; Lispy
-(after! lispyville
-  (setq lispyville-barf-stay-with-closing t)
-  (lispyville-set-key-theme
-   '(additional-movement)))
-
-
 ;; Python
 (after! python
   (setq python-shell-interpreter "ipython"))
