@@ -50,7 +50,7 @@
  (evil +everywhere)
  file-templates
  fold
- ;; format
+ format
  ;; god
  ;; lispy
  multiple-cursors
