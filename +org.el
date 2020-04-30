@@ -38,6 +38,10 @@
   (add-hook! org-journal-after-entry-create #'herwig/setup-entry))
 
 
+;; Org Roam
+(after! org-roam
+  (setq org-roam-directory (expand-file-name "Cerebro" org-directory)))
+
 ;; Org Toggl
 (use-package! org-toggl
   :config

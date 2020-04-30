@@ -141,7 +141,8 @@
  ;; ocaml
  (org
   +dragndrop
-  +journal)
+  +journal
+  +roam)
  ;; perl
  ;; php
  ;; plantuml
