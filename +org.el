@@ -3,7 +3,13 @@
 (setq
  org-ellipsis " ▼ "
  org-directory (expand-file-name "Org" (getenv "HOME"))
+ org-archive-location (concat org-directory ".archive/%s::")
  org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷"))
+
+(after! org
+  (add-to-list 'org-modules 'org-habit t)
+  ;; TODO adds keywords twie
+  (setq org-todo-keywords `(,@org-todo-keywords (sequence "SOLVE(s)" "REVIEW(r)" "|" "DONE(d)" "DROPPED(k)"))))
 
 (defun herwig/setup-university-tasks ()
   (interactive)
@@ -48,6 +54,9 @@
   (setq toggl-auth-token "5e48e18d607c8512c580f4dc4d303cc6")
   (setq org-toggl-inherit-toggl-properties t)
   (toggl-get-projects))
+
+;; Org Super Agenda
+(setq org-super-agenda-groups nil)
 
 (after! org
   (map!
