@@ -7,9 +7,7 @@
  org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷"))
 
 (after! org
-  (add-to-list 'org-modules 'org-habit t)
-  ;; TODO adds keywords twie
-  (setq org-todo-keywords `(,@org-todo-keywords (sequence "SOLVE(s)" "REVIEW(r)" "|" "DONE(d)" "DROPPED(k)"))))
+  (add-to-list 'org-modules 'org-habit t))
 
 (defun herwig/setup-university-tasks ()
   (interactive)
@@ -48,6 +46,7 @@
 (after! org-roam
   (setq org-roam-directory (expand-file-name "Cerebro" org-directory)))
 
+
 ;; Org Toggl
 (use-package! org-toggl
   :config
@@ -55,8 +54,30 @@
   (setq org-toggl-inherit-toggl-properties t)
   (toggl-get-projects))
 
-;; Org Super Agenda
-(setq org-super-agenda-groups nil)
+
+;; Org (Super) Agenda
+(setq org-agenda-custom-commands
+      '(("p" "Personal Tasks"
+         tags-todo "+Personal")
+        ("u" "University Tasks"
+         tags-todo "+Uni")))
+
+(setq org-agenda-show-future-repeats 'next
+      org-super-agenda-groups
+      '((:name "Overdue"
+         :deadline past)
+        (:name "Today"
+         :and (;:time-grid t
+               :date today
+               :not (:habit t)
+               :not (:todo ("DONE" "[X]")))
+         :deadline today)
+        (:name "Due Soon"
+         :deadline future)
+        (:name "Habits"
+         :habit t)))
+(org-super-agenda-mode)
+
 
 (after! org
   (map!
