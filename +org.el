@@ -56,26 +56,33 @@
 
 
 ;; Org (Super) Agenda
-(setq org-agenda-custom-commands
+(setq org-agenda-show-future-repeats 'next
+      org-stuck-projects '("+LEVEL=3/-DONE"
+                      ("TODO" "[ ]" "STRT")
+                      nil "")
+      org-refile-targets '((nil :maxlevel . 7) (org-agenda-files :maxlevel . 7))
+      org-agenda-todo-ignore-with-date t
+      org-agenda-show-future-repeats 'next
+      org-agenda-custom-commands
       '(("p" "Personal Tasks"
          tags-todo "+Personal")
         ("u" "University Tasks"
-         tags-todo "+Uni")))
-
-(setq org-agenda-show-future-repeats 'next
+         tags-todo "+Uni"))
       org-super-agenda-groups
-      '((:name "Overdue"
+      '((:log t)
+        (:name "Overdue"
          :deadline past)
         (:name "Today"
-         :and (;:time-grid t
-               :date today
-               :not (:habit t)
-               :not (:todo ("DONE" "[X]")))
+         :time-grid t
+         :scheduled today
          :deadline today)
+        (:habit t)
         (:name "Due Soon"
          :deadline future)
-        (:name "Habits"
-         :habit t)))
+        (:name "Scheduled earlier"
+         :scheduled past)
+        (:name "LVs"
+         :tag ("Optimierung_1" "Einfd_Algebra" "Wahrscheinlichkeitstheorie" "Funktionalanalysis"))))
 (org-super-agenda-mode)
 
 
