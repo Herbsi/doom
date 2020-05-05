@@ -37,9 +37,9 @@
     (progn
       (toggl-start-time-entry "Journal" (toggl-get-pid "Solitude") "Journal Timer Started!")
       (doom/window-maximize-buffer)
-      (company-mode -1)
       (evil-scroll-line-to-top (line-number-at-pos))
       (evil-scroll-line-up 2)
+      (load-theme 'doom-tomorrow-night)
       (flyspell-mode)
       (auto-fill-mode)))
   (add-hook! org-journal-after-entry-create #'herwig/setup-entry))
