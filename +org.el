@@ -40,7 +40,8 @@
       (company-mode -1)
       (evil-scroll-line-to-top (line-number-at-pos))
       (evil-scroll-line-up 2)
-      (flyspell-mode)))
+      (flyspell-mode)
+      (auto-fill-mode)))
   (add-hook! org-journal-after-entry-create #'herwig/setup-entry))
 
 
