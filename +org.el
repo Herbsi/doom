@@ -72,20 +72,19 @@
       org-agenda-custom-commands
       '(("p" . "Personal")
         ("pa" "All"
-         ((org-ql-block '((category "Personal")))))
+         ((org-ql-block '(category "Personal"))))
         ("pt" "TODO"
-         ;; tags-todo "+CATEGORY=\"Personal\"-SCHEDULED>\"<today>\"")
          ((org-ql-block '(and (category "Personal")
                               (or (scheduled :to today)
                                   (not (ts)))))))
         ("u" . "University")
         ("ua" "All"
-         ((org-ql-block '((category "University")))))
+         ((org-ql-block '(category "University"))))
         ("ut" "TODO"
          ((org-ql-block '(and (category "University")
                               (or (scheduled :to today)
                                   (not (scheduled)
-                                       (deadline)))))))
+                                       (deadline))))))))
       org-super-agenda-groups
       '((:name "Inactive"
          :todo ("DONE" "KILL" "[X]")
