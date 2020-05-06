@@ -4,7 +4,8 @@
  org-ellipsis " ▼ "
  org-directory (expand-file-name "Org" (getenv "HOME"))
  org-archive-location (concat org-directory ".archive/%s::")
- org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷"))
+ org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")
+ org-blank-before-new-entry '((heading . nil) (plain-list-item . nil)))
 
 (after! org
   (add-to-list 'org-modules 'org-habit t))
@@ -57,32 +58,48 @@
 
 ;; Org (Super) Agenda
 (setq org-agenda-show-future-repeats 'next
-      org-stuck-projects '("+LEVEL=3/-DONE"
-                      ("TODO" "[ ]" "STRT")
+      org-agenda-start-day "-1d"
+      org-stuck-projects '("+LEVEL=3/-[X]"
+                      ("[?]")
                       nil "")
       org-refile-targets '((nil :maxlevel . 7) (org-agenda-files :maxlevel . 7))
       org-agenda-todo-ignore-with-date t
       org-agenda-show-future-repeats 'next
+      org-capture-templates
+      '(("t" "Todo" entry (file+headline +org-capture-todo-file "Inbox")
+         "** TODO %?\n %i\n %a")
+        ("n" "Note" plain (function org-roam-capture)
+         "%?"))
       org-agenda-custom-commands
       '(("p" "Personal Tasks"
-         tags-todo "+Personal")
+         tags "+CATEGORY=\"Personal\"")
         ("u" "University Tasks"
-         tags-todo "+Uni"))
+         tags "+CATEGORY=\"University\""))
       org-super-agenda-groups
-      '((:log t)
+      '((:name "Inactive"
+         :todo ("DONE" "KILL" "[X]")
+         :order 100)
+        (:habit t
+         :order 3)
+        (:name "Schedule"
+         :time-grid t
+         :order 1)
         (:name "Overdue"
          :deadline past)
-        (:name "Today"
-         :time-grid t
-         :scheduled today
-         :deadline today)
-        (:habit t)
-        (:name "Due Soon"
-         :deadline future)
         (:name "Scheduled earlier"
-         :scheduled past)
-        (:name "LVs"
-         :tag ("Optimierung_1" "Einfd_Algebra" "Wahrscheinlichkeitstheorie" "Funktionalanalysis"))))
+         :scheduled past
+         :order)
+        (:name "Today"
+         :scheduled today
+         :order 2)
+        (:name "Due Today"
+         :deadline today
+         :order 2)
+        (:name "Due Soon"
+         :deadline future
+         :order 5)
+        (:auto-parent t
+         :order 6)))
 (org-super-agenda-mode)
 
 
