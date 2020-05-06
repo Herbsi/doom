@@ -63,7 +63,6 @@
                       ("[?]")
                       nil "")
       org-refile-targets '((nil :maxlevel . 7) (org-agenda-files :maxlevel . 7))
-      org-agenda-todo-ignore-with-date t
       org-agenda-show-future-repeats 'next
       org-capture-templates
       '(("t" "Todo" entry (file+headline +org-capture-todo-file "Inbox")
@@ -71,10 +70,22 @@
         ("n" "Note" plain (function org-roam-capture)
          "%?"))
       org-agenda-custom-commands
-      '(("p" "Personal Tasks"
-         tags "+CATEGORY=\"Personal\"")
-        ("u" "University Tasks"
-         tags "+CATEGORY=\"University\""))
+      '(("p" . "Personal")
+        ("pa" "All"
+         ((org-ql-block '((category "Personal")))))
+        ("pt" "TODO"
+         ;; tags-todo "+CATEGORY=\"Personal\"-SCHEDULED>\"<today>\"")
+         ((org-ql-block '(and (category "Personal")
+                              (or (scheduled :to today)
+                                  (not (ts)))))))
+        ("u" . "University")
+        ("ua" "All"
+         ((org-ql-block '((category "University")))))
+        ("ut" "TODO"
+         ((org-ql-block '(and (category "University")
+                              (or (scheduled :to today)
+                                  (not (scheduled)
+                                       (deadline)))))))
       org-super-agenda-groups
       '((:name "Inactive"
          :todo ("DONE" "KILL" "[X]")
