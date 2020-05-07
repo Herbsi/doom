@@ -83,8 +83,8 @@
         ("ut" "TODO"
          ((org-ql-block '(and (category "University")
                               (or (scheduled :to today)
-                                  (not (scheduled)
-                                       (deadline))))))))
+                                  (not (or (scheduled)
+                                           (deadline)))))))))
       org-super-agenda-groups
       '((:name "Inactive"
          :todo ("DONE" "KILL" "[X]")
