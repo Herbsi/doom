@@ -12,6 +12,7 @@
       epa-file-encrypt-to user-mail-address)
 #+END_SRC
 ** Better Defaults
+*** Simple Settings
 #+BEGIN_SRC emacs-lisp
 (setq-default
  uniquify-buffer-name-style 'forward              ; Uniquify buffer names
@@ -22,8 +23,9 @@
       sentence-end-double-space t                 ; the only correct choice
       default-input-method "german-postfix"       ; for when I need to type ä, ö, ü or ß
       evil-want-fine-undo t                       ; the finer the undo, the better
+      inhibit-compacting-font-caches t           ; when there are a lot of glyphs, keep them in memory
       undo-limit 80000000                         ; the more the undo, the better
-      inhibit-compacting-font-caches t)           ; when there are a lot of glyphs, keep them in memory
+      +evil-want-o/O-to-continue-comments nil)
 
 (delete-selection-mode 1)                         ; Replace selection when inserting text
 (global-subword-mode 1)                           ; Iterate through CamelCase words
@@ -66,4 +68,40 @@ This is subject to frequent change.
       scroll-bar-mode nil
       show-help-function nil
       show-paren-delay 0)
+#+END_SRC
+* Package Configuration
+** Calc
+Ah, Emacs Calc, poor man's mathematica.
+#+BEGIN_SRC emacs-lisp
+(after!
+    (setq calc-angle-mode 'rad
+        calc-algebraic-mode t
+        calc-symbolic-mode t)
+    (evil-set-initial-state 'calc-mode 'emacs))
+#+END_SRC
+** Company
+I disable autocompletion by default, and only use it on demand
+#+BEGIN_SRC emacs-lisp
+(after! company
+  (setq company-idle-delay nil))
+#+END_SRC
+** Direnv
+I disable the frequent, verbose summary messages
+#+BEGIN_SRC emacs-lisp
+(after! direnv
+  (setq direnv-always-show-summary nil))
+#+END_SRC
+** Evil-Tex
+#+BEGIN_SRC emacs-lisp
+(use-package! evil-tex
+  :hook (latex-mode . evil-tex-mode))
+#+END_SRC
+** Hercules
+#+BEGIN_SRC emacs-lisp
+(use-package! hercules
+  :config
+  (hercules-def
+   :show-funs #'macrostep-expand
+   :hide-funs #'macrostep-collapse-all
+   :keymap 'macrostep-keymap))
 #+END_SRC
