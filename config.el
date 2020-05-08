@@ -13,7 +13,7 @@
 (setq column-number-mode nil
       display-line-numbers-type nil
       doom-font (font-spec :family "Fira Code" :size (if IS-MAC 14.0 11.0))
-      doom-theme 'doom-monokai-spectrum
+      doom-theme 'doom-nord
       evil-echo-state nil
       frame-title-format "%b"
       lsp-ui-sideline-enable nil
