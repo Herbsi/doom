@@ -3,7 +3,7 @@
 (setq
  org-ellipsis " ▼ "
  org-directory (expand-file-name "Org" (getenv "HOME"))
- org-archive-location (concat org-directory ".archive/%s::")
+ org-archive-location (expand-file-name ".archive/%s::" org-directory)
  org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")
  org-blank-before-new-entry '((heading . nil) (plain-list-item . nil)))
 
