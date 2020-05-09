@@ -23,12 +23,19 @@
       sentence-end-double-space t                 ; the only correct choice
       default-input-method "german-postfix"       ; for when I need to type ä, ö, ü or ß
       evil-want-fine-undo t                       ; the finer the undo, the better
-      inhibit-compacting-font-caches t           ; when there are a lot of glyphs, keep them in memory
+      inhibit-compacting-font-caches t            ; when there are a lot of glyphs, keep them in memory
       undo-limit 80000000                         ; the more the undo, the better
       +evil-want-o/O-to-continue-comments nil)
 
 (delete-selection-mode 1)                         ; Replace selection when inserting text
 (global-subword-mode 1)                           ; Iterate through CamelCase words
+#+END_SRC
+*** Git
+Use evil-normal-state map in git-timemachine, so that I can move up and down using j & k.
+#+BEGIN_SRC emacs-lisp
+(after! git-timemachine
+  (evil-make-overriding-map git-timemachine-mode-map 'normal)
+  (add-hook! git-timemachine-mode-hook #'evil-normalize-keymaps))
 #+END_SRC
 *** Windows
 Split windows to the right and buttom.
@@ -75,8 +82,8 @@ Ah, Emacs Calc, poor man's mathematica.
 #+BEGIN_SRC emacs-lisp
 (after!
     (setq calc-angle-mode 'rad
-        calc-algebraic-mode t
-        calc-symbolic-mode t)
+          calc-algebraic-mode t
+          calc-symbolic-mode t)
     (evil-set-initial-state 'calc-mode 'emacs))
 #+END_SRC
 ** Company
@@ -104,4 +111,116 @@ I disable the frequent, verbose summary messages
    :show-funs #'macrostep-expand
    :hide-funs #'macrostep-collapse-all
    :keymap 'macrostep-keymap))
+#+END_SRC
+** Which-Key
+#+BEGIN_SRC emacs-lisp
+(after! which-key
+  (setq which-key-idle-delay 0.5)
+  (setq which-key-allow-multiple-replacements t)
+  (pushnew!
+   which-key-replacement-alist
+   '(("" . "\\`+?evil[-:]?\\(?:a-\\)?\\(.*\\)") . (nil . "◂\\1"))
+   '(("\\`g s" . "\\`evilem--?motion-\\(.*\\)") . (nil . "◃\\1"))))
+#+END_SRC
+* Language Configuration
+** Haskell
+#+BEGIN_SRC emacs-lisp
+(after! haskell
+  (setq haskell-interactive-popup-errors nil))
+#+END_SRC
+** Python
+I much prefer ipython to the regular python shell.
+#+BEGIN_SRC emacs-lisp
+(after! python
+  (setq python-shell-interpreter "ipython"))
+#+END_SRC
+** Org
+*** General
+I stole this ellipsis and the bullets from [[https://github.com/hlissner/doom-emacs-private][Henrik Lissner]].  Personally, I really like them.
+#+BEGIN_SRC emacs-lisp
+(setq
+ org-archive-location (expand-file-name ".archive/%s::" org-directory)
+ org-blank-before-new-entry '((heading . nil) (plain-list-item . nil)))
+ org-catch-invisible-edits 'smart
+ org-directory (expand-file-name "Org" (getenv "HOME"))
+ org-ellipsis " ▼ "
+ org-export-in-background t
+ org-list-allow-alphabetical
+org-refile-targets '((nil :maxlevel . 7) (org-agenda-files :maxlevel . 7))
+ org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")
+#+END_SRC
+
+I use org-mode to track my habits, besides other things.
+#+BEGIN_SRC emacs-lisp
+(after! org
+  (add-to-list 'org-modules 'org-habit t))
+#+END_SRC
+*** Agenda
+#+BEGIN_SRC emacs-lisp
+(use-package! org-super-agenda
+  :commands (org-super-agenda-mode))
+(after! org-agenda
+  (org-super-agenda-mode))
+
+(setq org-agenda-block-separator nil
+      org-agenda-compact-blocks t
+      org-agenda-include-deadlines t
+      org-agenda-start-day "-1d"
+      org-agenda-show-future-repeats 'next
+      org-agenda-skip-deadline-if-done t
+      org-agenda-skip-scheduled-if-done t)
+#+END_SRC
+*** Capture
+#+BEGIN_SRC emacs-lisp
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline +org-capture-todo-file "Inbox") "** TODO %?\n %i\n %a")
+        ("n" "Note" plain (function org-roam-capture) "%?"))
+#+END_SRC
+*** Journal
+I'm a big fan of the idea to up our calendar year by 10000, from [[https://www.youtube.com/watch?v=czgOWmtGVGs][this video]], though I don't push the idea on others.
+
+Setting the ~time-prefix~ to ~**~, is a bit of a hack to start a new journal entry with a subheading.
+#+BEGIN_SRC emacs-lisp
+(after! org-journal
+  (setq org-journal-dir (expand-file-name "Journal" org-directory)
+        org-journal-file-format "1%Y/%m %B.org" ;; e.g. 12019/04 April.org
+        org-journal-encrypt-journal t
+        org-journal-file-type 'monthly
+        org-journal-date-prefix "* "
+        org-journal-date-format "1%F %a" ;; e.g. 12019-04-01 Fri
+        ;; see here for formatting symbols: https://www.gnu.org/software/emacs/manual/html_node/elisp/Time-Parsing.html
+        org-journal-time-prefix "** "
+        org-journal-time-format "")
+  (defun herwig/setup-entry ()
+    (progn
+      (toggl-start-time-entry "Journal" (toggl-get-pid "Solitude") "Journal Timer Started!")
+      (doom/window-maximize-buffer)
+      (company-mode -1)
+      (evil-scroll-line-to-top (line-number-at-pos))
+      (evil-scroll-line-up 2)
+      (flyspell-mode)))
+  (add-hook! org-journal-after-entry-create #'herwig/setup-entry))
+#+END_SRC
+*** Roam
+I use a shameless X-Men reference for the name of my second brain.
+#+BEGIN_SRC emacs-lisp
+(after! org-roam
+  (setq org-roam-directory (expand-file-name "Cerebro" org-directory)))
+#+END_SRC
+*** Toggl
+Time tracking is one thing I don't use org-mode for (yet).  Having it easily available from my phone is just too convenient, but it's nice to be able to start it from Emacs from time to time, especially automatically, when journalling.
+#+BEGIN_SRC emacs-lisp
+(use-package! org-toggl
+  :config
+  (setq toggl-auth-token "5e48e18d607c8512c580f4dc4d303cc6")
+  (setq org-toggl-inherit-toggl-properties t)
+  (toggl-get-projects))
+#+END_SRC
+
+** Scheme
+Currently, I'm only using Scheme for SICP, for which I use the MIT Scheme implementation.
+#+BEGIN_SRC emacs-lisp
+(after! geiser
+  (setq geiser-active-implementations '(mit)
+        geiser-default-implementation 'mit))
 #+END_SRC
