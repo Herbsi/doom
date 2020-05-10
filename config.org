@@ -239,9 +239,9 @@ Setting the ~time-prefix~ to ~**~, is a bit of a hack to start a new journal ent
         org-journal-time-format "")
   (defun herwig/setup-entry ()
     (progn
+      (load-theme 'doom-tomorrow-night)
       (toggl-start-time-entry "Journal" (toggl-get-pid "Solitude") "Journal Timer Started!")
       (doom/window-maximize-buffer)
-      (company-mode -1)
       (evil-scroll-line-to-top (line-number-at-pos))
       (evil-scroll-line-up 2)
       (flyspell-mode)))
