@@ -169,9 +169,11 @@ I stole this ellipsis and the bullets from [[https://github.com/hlissner/doom-em
  org-directory (expand-file-name "Org" (getenv "HOME"))
  org-ellipsis " ▼ "
  org-export-in-background t
- org-list-allow-alphabetical
- org-refile-targets '((nil :maxlevel . 7) (org-agenda-files :maxlevel . 7))
- org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷"))
+ org-list-allow-alphabetical t)
+
+(after! org
+  (setq org-refile-targets '((nil :maxlevel . 7) (org-agenda-files :maxlevel . 7))
+        org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")))
 #+END_SRC
 
 I use org-mode to track my habits, besides other things.
@@ -185,13 +187,18 @@ I use org-mode to track my habits, besides other things.
   (map!
     (:map org-mode-map
      :localleader
+       "e" nil
+       "i" nil))
+  (map!
+    (:map org-mode-map
+     :localleader
         (:prefix ("e" . "export")
-        :desc "org-export-dispatch" "d" #'org-export-dispatch)
+          :desc "org-export-dispatch" "d" #'org-export-dispatch)
 
         (:prefix ("i" . "insert")
-        :desc "org-insert-heading-after-current" "h" #'org-insert-heading-after-current
-        :desc "org-insert-heading" "H" #'org-insert-heading
-        :desc "org-insert-subheading" "s" #'org-insert-subheading))))
+          :desc "org-insert-heading-after-current" "h" #'org-insert-heading-after-current
+          :desc "org-insert-heading" "H" #'org-insert-heading
+          :desc "org-insert-subheading" "s" #'org-insert-subheading))))
 #+END_SRC
 *** Agenda
 #+BEGIN_SRC emacs-lisp
@@ -212,7 +219,7 @@ I use org-mode to track my habits, besides other things.
 #+BEGIN_SRC emacs-lisp
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline +org-capture-todo-file "Inbox") "** TODO %?\n %i\n %a")
-        ("n" "Note" plain (function org-roam-capture) "%?"))
+        ("n" "Note" plain (function org-roam-capture) "%?")))
 #+END_SRC
 *** Journal
 I'm a big fan of the idea to up our calendar year by 10000, from [[https://www.youtube.com/watch?v=czgOWmtGVGs][this video]], though I don't push the idea on others.
