@@ -30,6 +30,22 @@
 (delete-selection-mode 1)                         ; Replace selection when inserting text
 (global-subword-mode 1)                           ; Iterate through CamelCase words
 #+END_SRC
+*** Keybindings
+I prefer ~SPC SPC~ for ~M-x~ to ~SPC :~, the one Spacemacs habit I couldn't shake off.
+#+BEGIN_SRC emacs-lisp
+(map!
+ :leader
+ ":" nil
+ :desc "M-x" "SPC" #'counsel-M-x)
+#+END_SRC
+
+I find ibuffer incredibly useful for buffer management, and closing multiple buffers at once.
+#+BEGIN_SRC emacs-lisp
+(map!
+ :leader
+ (:prefix ("b" . "buffer")
+  :desc "ibuffer" "i" #'ibuffer))
+#+END_SRC
 *** Git
 Use evil-normal-state map in git-timemachine, so that I can move up and down using j & k.
 #+BEGIN_SRC emacs-lisp
@@ -208,6 +224,14 @@ Setting the ~time-prefix~ to ~**~, is a bit of a hack to start a new journal ent
       (evil-scroll-line-up 2)
       (flyspell-mode)))
   (add-hook! org-journal-after-entry-create #'herwig/setup-entry))
+#+END_SRC
+
+Also bind journalling to a key.
+#+BEGIN_SRC emacs-lisp
+(map!
+ :leader
+ (:prefix ("n" . "notes")
+  :desc "Org Journal" "j" #'org-journal-new-entry))
 #+END_SRC
 *** Roam
 I use a shameless X-Men reference for the name of my second brain.
