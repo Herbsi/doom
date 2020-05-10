@@ -147,11 +147,12 @@
          ((agenda "" ((org-agenda-start-day "today")
                       (org-agenda-span 'day)
                       (org-super-agenda-groups
-                       '((:name "Overdue"
-                          :and (:not (:habit t)
-                                :scheduled past)
-                          :and (:not (:habit t)
-                                :deadline past))
+                       '((:name "Habits"
+                          :habit t
+                          :order 2)
+                         (:name "Overdue"
+                          :scheduled past
+                          :deadline past)
                          (:name "Forecast"
                           :time-grid t
                           :date today
