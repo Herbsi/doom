@@ -217,9 +217,10 @@ I use org-mode to track my habits, besides other things.
 #+END_SRC
 *** Capture
 #+BEGIN_SRC emacs-lisp
-(setq org-capture-templates
-      '(("t" "Todo" entry (file+headline +org-capture-todo-file "Inbox") "** TODO %?\n %i\n %a")
-        ("n" "Note" plain (function org-roam-capture) "%?")))
+(after! org
+  (setq org-capture-templates
+    '(("t" "Todo" entry (file+headline +org-capture-todo-file "Inbox") "** TODO %?\n %i\n %a")
+      ("n" "Note" plain (function org-roam-capture) "%?"))))
 #+END_SRC
 *** Journal
 I'm a big fan of the idea to up our calendar year by 10000, from [[https://www.youtube.com/watch?v=czgOWmtGVGs][this video]], though I don't push the idea on others.
