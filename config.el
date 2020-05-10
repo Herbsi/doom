@@ -142,6 +142,24 @@
       org-agenda-skip-deadline-if-done t
       org-agenda-skip-scheduled-if-done t)
 
+(setq org-agenda-custom-commands
+      '(("f" "Forecast"
+         ((agenda "" ((org-agenda-start-day "today")
+                      (org-agenda-span 'day)
+                      (org-super-agenda-groups
+                       '((:name "Overdue"
+                          :and (:not (:habit t)
+                                :scheduled past)
+                          :and (:not (:habit t)
+                                :deadline past))
+                         (:name "Forecast"
+                          :time-grid t
+                          :date today
+                          :scheduled today
+                          :deadline today
+                          :habit t
+                          :discard (:anything t))))))))))
+
 (after! org
   (setq org-capture-templates
     '(("t" "Todo" entry (file+headline +org-capture-todo-file "Inbox") "** TODO %?\n %i\n %a")

@@ -215,6 +215,24 @@ I use org-mode to track my habits, besides other things.
       org-agenda-show-future-repeats 'next
       org-agenda-skip-deadline-if-done t
       org-agenda-skip-scheduled-if-done t)
+
+(setq org-agenda-custom-commands
+      '(("f" "Forecast"
+         ((agenda "" ((org-agenda-start-day "today")
+                      (org-agenda-span 'day)
+                      (org-super-agenda-groups
+                       '((:name "Overdue"
+                          :and (:not (:habit t)
+                                :scheduled past)
+                          :and (:not (:habit t)
+                                :deadline past))
+                         (:name "Forecast"
+                          :time-grid t
+                          :date today
+                          :scheduled today
+                          :deadline today
+                          :habit t
+                          :discard (:anything t))))))))))
 #+END_SRC
 *** Capture
 #+BEGIN_SRC emacs-lisp
