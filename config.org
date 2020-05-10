@@ -58,8 +58,11 @@ Previews are also nice.
 * UI
 ** Font
 I use a different on my two computers.
+TODO set the correct sizes.
 #+BEGIN_SRC emacs-lisp
-(setq doom-font (font-spec :family "Fira Code" :size (if IS-MAC 14.0 11.0)))
+(setq doom-font (font-spec :family "Fira Code" :size (if IS-MAC 14.0 11.0))
+      doom-big-font (font-spec :family "Fira Code" :size (if IS-MAC 18.0 14.0))
+      doom-variable-pitch-font (font-spec :family "Overpass" :size (if IS-MAC 14.0 11.0)))
 #+END_SRC
 ** Theme
 This is subject to frequent change.
@@ -127,6 +130,11 @@ I disable the frequent, verbose summary messages
 #+BEGIN_SRC emacs-lisp
 (after! haskell
   (setq haskell-interactive-popup-errors nil))
+#+END_SRC
+** LaTeX
+*** Visuals
+#+BEGIN_SRC emacs-lisp
+(add-hook! LaTeX-mode #'mixed-pitch-mode)
 #+END_SRC
 ** Python
 I much prefer ipython to the regular python shell.
@@ -215,6 +223,10 @@ Time tracking is one thing I don't use org-mode for (yet).  Having it easily ava
   (setq toggl-auth-token "5e48e18d607c8512c580f4dc4d303cc6")
   (setq org-toggl-inherit-toggl-properties t)
   (toggl-get-projects))
+#+END_SRC
+*** Visuals
+#+BEGIN_SRC emacs-lisp
+(add-hook! org-mode #'+org-pretty-mode #'mixed-pitch-mode)
 #+END_SRC
 
 ** Scheme
