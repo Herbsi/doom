@@ -94,7 +94,7 @@
  ;; macos
  magit
  ;; make
- ;; pass
+ pass
  pdf
  ;; prodigy
  ;; rgb
