@@ -163,10 +163,10 @@ I much prefer ipython to the regular python shell.
 I stole this ellipsis and the bullets from [[https://github.com/hlissner/doom-emacs-private][Henrik Lissner]].  Personally, I really like them.
 #+BEGIN_SRC emacs-lisp
 (setq
+ org-directory (expand-file-name "Org" (getenv "HOME"))
  org-archive-location (expand-file-name ".archive/%s::" org-directory)
  org-blank-before-new-entry '((heading . nil) (plain-list-item . nil))
  org-catch-invisible-edits 'smart
- org-directory (expand-file-name "Org" (getenv "HOME"))
  org-ellipsis " ▼ "
  org-export-in-background t
  org-list-allow-alphabetical t)
