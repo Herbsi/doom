@@ -34,8 +34,7 @@
  (popup
   ;; +all
   +defaults)
- ;; (pretty-code
- ;;  +fira)
+ pretty-code
  ;; tabs
  ;; treemacs
  ;; unicode
