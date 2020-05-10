@@ -106,6 +106,9 @@
 (after! org
   (setq org-refile-targets '((nil :maxlevel . 7) (org-agenda-files :maxlevel . 7))))
 
+(remove-hook 'text-mode-hook #'visual-line-mode)
+(add-hook 'text-mode-hook #'auto-fill-mode)
+
 (after! org
   (add-to-list 'org-modules 'org-habit t))
 
