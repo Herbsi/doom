@@ -13,11 +13,10 @@
  ;; helm
  ;; ido
  (ivy
-  ;; +prescient
+  +prescient
   ;; +fuzzy
   +childframe
-  +icons
-  )
+  +icons)
 
  :ui
  ;; deft
