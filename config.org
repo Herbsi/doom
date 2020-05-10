@@ -164,14 +164,14 @@ I stole this ellipsis and the bullets from [[https://github.com/hlissner/doom-em
 #+BEGIN_SRC emacs-lisp
 (setq
  org-archive-location (expand-file-name ".archive/%s::" org-directory)
- org-blank-before-new-entry '((heading . nil) (plain-list-item . nil)))
+ org-blank-before-new-entry '((heading . nil) (plain-list-item . nil))
  org-catch-invisible-edits 'smart
  org-directory (expand-file-name "Org" (getenv "HOME"))
  org-ellipsis " ▼ "
  org-export-in-background t
  org-list-allow-alphabetical
-org-refile-targets '((nil :maxlevel . 7) (org-agenda-files :maxlevel . 7))
- org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")
+ org-refile-targets '((nil :maxlevel . 7) (org-agenda-files :maxlevel . 7))
+ org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷"))
 #+END_SRC
 
 I use org-mode to track my habits, besides other things.
