@@ -87,7 +87,7 @@ This is subject to frequent change.
 #+END_SRC
 ** Misc
 #+BEGIN_SRC emacs-lisp
-(setq display-line-numbers-type 'relative
+(setq display-line-numbers-type nil
       evil-echo-state nil                      ; I find it distracting; and I can tell the state from the cursor
       frame-title-format "%b"
       mode-line-default-help-echo nil
