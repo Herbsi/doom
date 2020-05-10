@@ -43,29 +43,3 @@
         (:auto-parent t
          :order 6)))
 (org-super-agenda-mode)
-
-
-(after! org
-  (map!
-   (:map org-mode-map
-     :localleader
-     "e" nil
-     "i" nil))
-  (map!
-   (:map org-mode-map
-     :localleader
-     (:prefix ("c" . "clock")
-       :desc "Report" "r" #'org-clock-report)
-
-     (:prefix ("C" . "checkbox")
-       :desc "org-toggle-checkbox" "t" #'org-toggle-checkbox
-       :desc "org-update-checkbox-count" "u" #'org-update-checkbox-count)
-
-     (:prefix ("e" . "export")
-       :desc "org-export-dispatch" "d" #'org-export-dispatch)
-
-     (:prefix ("i" . "insert")
-       :desc "org-timestamp" "t" #'org-time-stamp
-       :desc "org-insert-heading-after-current" "h" #'org-insert-heading-after-current
-       :desc "org-insert-heading" "H" #'org-insert-heading
-       :desc "org-insert-subheading" "s" #'org-insert-subheading))))

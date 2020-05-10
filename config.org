@@ -179,6 +179,20 @@ I use org-mode to track my habits, besides other things.
 (after! org
   (add-to-list 'org-modules 'org-habit t))
 #+END_SRC
+**** Keybindings
+#+BEGIN_SRC emacs-lisp
+(after! org
+  (map!
+    (:map org-mode-map
+     :localleader
+        (:prefix ("e" . "export")
+        :desc "org-export-dispatch" "d" #'org-export-dispatch)
+
+        (:prefix ("i" . "insert")
+        :desc "org-insert-heading-after-current" "h" #'org-insert-heading-after-current
+        :desc "org-insert-heading" "H" #'org-insert-heading
+        :desc "org-insert-subheading" "s" #'org-insert-subheading))))
+#+END_SRC
 *** Agenda
 #+BEGIN_SRC emacs-lisp
 (use-package! org-super-agenda
