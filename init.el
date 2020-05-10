@@ -174,5 +174,5 @@
  ;; twitter
 
  :config
- ;; literate
+ literate
  (default +bindings))
