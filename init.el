@@ -13,11 +13,10 @@
  ;; helm
  ;; ido
  (ivy
-  ;; +prescient
+  +prescient
   ;; +fuzzy
   +childframe
-  +icons
-  )
+  +icons)
 
  :ui
  ;; deft
@@ -35,8 +34,7 @@
  (popup
   ;; +all
   +defaults)
- ;; (pretty-code
- ;;  +fira)
+ pretty-code
  ;; tabs
  ;; treemacs
  ;; unicode
@@ -131,7 +129,7 @@
  ;; json
  ;; julia
  ;; kotlin
- (latex +cdlatex +fold)
+ (latex +cdlatex +fold +latexmk)
  ;; lean
  ;; ledger
  ;; lua
@@ -176,5 +174,5 @@
  ;; twitter
 
  :config
- ;; literate
+ literate
  (default +bindings))

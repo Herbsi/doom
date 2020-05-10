@@ -1,9 +1,19 @@
-;;; config.el -*- lexical-binding: t; -*-
+#+TITLE: Emacs Configuration
 
+* General Configuration
+#+BEGIN_SRC emacs-lisp
+;;; config.el -*- lexical-binding: t; -*-
+#+END_SRC
+
+** Personal Information
+#+BEGIN_SRC emacs-lisp
 (setq user-full-name "Herwig Hoehenberger"
       user-mail-address "herwig.hoehenberger@gmail.com"
       epa-file-encrypt-to user-mail-address)
-
+#+END_SRC
+** Better Defaults
+*** Simple Settings
+#+BEGIN_SRC emacs-lisp
 (setq-default
  uniquify-buffer-name-style 'forward              ; Uniquify buffer names
  window-combination-resize t                      ; take new window space from all other windows (not just current)
@@ -19,36 +29,64 @@
 
 (delete-selection-mode 1)                         ; Replace selection when inserting text
 (global-subword-mode 1)                           ; Iterate through CamelCase words
-
+#+END_SRC
+*** Keybindings
+I prefer ~SPC SPC~ for ~M-x~ to ~SPC :~, the one Spacemacs habit I couldn't shake off.
+#+BEGIN_SRC emacs-lisp
 (map!
  :leader
  ":" nil
  :desc "M-x" "SPC" #'counsel-M-x)
+#+END_SRC
 
+I find ibuffer incredibly useful for buffer management, and closing multiple buffers at once.
+#+BEGIN_SRC emacs-lisp
 (map!
  :leader
  (:prefix ("b" . "buffer")
   :desc "ibuffer" "i" #'ibuffer))
-
+#+END_SRC
+*** Git
+Use evil-normal-state map in git-timemachine, so that I can move up and down using j & k.
+#+BEGIN_SRC emacs-lisp
 (after! git-timemachine
   (evil-make-overriding-map git-timemachine-mode-map 'normal)
   (add-hook! git-timemachine-mode-hook #'evil-normalize-keymaps))
+#+END_SRC
+*** Windows
+Split windows to the right and buttom.
+#+BEGIN_SRC emacs-lisp
+  (setq evil-split-window-below t
+        evil-vsplit-window-right t)
+#+END_SRC
 
-(setq evil-split-window-below t
-      evil-vsplit-window-right t)
-
+And then, pull up ivy.
+#+BEGIN_SRC emacs-lisp
 (defadvice! prompt-for-buffer (&rest _)
   :after '(evil-window-split evil-window-vsplit)
   (+ivy/switch-buffer))
+#+END_SRC
 
+Previews are also nice.
+#+BEGIN_SRC emacs-lisp
 (setq +ivy-buffer-preview t)
-
+#+END_SRC
+* UI
+** Font
+I use a different on my two computers.
+TODO set the correct sizes.
+#+BEGIN_SRC emacs-lisp
 (setq doom-font (font-spec :family "Fira Code" :size (if IS-MAC 14.0 11.0))
       doom-big-font (font-spec :family "Fira Code" :size (if IS-MAC 18.0 14.0))
       doom-variable-pitch-font (font-spec :family "Overpass" :size (if IS-MAC 14.0 11.0)))
-
+#+END_SRC
+** Theme
+This is subject to frequent change.
+#+BEGIN_SRC emacs-lisp
 (setq doom-theme 'doom-nord)
-
+#+END_SRC
+** Misc
+#+BEGIN_SRC emacs-lisp
 (setq display-line-numbers-type nil
       evil-echo-state nil                      ; I find it distracting; and I can tell the state from the cursor
       frame-title-format "%b"
@@ -56,29 +94,45 @@
       scroll-bar-mode nil
       show-help-function nil
       show-paren-delay 0)
-
+#+END_SRC
+* Package Configuration
+** Calc
+Ah, Emacs Calc, poor man's mathematica.
+#+BEGIN_SRC emacs-lisp
 (after!
     (setq calc-angle-mode 'rad
           calc-algebraic-mode t
           calc-symbolic-mode t)
     (evil-set-initial-state 'calc-mode 'emacs))
-
+#+END_SRC
+** Company
+I disable autocompletion by default, and only use it on demand
+#+BEGIN_SRC emacs-lisp
 (after! company
   (setq company-idle-delay nil))
-
+#+END_SRC
+** Direnv
+I disable the frequent, verbose summary messages
+#+BEGIN_SRC emacs-lisp
 (after! direnv
   (setq direnv-always-show-summary nil))
-
+#+END_SRC
+** Evil-Tex
+#+BEGIN_SRC emacs-lisp
 (use-package! evil-tex
   :hook (latex-mode . evil-tex-mode))
-
+#+END_SRC
+** Hercules
+#+BEGIN_SRC emacs-lisp
 (use-package! hercules
   :config
   (hercules-def
    :show-funs #'macrostep-expand
    :hide-funs #'macrostep-collapse-all
    :keymap 'macrostep-keymap))
-
+#+END_SRC
+** Which-Key
+#+BEGIN_SRC emacs-lisp
 (after! which-key
   (setq which-key-idle-delay 0.5)
   (setq which-key-allow-multiple-replacements t)
@@ -86,15 +140,28 @@
    which-key-replacement-alist
    '(("" . "\\`+?evil[-:]?\\(?:a-\\)?\\(.*\\)") . (nil . "◂\\1"))
    '(("\\`g s" . "\\`evilem--?motion-\\(.*\\)") . (nil . "◃\\1"))))
-
+#+END_SRC
+* Language Configuration
+** Haskell
+#+BEGIN_SRC emacs-lisp
 (after! haskell
   (setq haskell-interactive-popup-errors nil))
-
+#+END_SRC
+** LaTeX
+*** Visuals
+#+BEGIN_SRC emacs-lisp
 (add-hook! LaTeX-mode #'mixed-pitch-mode)
-
+#+END_SRC
+** Python
+I much prefer ipython to the regular python shell.
+#+BEGIN_SRC emacs-lisp
 (after! python
   (setq python-shell-interpreter "ipython"))
-
+#+END_SRC
+** Org
+*** General
+I stole this ellipsis and the bullets from [[https://github.com/hlissner/doom-emacs-private][Henrik Lissner]].  Personally, I really like them.
+#+BEGIN_SRC emacs-lisp
 (setq
  org-directory (expand-file-name "Org" (getenv "HOME"))
  org-archive-location (expand-file-name ".archive/%s::" org-directory)
@@ -107,10 +174,15 @@
 (after! org
   (setq org-refile-targets '((nil :maxlevel . 7) (org-agenda-files :maxlevel . 7))
         org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")))
+#+END_SRC
 
+I use org-mode to track my habits, besides other things.
+#+BEGIN_SRC emacs-lisp
 (after! org
   (add-to-list 'org-modules 'org-habit t))
-
+#+END_SRC
+**** Keybindings
+#+BEGIN_SRC emacs-lisp
 (after! org
   (map!
     (:map org-mode-map
@@ -127,7 +199,9 @@
           :desc "org-insert-heading-after-current" "h" #'org-insert-heading-after-current
           :desc "org-insert-heading" "H" #'org-insert-heading
           :desc "org-insert-subheading" "s" #'org-insert-subheading))))
-
+#+END_SRC
+*** Agenda
+#+BEGIN_SRC emacs-lisp
 (use-package! org-super-agenda
   :commands (org-super-agenda-mode))
 (after! org-agenda
@@ -140,12 +214,19 @@
       org-agenda-show-future-repeats 'next
       org-agenda-skip-deadline-if-done t
       org-agenda-skip-scheduled-if-done t)
-
+#+END_SRC
+*** Capture
+#+BEGIN_SRC emacs-lisp
 (after! org
   (setq org-capture-templates
     '(("t" "Todo" entry (file+headline +org-capture-todo-file "Inbox") "** TODO %?\n %i\n %a")
       ("n" "Note" plain (function org-roam-capture) "%?"))))
+#+END_SRC
+*** Journal
+I'm a big fan of the idea to up our calendar year by 10000, from [[https://www.youtube.com/watch?v=czgOWmtGVGs][this video]], though I don't push the idea on others.
 
+Setting the ~time-prefix~ to ~**~, is a bit of a hack to start a new journal entry with a subheading.
+#+BEGIN_SRC emacs-lisp
 (after! org-journal
   (setq org-journal-dir (expand-file-name "Journal" org-directory)
         org-journal-file-format "1%Y/%m %B.org" ;; e.g. 12019/04 April.org
@@ -165,23 +246,39 @@
       (evil-scroll-line-up 2)
       (flyspell-mode)))
   (add-hook! org-journal-after-entry-create #'herwig/setup-entry))
+#+END_SRC
 
+Also bind journalling to a key.
+#+BEGIN_SRC emacs-lisp
 (map!
  :leader
  (:prefix ("n" . "notes")
   :desc "Org Journal" "j" #'org-journal-new-entry))
-
+#+END_SRC
+*** Roam
+I use a shameless X-Men reference for the name of my second brain.
+#+BEGIN_SRC emacs-lisp
 (after! org-roam
   (setq org-roam-directory (expand-file-name "Cerebro" org-directory)))
-
+#+END_SRC
+*** Toggl
+Time tracking is one thing I don't use org-mode for (yet).  Having it easily available from my phone is just too convenient, but it's nice to be able to start it from Emacs from time to time, especially automatically, when journalling.
+#+BEGIN_SRC emacs-lisp
 (use-package! org-toggl
   :config
   (setq toggl-auth-token "5e48e18d607c8512c580f4dc4d303cc6")
   (setq org-toggl-inherit-toggl-properties t)
   (toggl-get-projects))
-
+#+END_SRC
+*** Visuals
+#+BEGIN_SRC emacs-lisp
 (add-hook! org-mode #'+org-pretty-mode #'mixed-pitch-mode)
+#+END_SRC
 
+** Scheme
+Currently, I'm only using Scheme for SICP, for which I use the MIT Scheme implementation.
+#+BEGIN_SRC emacs-lisp
 (after! geiser
   (setq geiser-active-implementations '(mit)
         geiser-default-implementation 'mit))
+#+END_SRC
