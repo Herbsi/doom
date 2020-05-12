@@ -158,8 +158,22 @@
                           :date today
                           :scheduled today
                           :deadline today
-                          :habit t
-                          :discard (:anything t))))))))))
+                          :habit t)
+                         (:name "Due Soon"
+                          :deadline future
+                          :discard (:anything t)
+                          :order 3)))))))
+        ("p" . "Personal")
+         ("pt" "Todo"
+          ;; TODO customize groups
+            ((tags "CATEGORY=\"Personal\""
+                   ((org-super-agenda-groups
+                     '((:auto-parent t)))))))
+         ("u" . "University")
+          ("ut" "Todo"
+           ((tags "CATEGORY=\"University\""
+                  ((org-super-agenda-groups
+                    '((:auto-parent t)))))))))
 
 (after! org
   (setq org-capture-templates
