@@ -142,6 +142,16 @@
       org-agenda-skip-deadline-if-done t
       org-agenda-skip-scheduled-if-done t)
 
+(setq h/agenda-university-lv-groups
+      '((:name "Funktional Analysis"
+        :tag "Funktional_Analysis")
+        (:name "Einführung in die Algebra"
+         :tag "Einfd_Algebra")
+        (:name "Wahrscheinlichkeitstheorie"
+         :tag "Wahrscheinlichkeitstheorie")
+        (:name "Optimierung 1"
+         :tag "Optimierung_1")))
+
 (setq org-agenda-custom-commands
       '(("f" "Forecast"
          ((agenda "" ((org-agenda-start-day "today")
@@ -170,6 +180,11 @@
                    ((org-super-agenda-groups
                      '((:auto-parent t)))))))
          ("u" . "University")
+          ("up" "Problems"
+           ((tags "+CATEGORY=\"University\"+Assignment/-DONE"
+                  ((org-super-agenda-groups
+                    `((:discard (:heading-regexp "Solve Problems"))
+                      ,@h/university-lv-groups))))))
           ("ut" "Todo"
            ((tags "CATEGORY=\"University\""
                   ((org-super-agenda-groups
