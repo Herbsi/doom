@@ -186,11 +186,22 @@
                     `((:discard (:heading-regexp "Solve Problems"))
                       ,@h/university-lv-groups))))))
           ("ut" "Todo"
-           ((tags "CATEGORY=\"University\"-Assignment/-DONE-PROJ-WAIT-HOLD"
+           ((tags "+CATEGORY=\"University\"-Assignment/-DONE-PROJ-WAIT-HOLD"
                        ((org-super-agenda-groups
                          `((:deadline t)
                            ,@h/university-lv-groups
-                           (:discard (:not (:todo t)))))))))))
+                           (:discard (:not (:todo t)))))))))
+          ("us" "Shut Down"
+           ((agenda "" ((org-agenda-start-day "today")
+                        (org-agenda-span 2)))
+            (tags "+CATEGORY=\"University\"-SCHEDULED>\"<today>\"/-DONE-PROJ-WAIT-HOLD"
+                  ((org-super-agenda-groups
+                    `((:discard (:and (:todo t :children todo)))
+                      (:name "Past"
+                       :scheduled past
+                       :deadline past)
+                      ,@h/university-lv-groups
+                      (:discard (:not (:todo t)))))))))))
 
 (after! org
   (setq org-capture-templates
