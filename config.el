@@ -186,9 +186,11 @@
                     `((:discard (:heading-regexp "Solve Problems"))
                       ,@h/university-lv-groups))))))
           ("ut" "Todo"
-           ((tags "CATEGORY=\"University\""
-                  ((org-super-agenda-groups
-                    '((:auto-parent t)))))))))
+           ((tags "CATEGORY=\"University\"-Assignment/-DONE-PROJ-WAIT-HOLD"
+                       ((org-super-agenda-groups
+                         `((:deadline t)
+                           ,@h/university-lv-groups
+                           (:discard (:not (:todo t)))))))))))
 
 (after! org
   (setq org-capture-templates
@@ -277,7 +279,7 @@
     :list_property "::"
     :results       "#+RESULTS:"
     :property      "#+PROPERTY:"
-    :properties      ":PROPERTIES:"
+    :properties    ":PROPERTIES:"
     :end           ":END:"
     :options       "#+OPTIONS:"
     :title         "#+TITLE:"
