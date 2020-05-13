@@ -215,7 +215,6 @@
   (toggl-get-projects))
 
 (add-hook! org-mode #'(+org-pretty-mode mixed-pitch-mode))
-(add-hook! org-agenda-mode #'+org-pretty-mode)
 
 (after! org
   (setq org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")

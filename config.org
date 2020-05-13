@@ -307,7 +307,6 @@ Time tracking is one thing I don't use org-mode for (yet).  Having it easily ava
 *** Visuals
 #+BEGIN_SRC emacs-lisp
 (add-hook! org-mode #'(+org-pretty-mode mixed-pitch-mode))
-(add-hook! org-agenda-mode #'+org-pretty-mode)
 #+END_SRC
 **** Symbols
 I took these symbols from the amazing [[https://tecosaur.github.io/emacs-config/config.html][doom configuration]] of *@tecosaur*.
