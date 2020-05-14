@@ -9,7 +9,7 @@
       '((:name "Funktional Analysis" :tags "Funktional_Analysis")
         (:name "Einführing in die Algebra" :tags "Einfd_Algebra")
         (:name "Wahrscheinlichkeitstheorie" :tags "Wahrscheinlichkeitstheorie")
-        (:name "Optimierung 1" :tags "Optimierung_1"))
+        (:name "Optimierung 1" :tags "Optimierung_1")))
 
 (setq-default
  uniquify-buffer-name-style 'forward              ; Uniquify buffer names
