@@ -4,6 +4,13 @@
       user-mail-address "herwig.hoehenberger@gmail.com"
       epa-file-encrypt-to user-mail-address)
 
+(setq h/agenda-lv-groups
+      ;; Org-Super-Agenda groups for grouping by class
+      '((:name "Funktional Analysis" :tags "Funktional_Analysis")
+        (:name "Einführing in die Algebra" :tags "Einfd_Algebra")
+        (:name "Wahrscheinlichkeitstheorie" :tags "Wahrscheinlichkeitstheorie")
+        (:name "Optimierung 1" :tags "Optimierung_1"))
+
 (setq-default
  uniquify-buffer-name-style 'forward              ; Uniquify buffer names
  window-combination-resize t                      ; take new window space from all other windows (not just current)
@@ -142,16 +149,6 @@
       org-agenda-skip-deadline-if-done t
       org-agenda-skip-scheduled-if-done t)
 
-(setq h/agenda-university-lv-groups
-      '((:name "Funktional Analysis"
-        :tag "Funktional_Analysis")
-        (:name "Einführung in die Algebra"
-         :tag "Einfd_Algebra")
-        (:name "Wahrscheinlichkeitstheorie"
-         :tag "Wahrscheinlichkeitstheorie")
-        (:name "Optimierung 1"
-         :tag "Optimierung_1")))
-
 (setq org-agenda-custom-commands
       '(("f" "Forecast"
          ((agenda "" ((org-agenda-start-day "today")
@@ -184,12 +181,12 @@
            ((tags "+CATEGORY=\"University\"+Assignment/-DONE"
                   ((org-super-agenda-groups
                     `((:discard (:heading-regexp "Solve Problems"))
-                      ,@h/university-lv-groups))))))
+                      ,@h/agenda-lv-groups))))))
           ("ut" "Todo"
            ((tags "+CATEGORY=\"University\"-Assignment/-DONE-PROJ-WAIT-HOLD"
                        ((org-super-agenda-groups
                          `((:deadline t)
-                           ,@h/university-lv-groups
+                           ,@h/agenda-lv-groups
                            (:discard (:not (:todo t)))))))))
           ("us" "Shut Down"
            ((agenda "" ((org-agenda-start-day "today")
@@ -200,7 +197,7 @@
                       (:name "Past"
                        :scheduled past
                        :deadline past)
-                      ,@h/university-lv-groups
+                      ,@h/agenda-lv-groups
                       (:discard (:not (:todo t)))))))))))
 
 (after! org
