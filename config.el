@@ -6,10 +6,10 @@
 
 (setq h/agenda-lv-groups
       ;; Org-Super-Agenda groups for grouping by class
-      '((:name "Funktional Analysis" :tags "Funktional_Analysis")
-        (:name "Einführing in die Algebra" :tags "Einfd_Algebra")
-        (:name "Wahrscheinlichkeitstheorie" :tags "Wahrscheinlichkeitstheorie")
-        (:name "Optimierung 1" :tags "Optimierung_1")))
+      '((:name "Funktional Analysis" :tag "Funktional_Analysis")
+        (:name "Einführing in die Algebra" :tag "Einfd_Algebra")
+        (:name "Wahrscheinlichkeitstheorie" :tag "Wahrscheinlichkeitstheorie")
+        (:name "Optimierung 1" :tag "Optimierung_1")))
 
 (setq-default
  uniquify-buffer-name-style 'forward              ; Uniquify buffer names
