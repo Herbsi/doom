@@ -177,6 +177,10 @@
                    ((org-super-agenda-groups
                      '((:auto-parent t)))))))
          ("u" . "University")
+          ("uh" "Hold/Wait"
+           ((tags "+CATEGORY=\"University\"/WAIT|HOLD"
+                  ((org-super-agenda-groups
+                    `(,@h/agenda-lv-groups))))))
           ("up" "Problems"
            ((tags "+CATEGORY=\"University\"+Assignment/-DONE"
                   ((org-super-agenda-groups
