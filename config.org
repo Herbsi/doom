@@ -323,8 +323,7 @@ Also bind journalling to a key.
 *** Roam
 I use a shameless X-Men reference for the name of my second brain.
 #+BEGIN_SRC emacs-lisp
-(after! org-roam
-  (setq org-roam-directory (expand-file-name "Cerebro" org-directory)))
+(setq org-roam-directory (expand-file-name "Cerebro" org-directory))
 #+END_SRC
 *** Toggl
 Time tracking is one thing I don't use org-mode for (yet).  Having it easily available from my phone is just too convenient, but it's nice to be able to start it from Emacs from time to time, especially automatically, when journalling.

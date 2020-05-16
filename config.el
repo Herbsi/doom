@@ -234,8 +234,7 @@
  (:prefix ("n" . "notes")
   :desc "Org Journal" "j" #'org-journal-new-entry))
 
-(after! org-roam
-  (setq org-roam-directory (expand-file-name "Cerebro" org-directory)))
+(setq org-roam-directory (expand-file-name "Cerebro" org-directory))
 
 (use-package! org-toggl
   :config
