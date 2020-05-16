@@ -158,14 +158,14 @@
                           :habit t
                           :order 2)
                          (:name "Overdue"
+                          :date past
                           :scheduled past
                           :deadline past)
                          (:name "Forecast"
                           :time-grid t
                           :date today
                           :scheduled today
-                          :deadline today
-                          :habit t)
+                          :deadline today)
                          (:name "Due Soon"
                           :deadline future
                           :discard (:anything t)
