@@ -233,7 +233,6 @@ I use org-mode to track my habits, besides other things.
                           :habit t
                           :order 2)
                          (:name "Overdue"
-                          :date past
                           :scheduled past
                           :deadline past)
                          (:name "Forecast"

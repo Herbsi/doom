@@ -157,7 +157,6 @@
                           :habit t
                           :order 2)
                          (:name "Overdue"
-                          :date past
                           :scheduled past
                           :deadline past)
                          (:name "Forecast"
