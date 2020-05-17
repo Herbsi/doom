@@ -16,8 +16,7 @@
  window-combination-resize t                      ; take new window space from all other windows (not just current)
  x-stretch-cursor t)                              ; Stretch cursor to the glyph width
 
-(setq auto-save-default t                         ; please auto-save my work
-      sentence-end-double-space t                 ; the only correct choice
+(setq sentence-end-double-space t                 ; the only correct choice
       default-input-method "german-postfix"       ; for when I need to type ä, ö, ü or ß
       evil-want-fine-undo t                       ; the finer the undo, the better
       inhibit-compacting-font-caches t            ; when there are a lot of glyphs, keep them in memory
@@ -213,6 +212,11 @@
   (setq org-capture-templates
     '(("t" "Todo" entry (file+headline +org-capture-todo-file "Inbox") "** TODO %?\n %i\n %a")
       ("n" "Note" plain (function org-roam-capture) "%?"))))
+
+(after! org
+    (org-crypt-use-before-save-magic)
+    (setq org-tags-exclude-from-inheritance (quote ("crypt"))
+          org-crypt-key "4E9EA391B1AEE1AF"))
 
 (after! org-journal
   (setq org-journal-dir (expand-file-name "Journal" org-directory)
