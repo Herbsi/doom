@@ -170,7 +170,6 @@ I much prefer ipython to the regular python shell.
 #+END_SRC
 ** Org
 *** General
-I stole this ellipsis and the bullets from [[https://github.com/hlissner/doom-emacs-private][Henrik Lissner]].  Personally, I really like them.
 #+BEGIN_SRC emacs-lisp
 (setq
  org-directory (expand-file-name "Org" (getenv "HOME"))
@@ -225,7 +224,16 @@ I use org-mode to track my habits, besides other things.
       org-agenda-show-future-repeats 'next
       org-agenda-skip-deadline-if-done t
       org-agenda-skip-scheduled-if-done t)
-
+#+END_SRC
+Put ~org-agenda~ on a more convenient key because I use it a lot.
+#+BEGIN_SRC emacs-lisp
+(map!
+  :leader
+  :desc "Agenda" "a" #'org-agenda)
+#+END_SRC
+I use ~org-agenda-custom-commands~ a lot, so that I only see the tasks I want to
+see at any moment.
+#+BEGIN_SRC emacs-lisp
 (setq org-agenda-custom-commands
       '(("f" "Forecast"
          ((agenda "" ((org-agenda-start-day "today")
@@ -351,7 +359,8 @@ Time tracking is one thing I don't use org-mode for (yet).  Having it easily ava
 (add-hook! org-mode #'(+org-pretty-mode mixed-pitch-mode))
 #+END_SRC
 **** Symbols
-I took these symbols from the amazing [[https://tecosaur.github.io/emacs-config/config.html][doom configuration]] of *@tecosaur*.
+I took these symbols from the amazing [[https://tecosaur.github.io/emacs-config/config.html][doom configuration]] of *@tecosaur* and stole
+this ellipsis and the bullets from [[https://github.com/hlissner/doom-emacs-private][Henrik Lissner]].  Personally, I really like them.
 #+BEGIN_SRC emacs-lisp
 (after! org
   (setq org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")

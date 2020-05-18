@@ -150,6 +150,10 @@
       org-agenda-skip-deadline-if-done t
       org-agenda-skip-scheduled-if-done t)
 
+(map!
+  :leader
+  :desc "Agenda" "a" #'org-agenda)
+
 (setq org-agenda-custom-commands
       '(("f" "Forecast"
          ((agenda "" ((org-agenda-start-day "today")
