@@ -20,11 +20,13 @@
       default-input-method "german-postfix"       ; for when I need to type ä, ö, ü or ß
       evil-want-fine-undo t                       ; the finer the undo, the better
       inhibit-compacting-font-caches t            ; when there are a lot of glyphs, keep them in memory
+      type-break-interval (* 60 40)               ; number of seconds between type breaks
       undo-limit 80000000                         ; the more the undo, the better
       +evil-want-o/O-to-continue-comments nil)
 
 (delete-selection-mode 1)                         ; Replace selection when inserting text
 (global-subword-mode 1)                           ; Iterate through CamelCase words
+(type-break-mode 1)                               ; Stop me from typing too long
 
 (map!
  :leader
