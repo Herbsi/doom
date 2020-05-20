@@ -27,10 +27,11 @@
  hl-todo
  ;; hydra
  ;; indent-guides
+ minimap
  (modeline +light)
  nav-flash
  ;; neotree
- ;; ophints
+ ophints
  (popup
   ;; +all
   +defaults)
@@ -98,6 +99,7 @@
  pdf
  ;; prodigy
  ;; rgb
+ ;; taskrunner
  ;; terraform
  ;; tmux
  ;; upload
