@@ -221,7 +221,7 @@
 (after! org
     (org-crypt-use-before-save-magic)
     (setq org-tags-exclude-from-inheritance (quote ("crypt"))
-          org-crypt-key "4E9EA391B1AEE1AF"))
+          org-crypt-key "F1653669C24076F7"))
 
 (after! org-journal
   (setq org-journal-dir (expand-file-name "Journal" org-directory)

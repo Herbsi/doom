@@ -305,7 +305,7 @@ see at any moment.
 (after! org
     (org-crypt-use-before-save-magic)
     (setq org-tags-exclude-from-inheritance (quote ("crypt"))
-          org-crypt-key "4E9EA391B1AEE1AF"))
+          org-crypt-key "F1653669C24076F7"))
 #+END_SRC
 *** Journal
 I'm a big fan of the idea to up our calendar year by 10000, from [[https://www.youtube.com/watch?v=czgOWmtGVGs][this video]], though I don't push the idea on others.
