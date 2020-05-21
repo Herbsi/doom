@@ -211,7 +211,8 @@
                               :scheduled past
                               :deadline past)
                               ,@h/agenda-lv-groups
-                              (:discard (:not (:todo t)))))))))))
+                              (:discard (:not (:todo t)))))
+                           (org-agenda-dim-blocked-tasks 'invisible)))))))
 
 (after! org
   (setq org-capture-templates
