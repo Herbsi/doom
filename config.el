@@ -204,7 +204,7 @@
                         (org-agenda-span 2)))
             (org-ql-block '(and (category "University")
                                 (not (or (scheduled :from tomorrow)
-                                         (todo "DONE" "PROJ" "WAIT" "HOLD")
+                                         (todo "DONE" "PROJ" "WAIT" "HOLD" "[X]")
                                          (and (todo) (children (todo))))))
                           ((org-super-agenda-groups
                             `((:name "Past"
@@ -212,7 +212,8 @@
                               :deadline past)
                               ,@h/agenda-lv-groups
                               (:discard (:not (:todo t)))))
-                           (org-agenda-dim-blocked-tasks 'invisible)))))))
+                           (org-agenda-dim-blocked-tasks 'invisible)
+                           (org-ql-block-header "Available University Tasks")))))))
 
 (after! org
   (setq org-capture-templates

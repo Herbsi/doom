@@ -284,7 +284,7 @@ see at any moment.
                         (org-agenda-span 2)))
             (org-ql-block '(and (category "University")
                                 (not (or (scheduled :from tomorrow)
-                                         (todo "DONE" "PROJ" "WAIT" "HOLD")
+                                         (todo "DONE" "PROJ" "WAIT" "HOLD" "[X]")
                                          (and (todo) (children (todo))))))
                           ((org-super-agenda-groups
                             `((:name "Past"
@@ -292,7 +292,8 @@ see at any moment.
                               :deadline past)
                               ,@h/agenda-lv-groups
                               (:discard (:not (:todo t)))))
-                           (org-agenda-dim-blocked-tasks 'invisible)))))))
+                           (org-agenda-dim-blocked-tasks 'invisible)
+                           (org-ql-block-header "Available University Tasks")))))))
 #+END_SRC
 *** Capture
 #+BEGIN_SRC emacs-lisp
