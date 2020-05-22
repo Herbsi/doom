@@ -13,7 +13,7 @@
 #+END_SRC
 *** University Variables
 #+BEGIN_SRC emacs-lisp
-(setq h/agenda-lv-groups
+(setq herwig/agenda-lv-groups
       ;; Org-Super-Agenda groups for grouping by class
       '((:name "Funktional Analysis" :tag "Funktional_Analysis")
         (:name "Einführing in die Algebra" :tag "Einfd_Algebra")
@@ -93,7 +93,7 @@ TODO set the correct sizes.
 ** Theme
 This is subject to frequent change.
 #+BEGIN_SRC emacs-lisp
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-vibrant)
 #+END_SRC
 ** Misc
 #+BEGIN_SRC emacs-lisp
@@ -264,40 +264,40 @@ see at any moment.
         ("p" . "Personal")
          ("pt" "Todo"
           ;; TODO customize groups
-            ((tags "CATEGORY=\"Personal\""
-                   ((org-super-agenda-groups
-                     '((:auto-parent t)))))))
+            ((org-ql-block '(and (category "Personal")
+                                 (not (todo "DONE" "[X]")))
+                            ((org-super-agenda-groups
+                              '((:auto-parent t)))))))
          ("u" . "University")
           ("uh" "Hold/Wait"
            ((org-ql-block '(and (category "University")
                                 (todo "WAIT" "HOLD"))
-                           ((org-super-agenda-groups `(,@h/agenda-lv-groups))))))
+                           ((org-super-agenda-groups `(,@herwig/agenda-lv-groups))))))
           ("up" "Problems"
            ((org-ql-block '(and (category "University")
                                 (tags "Assignment")
                                 (not (or (todo "DONE" "[X]")
                                          (regexp "Solve Problems"))))
-                           ((org-super-agenda-groups `(,@h/agenda-lv-groups))))))
+                           ((org-super-agenda-groups `(,@herwig/agenda-lv-groups))))))
           ("ut" "Todo"
            ((org-ql-block '(and (category "University")
                                 (not (or (tags "Assignment")
                                          (todo "DONE" "PROJ" "WAIT" "HOLD"))))
                            ((org-super-agenda-groups
                              `((:deadline t)
-                               ,@h/agenda-lv-groups
+                               ,@herwig/agenda-lv-groups
                                (:discard (:not (:todo t)))))))))
           ("us" "Shut Down"
            ((agenda "" ((org-agenda-start-day "today")
                         (org-agenda-span 2)))
             (org-ql-block '(and (category "University")
                                 (not (or (scheduled :from tomorrow)
-                                         (todo "DONE" "PROJ" "WAIT" "HOLD" "[X]")
-                                         (and (todo) (children (todo))))))
+                                         (todo "DONE" "PROJ" "WAIT" "HOLD" "[X]"))))
                           ((org-super-agenda-groups
                             `((:name "Past"
                               :scheduled past
                               :deadline past)
-                              ,@h/agenda-lv-groups
+                              ,@herwig/agenda-lv-groups
                               (:discard (:not (:todo t)))))
                            (org-agenda-dim-blocked-tasks 'invisible)
                            (org-ql-block-header "Available University Tasks")))))))
@@ -317,13 +317,13 @@ see at any moment.
           org-crypt-key "F1653669C24076F7"))
 #+END_SRC
 *** Journal
-I'm a big fan of the idea to up our calendar year by 10000, from [[https://www.youtube.com/watch?v=czgOWmtGVGs][this video]], though I don't push the idea on others.
+I'm a big fan of the idea to up our calendar year by 10000, from [[https://www.youtube.com/watch?v=czgOWmtGVGs][this video]].
 
 Setting the ~time-prefix~ to ~**~, is a bit of a hack to start a new journal entry with a subheading.
 #+BEGIN_SRC emacs-lisp
+(setq org-journal-dir (expand-file-name "Journal" org-directory))
 (after! org-journal
-  (setq org-journal-dir (expand-file-name "Journal" org-directory)
-        org-journal-file-format "1%Y/%m %B.org" ;; e.g. 12019/04 April.org
+  (setq org-journal-file-format "1%Y/%m %B.org" ;; e.g. 12019/04 April.org
         org-journal-encrypt-journal t
         org-journal-file-type 'monthly
         org-journal-date-prefix "* "

@@ -4,7 +4,7 @@
       user-mail-address "herwig.hoehenberger@gmail.com"
       epa-file-encrypt-to user-mail-address)
 
-(setq h/agenda-lv-groups
+(setq herwig/agenda-lv-groups
       ;; Org-Super-Agenda groups for grouping by class
       '((:name "Funktional Analysis" :tag "Funktional_Analysis")
         (:name "Einführing in die Algebra" :tag "Einfd_Algebra")
@@ -55,7 +55,7 @@
       doom-big-font (font-spec :family "Fira Code" :size (if IS-MAC 18.0 14.0))
       doom-variable-pitch-font (font-spec :family "Overpass" :size 14.0))
 
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-vibrant)
 
 (setq display-line-numbers-type nil
       evil-echo-state nil                      ; I find it distracting; and I can tell the state from the cursor
@@ -180,40 +180,40 @@
         ("p" . "Personal")
          ("pt" "Todo"
           ;; TODO customize groups
-            ((tags "CATEGORY=\"Personal\""
-                   ((org-super-agenda-groups
-                     '((:auto-parent t)))))))
+            ((org-ql-block '(and (category "Personal")
+                                 (not (todo "DONE" "[X]")))
+                            ((org-super-agenda-groups
+                              '((:auto-parent t)))))))
          ("u" . "University")
           ("uh" "Hold/Wait"
            ((org-ql-block '(and (category "University")
                                 (todo "WAIT" "HOLD"))
-                           ((org-super-agenda-groups `(,@h/agenda-lv-groups))))))
+                           ((org-super-agenda-groups `(,@herwig/agenda-lv-groups))))))
           ("up" "Problems"
            ((org-ql-block '(and (category "University")
                                 (tags "Assignment")
                                 (not (or (todo "DONE" "[X]")
                                          (regexp "Solve Problems"))))
-                           ((org-super-agenda-groups `(,@h/agenda-lv-groups))))))
+                           ((org-super-agenda-groups `(,@herwig/agenda-lv-groups))))))
           ("ut" "Todo"
            ((org-ql-block '(and (category "University")
                                 (not (or (tags "Assignment")
                                          (todo "DONE" "PROJ" "WAIT" "HOLD"))))
                            ((org-super-agenda-groups
                              `((:deadline t)
-                               ,@h/agenda-lv-groups
+                               ,@herwig/agenda-lv-groups
                                (:discard (:not (:todo t)))))))))
           ("us" "Shut Down"
            ((agenda "" ((org-agenda-start-day "today")
                         (org-agenda-span 2)))
             (org-ql-block '(and (category "University")
                                 (not (or (scheduled :from tomorrow)
-                                         (todo "DONE" "PROJ" "WAIT" "HOLD" "[X]")
-                                         (and (todo) (children (todo))))))
+                                         (todo "DONE" "PROJ" "WAIT" "HOLD" "[X]"))))
                           ((org-super-agenda-groups
                             `((:name "Past"
                               :scheduled past
                               :deadline past)
-                              ,@h/agenda-lv-groups
+                              ,@herwig/agenda-lv-groups
                               (:discard (:not (:todo t)))))
                            (org-agenda-dim-blocked-tasks 'invisible)
                            (org-ql-block-header "Available University Tasks")))))))
@@ -228,9 +228,9 @@
     (setq org-tags-exclude-from-inheritance (quote ("crypt"))
           org-crypt-key "F1653669C24076F7"))
 
+(setq org-journal-dir (expand-file-name "Journal" org-directory))
 (after! org-journal
-  (setq org-journal-dir (expand-file-name "Journal" org-directory)
-        org-journal-file-format "1%Y/%m %B.org" ;; e.g. 12019/04 April.org
+  (setq org-journal-file-format "1%Y/%m %B.org" ;; e.g. 12019/04 April.org
         org-journal-encrypt-journal t
         org-journal-file-type 'monthly
         org-journal-date-prefix "* "
