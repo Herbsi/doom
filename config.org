@@ -210,6 +210,13 @@ I use org-mode to track my habits, besides other things.
           :desc "org-insert-heading" "H" #'org-insert-heading
           :desc "org-insert-subheading" "s" #'org-insert-subheading))))
 #+END_SRC
+
+Disable ~org-super-agenda-header-map~ because I want to be able to use ~j, k~ to
+move up and down on /every/ line in ~org-agenda~.
+#+BEGIN_SRC emacs-lisp
+(after! org-super-agenda
+    (setq org-super-agenda-header-map (make-sparse-keymap)))
+#+END_SRC
 *** Agenda
 #+BEGIN_SRC emacs-lisp
 (use-package! org-super-agenda

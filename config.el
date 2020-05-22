@@ -137,6 +137,9 @@
           :desc "org-insert-heading" "H" #'org-insert-heading
           :desc "org-insert-subheading" "s" #'org-insert-subheading))))
 
+(after! org-super-agenda
+    (setq org-super-agenda-header-map (make-sparse-keymap)))
+
 (use-package! org-super-agenda
   :commands (org-super-agenda-mode))
 (after! org-agenda
