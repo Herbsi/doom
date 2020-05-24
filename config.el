@@ -38,6 +38,11 @@
  (:prefix ("b" . "buffer")
   :desc "ibuffer" "i" #'ibuffer))
 
+(map!
+ :leader
+ (:prefix ("f" . "file")
+  "s" nil))
+
 (after! git-timemachine
   (evil-make-overriding-map git-timemachine-mode-map 'normal)
   (add-hook! git-timemachine-mode-hook #'evil-normalize-keymaps))

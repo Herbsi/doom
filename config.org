@@ -54,6 +54,14 @@ I find ibuffer incredibly useful for buffer management, and closing multiple buf
  (:prefix ("b" . "buffer")
   :desc "ibuffer" "i" #'ibuffer))
 #+END_SRC
+I use ~SPC f s~ a lot to save files, but it's not the most ergonomic for me, using
+a Dvorak layout.  So I want to train myself to use ~:w~ instead.
+#+BEGIN_SRC emacs-lisp
+(map!
+ :leader
+ (:prefix ("f" . "file")
+  "s" nil))
+#+END_SRC
 *** Git
 Use evil-normal-state map in git-timemachine, so that I can move up and down using j & k.
 #+BEGIN_SRC emacs-lisp
