@@ -199,7 +199,9 @@
                                 (tags "Assignment")
                                 (not (or (todo "DONE" "[X]")
                                          (regexp "Solve Problems"))))
-                           ((org-super-agenda-groups `(,@herwig/agenda-lv-groups))))))
+                           ((org-super-agenda-groups `(,@herwig/agenda-lv-groups))
+                            (org-agenda-dim-blocked-tasks 'invisible)
+                            (org-ql-block-header "Problems")))))
           ("ut" "Todo"
            ((org-ql-block '(and (category "University")
                                 (not (or (tags "Assignment")
