@@ -4,7 +4,6 @@
 #+BEGIN_SRC emacs-lisp
 ;;; config.el -*- lexical-binding: t; -*-
 #+END_SRC
-
 ** Personal Information
 #+BEGIN_SRC emacs-lisp
 (setq user-full-name "Herwig Hoehenberger"
@@ -48,7 +47,6 @@ I prefer ~SPC SPC~ for ~M-x~ to ~SPC :~, the one Spacemacs habit I couldn't shak
  ":" nil
  :desc "M-x" "SPC" #'counsel-M-x)
 #+END_SRC
-
 I find ibuffer incredibly useful for buffer management, and closing multiple buffers at once.
 #+BEGIN_SRC emacs-lisp
 (map!
@@ -64,19 +62,17 @@ Use evil-normal-state map in git-timemachine, so that I can move up and down usi
   (add-hook! git-timemachine-mode-hook #'evil-normalize-keymaps))
 #+END_SRC
 *** Windows
-Split windows to the right and buttom.
+Split windows to the right and bottom.
 #+BEGIN_SRC emacs-lisp
   (setq evil-split-window-below t
         evil-vsplit-window-right t)
 #+END_SRC
-
 And then, pull up ivy.
 #+BEGIN_SRC emacs-lisp
 (defadvice! prompt-for-buffer (&rest _)
   :after '(evil-window-split evil-window-vsplit)
   (+ivy/switch-buffer))
 #+END_SRC
-
 Previews are also nice.
 #+BEGIN_SRC emacs-lisp
 (setq +ivy-buffer-preview t)
