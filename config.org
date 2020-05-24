@@ -195,6 +195,15 @@ I use org-mode to track my habits, besides other things.
 (after! org
   (add-to-list 'org-modules 'org-habit t))
 #+END_SRC
+
+I unset these variables because I currently don't use the files, and don't want
+them to be open all the time.
+#+BEGIN_SRC emacs-lisp
+(after! org
+    (setq +org-capture-projects-file nil
+        +org-capture-changelog-file nil
+        +org-capture-journal-file nil))
+#+END_SRC
 **** Keybindings
 #+BEGIN_SRC emacs-lisp
 (after! org

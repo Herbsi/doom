@@ -126,6 +126,11 @@
   (add-to-list 'org-modules 'org-habit t))
 
 (after! org
+    (setq +org-capture-projects-file nil
+        +org-capture-changelog-file nil
+        +org-capture-journal-file nil))
+
+(after! org
   (map!
     (:map org-mode-map
      :localleader
