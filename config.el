@@ -62,7 +62,7 @@
 
 (setq doom-theme 'doom-vibrant)
 
-(setq display-line-numbers-type nil
+(setq display-line-numbers-type 'relative
       evil-echo-state nil                      ; I find it distracting; and I can tell the state from the cursor
       frame-title-format "%b"
       mode-line-default-help-echo nil
@@ -267,6 +267,8 @@
   (toggl-get-projects))
 
 (add-hook! org-mode #'(+org-pretty-mode mixed-pitch-mode))
+(add-hook! org-mode (display-line-numbers-mode -1))
+(add-hook! org-agenda-mode #'+org-pretty-mode)
 
 (after! org
   (setq org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")

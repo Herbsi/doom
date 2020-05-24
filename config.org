@@ -101,7 +101,7 @@ This is subject to frequent change.
 #+END_SRC
 ** Misc
 #+BEGIN_SRC emacs-lisp
-(setq display-line-numbers-type nil
+(setq display-line-numbers-type 'relative
       evil-echo-state nil                      ; I find it distracting; and I can tell the state from the cursor
       frame-title-format "%b"
       mode-line-default-help-echo nil
@@ -370,6 +370,8 @@ Time tracking is one thing I don't use org-mode for (yet).  Having it easily ava
 *** Visuals
 #+BEGIN_SRC emacs-lisp
 (add-hook! org-mode #'(+org-pretty-mode mixed-pitch-mode))
+(add-hook! org-mode (display-line-numbers-mode -1))
+(add-hook! org-agenda-mode #'+org-pretty-mode)
 #+END_SRC
 **** Symbols
 I took these symbols from the amazing [[https://tecosaur.github.io/emacs-config/config.html][doom configuration]] of *@tecosaur* and stole
