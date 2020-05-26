@@ -382,14 +382,8 @@ Time tracking is one thing I don't use org-mode for (yet).  Having it easily ava
   (toggl-get-projects))
 #+END_SRC
 *** Visuals
-#+BEGIN_SRC emacs-lisp
-(add-hook! org-mode #'(+org-pretty-mode mixed-pitch-mode))
-(add-hook! org-mode (display-line-numbers-mode -1))
-(add-hook! org-agenda-mode #'+org-pretty-mode)
-#+END_SRC
 **** Symbols
-I took these symbols from the amazing [[https://tecosaur.github.io/emacs-config/config.html][doom configuration]] of *@tecosaur* and stole
-this ellipsis and the bullets from [[https://github.com/hlissner/doom-emacs-private][Henrik Lissner]].  Personally, I really like them.
+I stole this ellipsis and the bullets from [[https://github.com/hlissner/doom-emacs-private][Henrik Lissner]].  Personally, I really like them.
 #+BEGIN_SRC emacs-lisp
 (after! org
   (setq org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")
@@ -402,62 +396,6 @@ this ellipsis and the bullets from [[https://github.com/hlissner/doom-emacs-priv
                              (?C . 'all-the-icons-yellow)
                              (?D . 'all-the-icons-green)
                              (?E . 'all-the-icons-blue))))
-#+END_SRC
-
-Use Unicode characters for check boxes and some other commands.
-#+BEGIN_SRC emacs-lisp
-(after! org
-  (appendq! +pretty-code-symbols
-            `(:checkbox      "☐"
-              :pending       "◼"
-              :checkedbox    "☑"
-              :list_property "∷"
-              :results       "🠶"
-              :property      "☸"
-              :properties    "⚙"
-              :end           "∎"
-              :options       "⌥"
-              :title         "𝙏"
-              :author        "𝘼"
-              :date          "𝘿"
-              :latex_header  "⇥"
-              :latex_class   "🄲"
-              :begin_quote   "❮"
-              :end_quote     "❯"
-              :begin_export  "⯮"
-              :end_export    "⯬"
-              :priority_a   ,(propertize "⚑" 'face 'all-the-icons-red)
-              :priority_b   ,(propertize "⬆" 'face 'all-the-icons-orange)
-              :priority_c   ,(propertize "■" 'face 'all-the-icons-yellow)
-              :priority_d   ,(propertize "⬇" 'face 'all-the-icons-green)
-              :priority_e   ,(propertize "❓" 'face 'all-the-icons-blue)
-              :em_dash       "—"))
-  (set-pretty-symbols! 'org-mode
-    :merge t
-    :checkbox      "[ ]"
-    :pending       "[-]"
-    :checkedbox    "[X]"
-    :list_property "::"
-    :results       "#+RESULTS:"
-    :property      "#+PROPERTY:"
-    :properties    ":PROPERTIES:"
-    :end           ":END:"
-    :options       "#+OPTIONS:"
-    :title         "#+TITLE:"
-    :author        "#+AUTHOR:"
-    :date          "#+DATE:"
-    :latex_class   "#+LATEX_CLASS:"
-    :latex_header  "#+LATEX_HEADER:"
-    :begin_quote   "#+BEGIN_QUOTE"
-    :end_quote     "#+END_QUOTE"
-    :begin_export  "#+BEGIN_EXPORT"
-    :end_export    "#+END_EXPORT"
-    :priority_a    "[#A]"
-    :priority_b    "[#B]"
-    :priority_c    "[#C]"
-    :priority_d    "[#D]"
-    :priority_e    "[#E]"
-    :em_dash       "---"))
 #+END_SRC
 ** Scheme
 Currently, I'm only using Scheme for SICP, for which I use the MIT Scheme implementation.
