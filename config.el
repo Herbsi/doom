@@ -202,8 +202,7 @@
           ("up" "Problems"
            ((org-ql-block '(and (category "University")
                                 (tags "Assignment")
-                                (not (or (todo "DONE" "[X]")
-                                         (regexp "Solve Problems"))))
+                                (not (or (todo "DONE" "[X]"))))
                            ((org-super-agenda-groups `(,@herwig/agenda-lv-groups))
                             (org-agenda-dim-blocked-tasks 'invisible)
                             (org-ql-block-header "Problems")))))
@@ -217,15 +216,19 @@
                                (:discard (:not (:todo t)))))))))
           ("us" "Shut Down"
            ((agenda "" ((org-agenda-start-day "today")
-                        (org-agenda-span 2)))
+                        (org-agenda-span 2)
+                        (org-super-agenda-groups
+                         '((:name "Overdue"
+                            :discard (:habit t)
+                            :scheduled past
+                            :deadline past)
+                           (:name "Agenda"
+                            :anything t)))))
             (org-ql-block '(and (category "University")
                                 (not (or (scheduled :from tomorrow)
                                          (todo "DONE" "PROJ" "WAIT" "HOLD" "[X]"))))
                           ((org-super-agenda-groups
-                            `((:name "Past"
-                              :scheduled past
-                              :deadline past)
-                              ,@herwig/agenda-lv-groups
+                            `(,@herwig/agenda-lv-groups
                               (:discard (:not (:todo t)))))
                            (org-agenda-dim-blocked-tasks 'invisible)
                            (org-ql-block-header "Available University Tasks")))))))
