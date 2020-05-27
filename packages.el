@@ -8,3 +8,9 @@
 (package! org-ql :recipe (:host github :repo "alphapapa/org-ql") :pin "c847afe0b538a1a44c73e40b067831cbea132ba7")
 (package! org-super-agenda :pin "dd0d104c269fab9ebe5af7009bc1dd2a3a8f3c12")
 (package! org-toggl :recipe (:host github :repo "mbork/org-toggl") :pin "40b5353dc58e635ba2e80e3e4471b74941d535cb")
+
+;; Needed for org-gcal
+(package! org-gcal :pin "2ee2b31547e6f4e33db70fb812d552e55d612fd6")
+(package! alert)
+(package! persist)
+(package! request :pin "912525c772984c6af0fd84acd6699ee43d91037a")

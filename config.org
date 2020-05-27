@@ -320,6 +320,12 @@ see at any moment.
                            (org-agenda-dim-blocked-tasks 'invisible)
                            (org-ql-block-header "Available University Tasks")))))))
 #+END_SRC
+**** Calendar
+#+BEGIN_SRC emacs-lisp
+(after! org
+  (load-library (expand-file-name "gcal-credentials.el.gpg" (getenv "DOOMDIR")))
+  (appendq! org-agenda-files `(,org-gcal-directory)))
+#+END_SRC
 *** Capture
 #+BEGIN_SRC emacs-lisp
 (after! org
