@@ -395,7 +395,7 @@ Setting the ~time-prefix~ to ~**~, is a bit of a hack to start a new journal ent
   (add-hook! org-journal-after-entry-create #'herwig/setup-entry))
 #+END_SRC
 
-Also bind journalling to a key.
+Also bind journaling to a key.
 #+BEGIN_SRC emacs-lisp
 (map!
  :leader
@@ -408,7 +408,9 @@ I use a shameless X-Men reference for the name of my second brain.
 (setq org-roam-directory (expand-file-name "Cerebro" org-directory))
 #+END_SRC
 *** Toggl
-Time tracking is one thing I don't use org-mode for (yet).  Having it easily available from my phone is just too convenient, but it's nice to be able to start it from Emacs from time to time, especially automatically, when journalling.
+Time tracking is one thing I don't use org-mode for (yet).  Having it easily
+available from my phone is just too convenient, but it's nice to be able to
+start it from Emacs from time to time, especially automatically, when journaling.
 #+BEGIN_SRC emacs-lisp
 (use-package! org-toggl
   :after epg
@@ -422,6 +424,19 @@ Time tracking is one thing I don't use org-mode for (yet).  Having it easily ava
 (add-hook! org-mode #'(+org-pretty-mode mixed-pitch-mode))
 (add-hook! org-mode (display-line-numbers-mode -1))
 (add-hook! org-agenda-mode #'+org-pretty-mode)
+#+END_SRC
+**** Fonts
+Make headings bigger.
+#+BEGIN_SRC emacs-lisp
+(custom-set-faces!
+  '(outline-1 :weight extra-bold :height 1.25)
+  '(outline-2 :weight bold :height 1.15)
+  '(outline-3 :weight bold :height 1.12)
+  '(outline-4 :weight semi-bold :height 1.09)
+  '(outline-5 :weight semi-bold :height 1.06)
+  '(outline-6 :weight semi-bold :height 1.03)
+  '(outline-8 :weight semi-bold)
+  '(outline-9 :weight semi-bold))
 #+END_SRC
 **** Symbols
 I took these symbols from the amazing [[https://tecosaur.github.io/emacs-config/config.html][doom configuration]] of *@tecosaur* and stole
