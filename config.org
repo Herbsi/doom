@@ -330,11 +330,36 @@ see at any moment.
 #+END_SRC
 *** Capture
 #+BEGIN_SRC emacs-lisp
-(after! org
-  (setq org-capture-templates
-    '(("t" "Todo" entry (file+headline +org-capture-todo-file "Inbox") "** TODO %?\n %i\n %a")
-      ("n" "Note" plain (function org-roam-capture) "%?"))))
-#+END_SRC
+(use-package! doct
+  :commands (doct))
+
+(after! org-capture
+    (setq org-capture-templates
+    ;      ("n" "Note" plain (function org-roam-capture) "%?"))
+        (doct
+        '(("Todo" :keys "t"
+            :file +org-capture-todo-file
+            :icon ("inbox" :set "octicon" :color "yellow")
+            :prepend t
+            :headline "Inbox"
+            :template ("* %{todo-state} %?"
+                    "%i %a")
+            :children (("TODO" :keys "t"
+                        :todo-state "TODO")
+                        ("[ ]" :keys "T"
+                            :todo-state "[ ]")
+                        ("- [ ]" :keys "c"
+                            :type checkitem
+                            :template ("[ ] %^{Description}"
+                                    "%?"))
+                        ("HOLD" :keys "h"
+                            :todo-state "HOLD")
+                        ("WAIT" :keys "w"
+                            :todo-state "WAIT")
+                        ("[?]" :keys "W"
+                            :todo-state "[?]")))))))
+    #+END_SRC
+
 *** Crypt
 #+BEGIN_SRC emacs-lisp
 (after! org

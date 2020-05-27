@@ -5,6 +5,7 @@
 (package! hercules :recipe (:host gitlab :repo "jjzmajic/hercules.el") :pin "557da39878d0637395fdded91243b340c37eff7b")
 (package! literate-calc-mode)
 (package! mixed-pitch)
+(package! doct :pin "1bcec209e12200c9b93b0d95f61b964b5de4439c")
 (package! org-ql :recipe (:host github :repo "alphapapa/org-ql") :pin "c847afe0b538a1a44c73e40b067831cbea132ba7")
 (package! org-super-agenda :pin "dd0d104c269fab9ebe5af7009bc1dd2a3a8f3c12")
 (package! org-toggl :recipe (:host github :repo "mbork/org-toggl") :pin "40b5353dc58e635ba2e80e3e4471b74941d535cb")
