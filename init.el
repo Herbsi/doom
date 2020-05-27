@@ -41,7 +41,7 @@
  ;; unicode
  vc-gutter
  vi-tilde-fringe
- window-select
+ (window-select +numbers)
  workspaces
  ;; zen
 
