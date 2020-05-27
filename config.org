@@ -384,8 +384,9 @@ I use a shameless X-Men reference for the name of my second brain.
 Time tracking is one thing I don't use org-mode for (yet).  Having it easily available from my phone is just too convenient, but it's nice to be able to start it from Emacs from time to time, especially automatically, when journalling.
 #+BEGIN_SRC emacs-lisp
 (use-package! org-toggl
+  :after org
   :config
-  (setq toggl-auth-token "5e48e18d607c8512c580f4dc4d303cc6")
+  (load-library (expand-file-name "toggl-auth-token.el.gpg" (getenv "DOOMDIR")))
   (setq org-toggl-inherit-toggl-properties t)
   (toggl-get-projects))
 #+END_SRC
