@@ -37,7 +37,6 @@
 
 (delete-selection-mode 1)                         ; Replace selection when inserting text
 (global-subword-mode 1)                           ; Iterate through CamelCase words
-(type-break-mode 1)                               ; Stop me from typing too long
 #+END_SRC
 *** Keybindings
 I prefer ~SPC SPC~ for ~M-x~ to ~SPC :~, the one Spacemacs habit I couldn't shake off.
