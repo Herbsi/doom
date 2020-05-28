@@ -337,30 +337,48 @@ see at any moment.
   :commands (doct))
 
 (after! org-capture
-  (setq org-capture-templates
-    (doct
-      '(("Todo" :keys "t"
-        :file +org-capture-todo-file
-        :icon ("inbox" :set "octicon" :color "yellow")
-        :prepend t
-        :headline "Inbox"
-        :template ("* %{todo-state} %?"
-                   "%i %a")
-        :children (("TODO" :keys "t"
-                    :todo-state "TODO")
-                    ("[ ]" :keys "T"
-                    :todo-state "[ ]")
-                    ("- [ ]" :keys "c"
-                    :type checkitem
-                    :template ("[ ] %^{Description}"
-                               "%?"))
-                    ("HOLD" :keys "h"
-                    :todo-state "HOLD")
-                    ("WAIT" :keys "w"
-                    :todo-state "WAIT")
-                    ("[?]" :keys "W"
-                    :todo-state "[?]")))))))
-#+END_SRC
+    (setq org-capture-templates
+        (doct
+        '(("Todo" :keys "t"
+            :file +org-capture-todo-file
+            :icon ("inbox" :set "octicon" :color "yellow")
+            :prepend t
+            :headline "Inbox"
+            :template ("* %{todo-state} %?"
+                    "%i %a")
+            :children (("TODO" :keys "t"
+                        :todo-state "TODO")
+                        ("[ ]" :keys "T"
+                            :todo-state "[ ]")
+                        ("- [ ]" :keys "c"
+                            :type checkitem
+                            :template ("[ ] %^{Description}"
+                                    "%?"))
+                        ("HOLD" :keys "h"
+                            :todo-state "HOLD")
+                        ("WAIT" :keys "w"
+                            :todo-state "WAIT")
+                        ("[?]" :keys "W"
+                            :todo-state "[?]")))
+          ("University" :keys "u"
+           :file +org-capture-todo-file
+           :icon ("graduation-cap" :set "faicon" :color "purple")
+           :prepend t
+           :headline "Inbox"
+           :children (("Übungszettel"
+                       :keys "u"
+                       :icon ("library_books" :set "material" :color "orange")
+                       :template ("* TODO %^{No}. Übungszettel :Assignment:"
+                                  "DEADLINE: %^{Due date}T"
+                                  ":PROPERTIES:"
+                                  ":ORDERED:  t"
+                                  ":END:"
+                                  "** TODO Download PDF"
+                                  "** TODO Solve Problems"
+                                  "*** [ ] %?"
+                                  "** TODO Upload Solutions"))))
+          ))))
+    #+END_SRC
 
 *** Crypt
 #+BEGIN_SRC emacs-lisp
