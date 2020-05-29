@@ -119,13 +119,13 @@ Ah, Emacs Calc, poor man's mathematica.
     (evil-set-initial-state 'calc-mode 'emacs))
 #+END_SRC
 ** Company
-I disable autocompletion by default, and only use it on demand
+I disable autocompletion by default, and only use it on demand.
 #+BEGIN_SRC emacs-lisp
 (after! company
   (setq company-idle-delay nil))
 #+END_SRC
 ** Direnv
-I disable the frequent, verbose summary messages
+I disable the frequent, verbose summary messages.
 #+BEGIN_SRC emacs-lisp
 (after! direnv
   (setq direnv-always-show-summary nil))
@@ -383,9 +383,9 @@ see at any moment.
 *** Crypt
 #+BEGIN_SRC emacs-lisp
 (after! org
-    (org-crypt-use-before-save-magic)
-    (setq org-tags-exclude-from-inheritance (quote ("crypt"))
-          org-crypt-key "F1653669C24076F7"))
+  (org-crypt-use-before-save-magic)
+  (setq org-tags-exclude-from-inheritance (quote ("crypt"))
+        org-crypt-key "F1653669C24076F7"))
 #+END_SRC
 *** Journal
 I'm a big fan of the idea to up our calendar year by 10000, from [[https://www.youtube.com/watch?v=czgOWmtGVGs][this video]].
