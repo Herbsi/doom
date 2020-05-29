@@ -325,10 +325,10 @@ see at any moment.
 **** Calendar
 #+BEGIN_SRC emacs-lisp
 (use-package! org-gcal
-  :after epg
+  :defer 3
   :config
   (setq org-gcal-directory (expand-file-name ".gcal" org-directory))
-  (appendq! org-agenda-files `(,org-gcal-directory))
+  (pushnew org-gcal-directory org-agenda-files )
   (load-library (expand-file-name "gcal-credentials.el.gpg" (getenv "DOOMDIR"))))
 #+END_SRC
 *** Capture
@@ -431,7 +431,7 @@ available from my phone is just too convenient, but it's nice to be able to
 start it from Emacs from time to time, especially automatically, when journaling.
 #+BEGIN_SRC emacs-lisp
 (use-package! org-toggl
-  :after epg
+  :defer 3
   :config
   (load-library (expand-file-name "toggl-auth-token.el.gpg" (getenv "DOOMDIR")))
   (setq org-toggl-inherit-toggl-properties t)
