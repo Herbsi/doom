@@ -336,10 +336,10 @@ see at any moment.
 (use-package! doct
   :commands (doct))
 
-(after! org-capture
+(after! (org-capture org-gcal)
     (setq org-capture-templates
         (doct
-        '(("Todo" :keys "t"
+        `(("Todo" :keys "t"
             :file +org-capture-todo-file
             :icon ("inbox" :set "octicon" :color "yellow")
             :prepend t
@@ -360,6 +360,17 @@ see at any moment.
                             :todo-state "WAIT")
                         ("[?]" :keys "W"
                             :todo-state "[?]")))
+          ("Calendar Event" :keys "a"
+           :file ,(alist-get org-gcal-changes-id org-gcal-file-alist)
+           :hook org-gcal-post-at-point
+           :calendar-id ,org-gcal-changes-id
+           :template ("* %^{Description}"
+                      ":PROPERTIES:"
+                      ":calendar-id: %{calendar-id}"
+                      ":END:"
+                      ":org-gcal:"
+                      "%^{Start}T--%^{End}T"
+                      ":END:"))
           ("University" :keys "u"
            :file +org-capture-todo-file
            :icon ("graduation-cap" :set "faicon" :color "purple")
@@ -376,8 +387,7 @@ see at any moment.
                                   "** TODO Download PDF"
                                   "** TODO Solve Problems"
                                   "*** [ ] %?"
-                                  "** TODO Upload Solutions"))))
-          ))))
+                                  "** TODO Upload Solutions"))))))))
     #+END_SRC
 
 *** Crypt
