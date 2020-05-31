@@ -43,7 +43,7 @@
  vi-tilde-fringe
  (window-select +numbers)
  workspaces
- ;; zen
+ zen
 
  :editor
  (evil +everywhere)
@@ -76,7 +76,7 @@
 
  :checkers
  syntax
- ;; (spell +aspell)
+(spell +aspell)
  ;; grammar
 
  :tools
