@@ -325,7 +325,7 @@ see at any moment.
 **** Calendar
 #+BEGIN_SRC emacs-lisp
 (use-package! org-gcal
-  :defer 3
+  :defer 1
   :config
   (setq org-gcal-directory (expand-file-name ".gcal" org-directory))
   (pushnew org-gcal-directory org-agenda-files )
@@ -441,7 +441,7 @@ available from my phone is just too convenient, but it's nice to be able to
 start it from Emacs from time to time, especially automatically, when journaling.
 #+BEGIN_SRC emacs-lisp
 (use-package! org-toggl
-  :defer 3
+  :defer 1
   :config
   (load-library (expand-file-name "toggl-auth-token.el.gpg" (getenv "DOOMDIR")))
   (setq org-toggl-inherit-toggl-properties t)
