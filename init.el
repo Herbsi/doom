@@ -91,7 +91,7 @@
  (lookup
   +dictionary
   +docsets)
- lsp
+ (lsp +eglot)
  ;; macos
  magit
  ;; make
