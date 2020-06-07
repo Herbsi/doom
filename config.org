@@ -289,11 +289,10 @@ see at any moment.
           ("ut" "Todo"
            ((org-ql-block '(and (category "University")
                                 (not (or (tags "Assignment")
-                                         (todo "DONE" "PROJ" "WAIT" "HOLD"))))
+                                         (todo "DONE" "PROJ" "WAIT" "HOLD" "[X]" "KILL"))))
                            ((org-super-agenda-groups
                              `((:deadline t)
-                               ,@herwig/agenda-lv-groups
-                               (:discard (:not (:todo t)))))))))
+                               ,@herwig/agenda-lv-groups))))))
           ("us" "Shut Down"
            ((agenda "" ((org-agenda-start-day "today")
                         (org-agenda-span 2)
@@ -308,7 +307,7 @@ see at any moment.
                             :anything t)))))
             (org-ql-block '(and (category "University")
                                 (not (or (scheduled :from tomorrow)
-                                         (todo "DONE" "PROJ" "WAIT" "HOLD" "[X]"))))
+                                         (todo "DONE" "PROJ" "WAIT" "HOLD" "[X]" "KILL"))))
                           ((org-super-agenda-groups
                             `(,@herwig/agenda-lv-groups
                               (:discard (:not (:todo t)))))
