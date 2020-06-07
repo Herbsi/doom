@@ -471,27 +471,19 @@ to make something like this on my own.
         (doct
         `(("Todo" :keys "t"
             :file +org-capture-todo-file
-            :icon ("inbox" :set "octicon" :color "yellow")
+            :icon ("inbox" :set "octicon" :color "purple")
             :prepend t
             :headline "Inbox"
             :template ("* %{todo-state} %?"
-                    "%i %a")
+                       "%i %a")
             :children (("TODO" :keys "t"
+                        :icon ("check_box" :set "material" :color "purple")
                         :todo-state "TODO")
                         ("[ ]" :keys "T"
-                            :todo-state "[ ]")
-                        ("- [ ]" :keys "c"
-                            :type checkitem
-                            :template ("[ ] %^{Description}"
-                                    "%?"))
-                        ("HOLD" :keys "h"
-                            :todo-state "HOLD")
-                        ("WAIT" :keys "w"
-                            :todo-state "WAIT")
-                        ("[?]" :keys "W"
-                            :todo-state "[?]")))
+                        :todo-state "[ ]")))
             ("Calendar Event" :keys "a"
             :file ,(alist-get org-gcal-changes-id org-gcal-file-alist)
+            :icon ("event_note" :set "material" :color "blue")
             :hook org-gcal-post-at-point
             :calendar-id ,org-gcal-changes-id
             :template ("* %^{Description}"
@@ -503,7 +495,7 @@ to make something like this on my own.
                         ":END:"))
             ("University" :keys "u"
             :file +org-capture-todo-file
-            :icon ("graduation-cap" :set "faicon" :color "purple")
+            :icon ("graduation-cap" :set "faicon" :color "yellow")
             :prepend t
             :headline "Inbox"
             :children (("Übungszettel"
@@ -520,6 +512,7 @@ to make something like this on my own.
                                     "** TODO Upload Solutions"))
                         ("Exam"
                         :keys "p"
+                        :icon ("local_library" :set "material" :color "green")
                         :template ("* TODO VO Prüfung machen"
                                     ":PROPERTIES:"
                                     ":ORDERED:  t"
