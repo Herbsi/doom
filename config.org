@@ -335,57 +335,71 @@ see at any moment.
   "X" nil)
 
 (after! (org-capture org-gcal)
-    (setq org-capture-templates
-        (doct
-        `(("Todo" :keys "t"
-            :file +org-capture-todo-file
-            :icon ("inbox" :set "octicon" :color "yellow")
-            :prepend t
-            :headline "Inbox"
-            :template ("* %{todo-state} %?"
-                    "%i %a")
-            :children (("TODO" :keys "t"
-                        :todo-state "TODO")
-                        ("[ ]" :keys "T"
-                            :todo-state "[ ]")
-                        ("- [ ]" :keys "c"
-                            :type checkitem
-                            :template ("[ ] %^{Description}"
-                                    "%?"))
-                        ("HOLD" :keys "h"
-                            :todo-state "HOLD")
-                        ("WAIT" :keys "w"
-                            :todo-state "WAIT")
-                        ("[?]" :keys "W"
-                            :todo-state "[?]")))
-          ("Calendar Event" :keys "a"
-           :file ,(alist-get org-gcal-changes-id org-gcal-file-alist)
-           :hook org-gcal-post-at-point
-           :calendar-id ,org-gcal-changes-id
-           :template ("* %^{Description}"
-                      ":PROPERTIES:"
-                      ":calendar-id: %{calendar-id}"
-                      ":END:"
-                      ":org-gcal:"
-                      "%^{Start}T--%^{End}T"
-                      ":END:"))
-          ("University" :keys "u"
-           :file +org-capture-todo-file
-           :icon ("graduation-cap" :set "faicon" :color "purple")
-           :prepend t
-           :headline "Inbox"
-           :children (("Übungszettel"
-                       :keys "u"
-                       :icon ("library_books" :set "material" :color "orange")
-                       :template ("* TODO %^{No}. Übungszettel :Assignment:"
-                                  "DEADLINE: %^{Due date}T"
-                                  ":PROPERTIES:"
-                                  ":ORDERED:  t"
-                                  ":END:"
-                                  "** TODO Download PDF"
-                                  "** TODO Solve Problems"
-                                  "*** [ ] %?"
-                                  "** TODO Upload Solutions"))))))))
+    (add-transient-hook! 'org-capture-select-template
+        (setq org-capture-templates
+            (doct
+            `(("Todo" :keys "t"
+                :file +org-capture-todo-file
+                :icon ("inbox" :set "octicon" :color "yellow")
+                :prepend t
+                :headline "Inbox"
+                :template ("* %{todo-state} %?"
+                        "%i %a")
+                :children (("TODO" :keys "t"
+                            :todo-state "TODO")
+                            ("[ ]" :keys "T"
+                                :todo-state "[ ]")
+                            ("- [ ]" :keys "c"
+                                :type checkitem
+                                :template ("[ ] %^{Description}"
+                                        "%?"))
+                            ("HOLD" :keys "h"
+                                :todo-state "HOLD")
+                            ("WAIT" :keys "w"
+                                :todo-state "WAIT")
+                            ("[?]" :keys "W"
+                                :todo-state "[?]")))
+                ("Calendar Event" :keys "a"
+                :file ,(alist-get org-gcal-changes-id org-gcal-file-alist)
+                :hook org-gcal-post-at-point
+                :calendar-id ,org-gcal-changes-id
+                :template ("* %^{Description}"
+                            ":PROPERTIES:"
+                            ":calendar-id: %{calendar-id}"
+                            ":END:"
+                            ":org-gcal:"
+                            "%^{Start}T--%^{End}T"
+                            ":END:"))
+                ("University" :keys "u"
+                :file +org-capture-todo-file
+                :icon ("graduation-cap" :set "faicon" :color "purple")
+                :prepend t
+                :headline "Inbox"
+                :children (("Übungszettel"
+                            :keys "u"
+                            :icon ("library_books" :set "material" :color "orange")
+                            :template ("* TODO %^{No}. Übungszettel :Assignment:"
+                                        "DEADLINE: %^{Due date}T"
+                                        ":PROPERTIES:"
+                                        ":ORDERED:  t"
+                                        ":END:"
+                                        "** TODO Download PDF"
+                                        "** TODO Solve Problems"
+                                        "*** [ ] %?"
+                                        "** TODO Upload Solutions"))
+                           ("Exam"
+                            :keys "p"
+                            :template ("* TODO VO Prüfung machen"
+                                       ":PROPERTIES:"
+                                       ":ORDERED:  t"
+                                       ":END:"
+                                       "** TODO Prepare"
+                                       ":PROPERTIES:"
+                                       ":ORDERED:  nil"
+                                       ":END:"
+                                       "*** TODO Termin ausmachen :email:"
+                                       "*** TODO [#D] Karteikarten schreiben"
+                                       "** TODO Lernen")))))))))
     #+END_SRC
 
 *** Crypt
