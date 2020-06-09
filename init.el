@@ -76,7 +76,7 @@
 
  :checkers
  syntax
-(spell +aspell)
+ (spell +aspell)
  ;; grammar
 
  :tools
