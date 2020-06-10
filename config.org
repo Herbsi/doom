@@ -323,6 +323,13 @@ see at any moment.
   (pushnew org-gcal-directory org-agenda-files )
   (load-library (expand-file-name "gcal-credentials.el.gpg" (getenv "DOOMDIR"))))
 #+END_SRC
+*** Anki
+#+BEGIN_SRC emacs-lisp
+(use-package anki-editor
+  :after org
+  :init
+  (setq-default anki-editor-use-math-jax t))
+#+END_SRC
 *** Capture
 #+BEGIN_SRC emacs-lisp
 (use-package! doct
