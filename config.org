@@ -153,6 +153,13 @@ I disable the frequent, verbose summary messages.
   (setq haskell-interactive-popup-errors nil))
 #+END_SRC
 ** LaTeX
+*** Auto LaTeX Snippet
+#+BEGIN_SRC emacs-lisp
+(use-package! auto-latex-snippets
+  :hook (LaTeX-mode . auto-latex-snippets-mode)
+  :config
+  (add-hook 'als-post-snippet-expand-hook #'+latex-fold-last-macro-a))
+#+END_SRC
 *** Visuals
 #+BEGIN_SRC emacs-lisp
 (add-hook! LaTeX-mode #'mixed-pitch-mode)
