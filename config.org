@@ -124,11 +124,6 @@ I disable the frequent, verbose summary messages.
 (after! direnv
   (setq direnv-always-show-summary nil))
 #+END_SRC
-** Evil-Tex
-#+BEGIN_SRC emacs-lisp
-(use-package! evil-tex
-  :hook (latex-mode . evil-tex-mode))
-#+END_SRC
 ** Hercules
 #+BEGIN_SRC emacs-lisp
 (use-package! hercules
@@ -161,6 +156,11 @@ I disable the frequent, verbose summary messages.
   :hook (LaTeX-mode . auto-latex-snippets-mode)
   :config
   (add-hook 'als-post-snippet-expand-hook #'+latex-fold-last-macro-a))
+#+END_SRC
+*** Evil-Tex
+#+BEGIN_SRC emacs-lisp
+(use-package! evil-tex
+  :hook (LaTeX-mode . evil-tex-mode))
 #+END_SRC
 *** Visuals
 #+BEGIN_SRC emacs-lisp

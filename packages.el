@@ -4,7 +4,7 @@
 (package! anki-editor)
 (package! auto-latex-snippets
   :recipe (:host github :repo "tecosaur/Auto-LaTeX-Snippets"))
-(package! evil-tex :recipe (:host github :repo "itai33/evil-tex") :pin "81e89a9760ae927b28ceb15699d4bf7c8f602a0b")
+(package! evil-tex :recipe (:host github :repo "itai33/evil-tex") :pin "f199afd926c2f920663e8aeb42c4310e05c90228")
 (package! hercules :recipe (:host gitlab :repo "jjzmajic/hercules.el") :pin "557da39878d0637395fdded91243b340c37eff7b")
 (package! literate-calc-mode)
 (package! mixed-pitch)
