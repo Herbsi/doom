@@ -13,6 +13,9 @@
 (package! org-super-agenda :pin "dd0d104c269fab9ebe5af7009bc1dd2a3a8f3c12")
 (package! org-toggl :recipe (:host github :repo "mbork/org-toggl") :pin "40b5353dc58e635ba2e80e3e4471b74941d535cb")
 
+(package! zenburn-emacs
+  :recipe (:host github :repo "bbatsov/zenburn-emacs"))
+
 ;; Needed for org-gcal
 (package! org-gcal :pin "2ee2b31547e6f4e33db70fb812d552e55d612fd6")
 (package! alert)

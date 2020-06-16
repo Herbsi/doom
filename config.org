@@ -28,6 +28,7 @@
  x-stretch-cursor t)                              ; Stretch cursor to the glyph width
 
 (setq sentence-end-double-space t                 ; the only correct choice
+      auto-save-default t
       default-input-method "german-postfix"       ; for when I need to type ä, ö, ü or ß
       evil-want-fine-undo t                       ; the finer the undo, the better
       inhibit-compacting-font-caches t            ; when there are a lot of glyphs, keep them in memory
@@ -83,12 +84,13 @@ TODO set the correct sizes.
 #+BEGIN_SRC emacs-lisp
 (setq doom-font (font-spec :family "Fira Code" :size (if IS-MAC 14.0 11.0))
       doom-big-font (font-spec :family "Fira Code" :size (if IS-MAC 18.0 14.0))
-      doom-variable-pitch-font (font-spec :family "Overpass" :size 14.0))
+      doom-variable-pitch-font (font-spec :family "Overpass" :size 14.0)
+      zenburn-use-variable-pitch t)
 #+END_SRC
 ** Theme
 This is subject to frequent change.
 #+BEGIN_SRC emacs-lisp
-(setq doom-theme 'doom-vibrant)
+(setq doom-theme 'zenburn)
 #+END_SRC
 ** Misc
 #+BEGIN_SRC emacs-lisp
@@ -483,15 +485,7 @@ start it from Emacs from time to time, especially automatically, when journaling
 **** Fonts
 Make headings bigger.
 #+BEGIN_SRC emacs-lisp
-(custom-set-faces!
-  '(outline-1 :weight extra-bold :height 1.25)
-  '(outline-2 :weight bold :height 1.15)
-  '(outline-3 :weight bold :height 1.12)
-  '(outline-4 :weight semi-bold :height 1.09)
-  '(outline-5 :weight semi-bold :height 1.06)
-  '(outline-6 :weight semi-bold :height 1.03)
-  '(outline-8 :weight semi-bold)
-  '(outline-9 :weight semi-bold))
+(setq zenburn-scale-org-headlines t)
 #+END_SRC
 **** Symbols
 I took these symbols from the amazing [[https://tecosaur.github.io/emacs-config/config.html][doom configuration]] of *@tecosaur* and stole
