@@ -131,7 +131,7 @@
  ;; json
  ;; julia
  ;; kotlin
- (latex +cdlatex +fold +latexmk)
+ (latex +fold +latexmk)
  ;; lean
  ;; ledger
  ;; lua
