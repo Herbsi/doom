@@ -15,8 +15,7 @@
  (ivy
   +prescient
   ;; +fuzzy
-  +childframe
-  +icons)
+  +childframe)
 
  :ui
  ;; deft
@@ -61,8 +60,7 @@
 
  :emacs
  (dired
-  +ranger
-  +icons)
+  +ranger)
  electric
  ibuffer
  (undo +tree)
@@ -131,7 +129,7 @@
  ;; json
  ;; julia
  ;; kotlin
- (latex +cdlatex +fold +latexmk)
+ (latex +fold +latexmk)
  ;; lean
  ;; ledger
  ;; lua
