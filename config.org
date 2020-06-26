@@ -291,7 +291,7 @@ available from my phone is just too convenient, but it's nice to be able to
 start it from Emacs from time to time, especially automatically, when journaling.
 #+BEGIN_SRC emacs-lisp
 (use-package! org-toggl
-  :defer 1
+  :after org-journal
   :config
   (load-library (expand-file-name "toggl-auth-token.el.gpg" (getenv "DOOMDIR")))
   (setq org-toggl-inherit-toggl-properties t)
