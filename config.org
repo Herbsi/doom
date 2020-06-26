@@ -697,6 +697,10 @@ Use Unicode characters for check boxes and some other commands.
     :priority_e    "[#E]"
     :em_dash       "---"))
 #+END_SRC
+** Rust
+#+BEGIN_SRC emacs-lisp
+(setq rustic-lsp-server 'rust-analyzer)
+#+END_SRC
 ** Scheme
 Currently, I'm only using Scheme for SICP, for which I use the MIT Scheme implementation.
 #+BEGIN_SRC emacs-lisp
