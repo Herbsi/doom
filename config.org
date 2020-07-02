@@ -296,7 +296,7 @@ start it from Emacs from time to time, especially automatically, when journaling
 (use-package! org-toggl
   :after org-journal
   :config
-  (load-library (expand-file-name "toggl-auth-token.el.gpg" (getenv "DOOMDIR")))
+  (load-library (expand-file-name "toggl-auth-token.el.gpg" doom-private-dir))
   (setq org-toggl-inherit-toggl-properties t)
   (toggl-get-projects))
 #+END_SRC
