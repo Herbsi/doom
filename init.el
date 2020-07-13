@@ -135,7 +135,7 @@
  ;; lua
  ;; markdown
  ;; nim
- nix
+ ;; nix
  ;; ocaml
  (org
   +dragndrop
