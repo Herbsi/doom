@@ -37,6 +37,7 @@
 
 (delete-selection-mode 1)                         ; Replace selection when inserting text
 (global-subword-mode 1)                           ; Iterate through CamelCase words
+(global-hl-line-mode 1)                           ; Highlight cursor line
 #+END_SRC
 *** Keybindings
 I find ibuffer incredibly useful for buffer management, and closing multiple buffers at once.
@@ -93,7 +94,7 @@ I use a different on my two computers.
 ** Theme
 This is subject to frequent change.
 #+BEGIN_SRC emacs-lisp
-(setq doom-theme 'zenburn)
+(setq doom-theme 'doom-nord)
 #+END_SRC
 ** Misc
 #+BEGIN_SRC emacs-lisp
