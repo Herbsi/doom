@@ -92,7 +92,7 @@ I use a different on my two computers.
 ** Theme
 This is subject to frequent change.
 #+BEGIN_SRC emacs-lisp
-(setq doom-theme 'doom-nord)
+(setq doom-theme (if (string= "herwig" user-login-name) 'doom-nord 'zenburn))
 #+END_SRC
 ** Misc
 #+BEGIN_SRC emacs-lisp
