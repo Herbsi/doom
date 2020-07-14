@@ -1,8 +1,5 @@
 ;;; ~/.config/doom/init.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here
-(put 'narrow-to-region 'disabled nil)
-
 (doom!
  :input
  ;; chinese
