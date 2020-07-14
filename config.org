@@ -10,14 +10,12 @@
       user-mail-address "herwig.hoehenberger@gmail.com"
       epa-file-encrypt-to user-mail-address)
 #+END_SRC
-*** University Variables
+
+Don't store authinfo in ~~/.config/emacs~, I have run ~rm -rf ~~/.config/emacs~
+before.
 #+BEGIN_SRC emacs-lisp
-(setq herwig/agenda-lv-groups
-      ;; Org-Super-Agenda groups for grouping by class
-      '((:name "Funktional Analysis" :tag "Funktional_Analysis")
-        (:name "Einführing in die Algebra" :tag "Einfd_Algebra")
-        (:name "Wahrscheinlichkeitstheorie" :tag "Wahrscheinlichkeitstheorie")
-        (:name "Optimierung 1" :tag "Optimierung_1")))
+(setq auth-sources '("~/.secrets/authinfo.gpg")
+      auth-source-cache-expiry nil)
 #+END_SRC
 ** Better Defaults
 *** Simple Settings
@@ -86,8 +84,8 @@ Previews are also nice.
 ** Font
 I use a different on my two computers.
 #+BEGIN_SRC emacs-lisp
-(setq doom-font (font-spec :family "Fira Code" :size (if IS-MAC 14.0 11.0))
-      doom-big-font (font-spec :family "Fira Code" :size (if IS-MAC 18.0 14.0))
+(setq doom-font (font-spec :family "Fira Code" :size 14.0)
+      doom-big-font (font-spec :family "Fira Code" :size 18.0)
       doom-variable-pitch-font (font-spec :family "Overpass" :size 14.0)
       zenburn-use-variable-pitch t)
 #+END_SRC
