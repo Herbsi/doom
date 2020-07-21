@@ -18,11 +18,11 @@
  ;; deft
  doom
  ;; doom-dashboard
- doom-quit
+ ;; doom-quit
  ;; fill-column
  hl-todo
  ;; hydra
- ;; indent-guides
+ indent-guides
  minimap
  (modeline +light)
  nav-flash
@@ -33,10 +33,10 @@
   +defaults)
  pretty-code
  ;; tabs
- ;; treemacs
+ treemacs
  ;; unicode
  vc-gutter
- vi-tilde-fringe
+ ;; vi-tilde-fringe
  (window-select +numbers)
  workspaces
  zen
@@ -86,7 +86,7 @@
  (lookup
   +dictionary
   +docsets)
- (lsp +eglot)
+ (lsp +peek)
  ;; macos
  magit
  ;; make
