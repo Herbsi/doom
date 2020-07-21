@@ -8,7 +8,7 @@
 #+BEGIN_SRC emacs-lisp
 (setq user-full-name "Herwig Hoehenberger"
       user-mail-address "herwig.hoehenberger@gmail.com"
-      epa-file-encrypt-to user-mail-address)
+      epa-file-encrypt-to "9C167EE7C9D3CA5D8C35807A1DCF474EE53A950D")
 #+END_SRC
 
 Don't store authinfo in ~~/.config/emacs~, I have run ~rm -rf ~~/.config/emacs~
