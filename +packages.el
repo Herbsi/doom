@@ -9,7 +9,7 @@
 
 ;; Company
 (after! company
-  (setq company-idle-delay 0.01))
+  (setq company-idle-delay nil))
 
 ;; Direnv
 ; Disable frequent, verbose summary messages
