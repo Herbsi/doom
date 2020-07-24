@@ -10,7 +10,6 @@
  org-export-in-background t
  org-list-allow-alphabetical t)
 
-
 ;; Anki
 (use-package anki-editor
   :after org
@@ -24,7 +23,7 @@
         org-crypt-key "F1653669C24076F7"))
 
 ;; org-journal
-(setq org-journal-dir (expand-file-name "Journal" org-directory))
+(setq org-journal-dir (expand-file-name "Journal" (getenv "HOME")))
 (after! org-journal
   (setq org-journal-file-format "1%Y/%m %B.org" ;; e.g. 12019/04 April.org
         org-journal-encrypt-journal t
@@ -53,9 +52,6 @@ Sets up everything the way I want it to be when journaling."
  (:prefix ("n" . "notes")
   :desc "Org Journal" "j" #'org-journal-new-entry))
 
-;; org-roam
-(setq org-roam-directory (expand-file-name "Cerebro" org-directory))
-
 ;; org-toggl
 (use-package! org-toggl
   :after org-journal
@@ -65,18 +61,10 @@ Sets up everything the way I want it to be when journaling."
   (toggl-get-projects))
 
 ;; Visuals
-(add-hook! org-mode #'(+org-pretty-mode mixed-pitch-mode))
+(add-hook! org-mode #'mixed-pitch-mode)
 
 ;; Symbols
-;; Source: [[https://tecosaur.github.io/emacs-config/config.html][doom configuration]]
 (after! org
   (setq org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")
-        org-super-star-prettify-item-bullets t)
-  (setq org-ellipsis " ▼ "
-        org-priority-highest ?A
-        org-priority-lowest ?E
-        org-priority-faces '((?A . 'all-the-icons-red)
-                             (?B . 'all-the-icons-orange)
-                             (?C . 'all-the-icons-yellow)
-                             (?D . 'all-the-icons-green)
-                             (?E . 'all-the-icons-blue))))
+        org-super-star-prettify-item-bullets t
+        org-ellipsis " ▼ "))
