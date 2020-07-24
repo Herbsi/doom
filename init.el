@@ -22,7 +22,7 @@
  ;; fill-column
  hl-todo
  ;; hydra
- indent-guides
+ ;; indent-guides
  minimap
  (modeline +light)
  nav-flash
@@ -31,11 +31,11 @@
  (popup
   ;; +all
   +defaults)
- pretty-code
+ ;; pretty-code
  ;; tabs
  treemacs
  ;; unicode
- vc-gutter
+ ;; vc-gutter
  ;; vi-tilde-fringe
  (window-select +numbers)
  workspaces

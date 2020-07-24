@@ -12,7 +12,7 @@
   (setq company-idle-delay nil))
 
 ;; Direnv
-; Disable frequent, verbose summary messages
+;; Disable frequent, verbose summary messages
 (after! direnv
   (setq direnv-always-show-summary nil))
 
@@ -25,7 +25,7 @@
    :keymap 'macrostep-keymap))
 
 ;; Which Key
-; make evil prefixes in which-key more compact
+;; make evil prefixes in which-key more compact
 (after! which-key
   (setq which-key-idle-delay 0.5)
   (setq which-key-allow-multiple-replacements t)
