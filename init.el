@@ -86,7 +86,7 @@
  (lookup
   +dictionary
   +docsets)
- (lsp +peek)
+ (lsp +eglot)
  ;; macos
  magit
  ;; make
