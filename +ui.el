@@ -7,7 +7,7 @@
       zenburn-use-variable-pitch t)
 
 ;; Theme
-(setq doom-theme (if (string= "herwig" user-login-name) 'doom-nord 'zenburn))
+(setq doom-theme (if (string= "herwig" user-login-name) 'doom-nord 'doom-zenburn))
 
 ;; Misc
 (setq display-line-numbers-type nil
