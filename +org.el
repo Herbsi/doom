@@ -3,7 +3,7 @@
 ;; General
 ;; Set defaults
 (setq
- org-directory (expand-file-name "Org" (getenv "HOME"))
+ org-directory (expand-file-name ".org" (getenv "HOME"))
  org-archive-location (expand-file-name ".archive/%s::" org-directory)
  org-blank-before-new-entry '((heading . nil) (plain-list-item . nil))
  org-catch-invisible-edits 'smart
@@ -43,6 +43,7 @@ Sets up everything the way I want it to be when journaling."
       (doom/window-maximize-buffer)
       (evil-scroll-line-to-top (line-number-at-pos))
       (evil-scroll-line-up 2)
+      (writegood-mode)
       (writeroom-mode)
       (turn-on-flyspell)))
   (add-hook! org-journal-after-entry-create #'herwig/setup-entry))
