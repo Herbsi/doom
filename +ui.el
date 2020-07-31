@@ -18,4 +18,8 @@
       show-help-function nil
       show-paren-delay 0)
 
+;; Show scrollbars
+(scroll-bar-mode +1)
+
+;; Maximize on startup
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
