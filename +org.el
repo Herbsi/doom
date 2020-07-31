@@ -3,7 +3,7 @@
 ;; General
 ;; Set defaults
 (setq
- org-directory (expand-file-name ".org" (getenv "HOME"))
+ org-directory (expand-file-name "Org" (getenv "HOME"))
  org-archive-location (expand-file-name ".archive/%s::" org-directory)
  org-blank-before-new-entry '((heading . nil) (plain-list-item . nil))
  org-catch-invisible-edits 'smart
@@ -51,6 +51,9 @@ Sets up everything the way I want it to be when journaling."
  :leader
  (:prefix ("n" . "notes")
   :desc "Org Journal" "j" #'org-journal-new-entry))
+
+;; org-roam
+(setq org-roam-directory (expand-file-name "Cerebro" (getenv "HOME")))
 
 ;; org-toggl
 (use-package! org-toggl
