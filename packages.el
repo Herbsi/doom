@@ -10,5 +10,3 @@
 (package! magit-delta :pin "d988abd99882c6b89f21f2746f721a4d7ece6ad4")
 (package! mixed-pitch)
 (package! org-toggl :recipe (:host github :repo "mbork/org-toggl") :pin "40b5353dc58e635ba2e80e3e4471b74941d535cb")
-(package! writegood-mode
-  :recipe (:host github :repo "bnbeckwith/writegood-mode") :pin "b71757ec337e226909fb0422f0224e31acc71733")

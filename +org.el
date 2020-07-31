@@ -43,7 +43,6 @@ Sets up everything the way I want it to be when journaling."
       (doom/window-maximize-buffer)
       (evil-scroll-line-to-top (line-number-at-pos))
       (evil-scroll-line-up 2)
-      (writegood-mode)
       (writeroom-mode)
       (turn-on-flyspell)))
   (add-hook! org-journal-after-entry-create #'herwig/setup-entry))
@@ -58,8 +57,8 @@ Sets up everything the way I want it to be when journaling."
   :after org-journal
   :config
   (load-library (expand-file-name "toggl-auth-token.el.gpg" doom-private-dir))
-  (setq org-toggl-inherit-toggl-properties t)
-  (toggl-get-projects))
+  (setq org-toggl-inherit-toggl-properties t))
+
 
 ;; Visuals
 (add-hook! org-mode #'mixed-pitch-mode)

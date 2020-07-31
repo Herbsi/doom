@@ -72,7 +72,7 @@
  :checkers
  syntax
  (spell +aspell)
- ;; grammar
+ grammar
 
  :tools
  ;; ansible
