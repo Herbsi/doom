@@ -76,6 +76,7 @@
 
  :tools
  ;; ansible
+ biblio
  ;; debugger
  direnv
  ;; docker
@@ -87,7 +88,7 @@
   +dictionary
   +docsets)
  (lsp +eglot)
- ;; macos
+ macos
  magit
  ;; make
  ;; pass
