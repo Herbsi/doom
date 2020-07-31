@@ -23,7 +23,7 @@
  hl-todo
  ;; hydra
  ;; indent-guides
- minimap
+ ;; minimap
  (modeline +light)
  nav-flash
  ;; neotree
