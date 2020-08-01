@@ -23,3 +23,5 @@
 
 ;; Maximize on startup
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+(delete '("x" . 57707) +pretty-code-fira-code-font-ligatures)
