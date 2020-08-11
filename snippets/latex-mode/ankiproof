@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: ankiproof
+# uuid:
+# key:
+# condition: t
+# --
+* Item
+:PROPERTIES:
+:ANKI_DECK: ${1:`(completing-read "Choose a deck: "
+                                      (sort (anki-editor-deck-names) #'string-lessp))`}
+:ANKI_NOTE_TYPE: Proof
+:END:
+** Satz
+$2
+** Beweis
+$3

@@ -12,3 +12,11 @@
 
 ;; Use Mixed Pitch Mode
 (add-hook! LaTeX-mode #'mixed-pitch-mode)
+
+(defun herwig/setup-flashcards ()
+  (interactive)
+  (progn
+    (+default/new-buffer)
+    (LaTeX-mode)
+    (anki-editor-mode)
+    (writeroom-mode)))

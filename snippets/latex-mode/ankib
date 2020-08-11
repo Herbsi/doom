@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# contributor: Herwig Hoehenberger
+# key: ankib
+# name: Anki Basic Card
+# --
+
+* Item
+  :PROPERTIES:
+  :ANKI_DECK: ${1:`(completing-read "Choose a deck: "
+                                      (sort (anki-editor-deck-names) #'string-lessp))`}
+  :ANKI_NOTE_TYPE: Basic
+  :END:
+
+** Front
+  ${3:Front}
+
+** Back
+  ${0:Back}
+
