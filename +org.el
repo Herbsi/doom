@@ -39,7 +39,7 @@
 
 Sets up everything the way I want it to be when journaling."
     (progn
-      (toggl-start-time-entry "Journal" (toggl-get-pid "Solitude") "Journal Timer Started!")
+      (toggl-start-time-entry "Journal" (toggl-get-pid "⛰ Solitude") "Journal Timer Started!")
       (doom/window-maximize-buffer)
       (evil-scroll-line-to-top (line-number-at-pos))
       (evil-scroll-line-up 2)
