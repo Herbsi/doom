@@ -6,10 +6,6 @@
   :config
   (add-hook 'als-post-snippet-expand-hook #'+latex-fold-last-macro-a))
 
-;; Evil-Tex
-(use-package! evil-tex
-  :hook (LaTeX-mode . evil-tex-mode))
-
 ;; Use Mixed Pitch Mode
 (add-hook! LaTeX-mode #'mixed-pitch-mode)
 
