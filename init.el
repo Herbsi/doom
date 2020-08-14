@@ -11,7 +11,7 @@
  ;; ido
  (ivy
   +prescient
-  ;; +fuzzy
+  +fuzzy
   +childframe)
 
  :ui
