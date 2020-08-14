@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Norm
+# key: norm
+# condition: t
+# --
+\norm\{$1\}${2:$(when (> (length yas-text) 0) "^")
+}${2:$(when (> (length yas-text) 1) "{")
+}$2${2:$(when (> (length yas-text) 1) "}")} $0

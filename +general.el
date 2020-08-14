@@ -54,3 +54,7 @@
 ;; Use hard line wrap
 (remove-hook 'text-mode-hook #'visual-line-mode)
 (add-hook 'text-mode-hook #'auto-fill-mode)
+
+;; Allow nested snippet expansion
+(after! yasnippet
+  (setq yas-triggers-in-field t))

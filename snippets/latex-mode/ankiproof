@@ -1,13 +1,17 @@
 # -*- mode: snippet -*-
-# name: ankiproof
-# uuid:
-# key:
+# name: Anki Proof
+# key: ankiproof
 # condition: t
 # --
 * Item
 :PROPERTIES:
-:ANKI_DECK: ${1:`(completing-read "Choose a deck: "
-                                      (sort (anki-editor-deck-names) #'string-lessp))`}
+:ANKI_DECK: ${1:`(if herwig/proof-lv
+                       herwig/proof-lv
+                       (progn
+                        (setq herwig/proof-lv
+                          (completing-read "Choose a deck: "
+                            (sort (anki-editor-deck-names) #'string-lessp)))
+                        herwig/proof-lv))`}
 :ANKI_NOTE_TYPE: Proof
 :END:
 ** Satz

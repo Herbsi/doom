@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Bilinear Form
+# key: sp
+# condition: t
+# --
+\langle ${1:x}, ${2:y}\rangle $0
