@@ -10,8 +10,9 @@
 
 ;; Rust
 (setq rustic-lsp-server 'rust-analyzer)
-(after! eglot
-  (add-to-list 'eglot-server-programs '(rust-mode . "rust-analyzer")))
+(after! rustic
+  (setq ;; rustic-lsp-server 'rust-analyzer
+        rustic-lsp-client 'eglot))
 
 ;; Scheme
 (after! geiser
