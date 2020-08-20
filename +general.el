@@ -61,10 +61,10 @@
 
 
 (map!
- :i "M-a" (cmd! (insert-char (char-from-name "LATIN SMALL LETTER A WITH DIAERESIS")))
- :i "M-o" (cmd! (insert-char (char-from-name "LATIN SMALL LETTER O WITH DIAERESIS")))
- :i "M-u" (cmd! (insert-char (char-from-name "LATIN SMALL LETTER U WITH DIAERESIS")))
- :i "M-s" (cmd! (insert-char (char-from-name "LATIN SMALL LETTER SHARP S")))
- :i "M-A" (cmd! (insert-char (char-from-name "LATIN CAPITAL LETTER A WITH DIAERESIS")))
- :i "M-O" (cmd! (insert-char (char-from-name "LATIN CAPITAL LETTER O WITH DIAERESIS")))
- :i "M-U" (cmd! (insert-char (char-from-name "LATIN CAPITAL LETTER U WITH DIAERESIS"))))
+ :i "M-a" nil
+ :i "M-o" nil
+ :i "M-u" nil
+ :i "M-s" nil
+ :i "M-A" nil
+ :i "M-O" nil
+ :i "M-U" nil)
