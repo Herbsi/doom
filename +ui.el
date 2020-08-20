@@ -1,13 +1,13 @@
 ;;; +ui.el -*- lexical-binding: t; -*-
 
 ;; Font
-(setq doom-font (font-spec :family "Fira Code" :size 13.0)
+(setq doom-font (font-spec :family "Fira Code" :size 14.0)
       doom-big-font (font-spec :family "Fira Code" :size 18.0)
-      doom-variable-pitch-font (font-spec :family "Overpass" :size 13.0)
+      doom-variable-pitch-font (font-spec :family "Overpass" :size 14.0)
       zenburn-use-variable-pitch t)
 
 ;; Theme
-(setq doom-theme (if (string= "herwig" user-login-name) 'doom-nord 'doom-zenburn))
+(setq doom-theme (if (string= "herwig" user-login-name) 'doom-nord 'doom-molokai))
 
 ;; Misc
 (setq display-line-numbers-type nil
@@ -23,5 +23,3 @@
 
 ;; Maximize on startup
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-
-(delete '("x" . 57707) +pretty-code-fira-code-font-ligatures)
