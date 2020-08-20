@@ -31,7 +31,7 @@
  (popup
   ;; +all
   +defaults)
- (pretty-code +fira)
+ ligatures
  ;; tabs
  treemacs
  ;; unicode
@@ -88,7 +88,6 @@
   +dictionary
   +docsets)
  lsp
- macos
  magit
  ;; make
  ;; pass
@@ -99,6 +98,9 @@
  ;; terraform
  ;; tmux
  ;; upload
+
+ :os
+ macos
 
  :lang
  ;; agda
