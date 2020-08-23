@@ -12,11 +12,6 @@
 (after! company
   (setq company-idle-delay nil))
 
-;; Direnv
-;; Disable frequent, verbose summary messages
-(after! direnv
-  (setq direnv-always-show-summary nil))
-
 ;; Hercules
 (use-package! hercules
   :config

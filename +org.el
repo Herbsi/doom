@@ -43,7 +43,6 @@ Sets up everything the way I want it to be when journaling."
       (doom/window-maximize-buffer)
       (evil-scroll-line-to-top (line-number-at-pos))
       (evil-scroll-line-up 2)
-      (writeroom-mode)
       (turn-on-flyspell)))
   (add-hook! org-journal-after-entry-create #'herwig/setup-entry))
 
@@ -65,9 +64,3 @@ Sets up everything the way I want it to be when journaling."
 
 ;; Visuals
 (add-hook! org-mode #'mixed-pitch-mode)
-
-;; Symbols
-(after! org
-  (setq org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷")
-        org-super-star-prettify-item-bullets t
-        org-ellipsis " ▼ "))
