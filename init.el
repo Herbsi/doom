@@ -81,7 +81,7 @@
  direnv
  ;; docker
  editorconfig
- ein
+ ;; ein
  (eval +overlay)
  ;; gist
  (lookup
