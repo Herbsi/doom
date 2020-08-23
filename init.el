@@ -6,13 +6,12 @@
  ;; japanese
 
  :completion
- (company +childframe)
+ company
  ;; helm
  ;; ido
  (ivy
   +prescient
-  +fuzzy
-  +childframe)
+  +fuzzy)
 
  :ui
  ;; deft
@@ -31,15 +30,15 @@
  (popup
   ;; +all
   +defaults)
- ligatures
+ ;; (ligatures +extra)
  ;; tabs
  treemacs
  ;; unicode
- ;; vc-gutter
+ vc-gutter
  ;; vi-tilde-fringe
  (window-select +numbers)
  workspaces
- zen
+ ;; zen
 
  :editor
  (evil +everywhere)
@@ -71,8 +70,8 @@
 
  :checkers
  syntax
- (spell +aspell)
- grammar
+ spell
+ ;; grammar
 
  :tools
  ;; ansible
@@ -101,6 +100,7 @@
 
  :os
  macos
+ tty
 
  :lang
  ;; agda
@@ -133,14 +133,13 @@
  ;; lean
  ;; ledger
  ;; lua
- ;; markdown
+ markdown
  ;; nim
  ;; nix
  ;; ocaml
  (org
   +dragndrop
   +journal
-  +noter
   +roam)
  ;; perl
  ;; php
