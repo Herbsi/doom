@@ -3,6 +3,4 @@
 # key: abs
 # condition: t
 # --
-\abs\{$1\}${2:$(when (> (length yas-text) 0) "^")
-}${2:$(when (> (length yas-text) 1) "{")
-}$2${2:$(when (> (length yas-text) 1) "}")} $0
+\abs\{${1:x}\}$0

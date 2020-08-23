@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: Norm
-# key: norm
+# name: sup
+# key: sup
 # condition: t
 # --
-\norm\{${1:x}\}$0
+\sup$0
