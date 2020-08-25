@@ -59,7 +59,7 @@
 (after! yasnippet
   (setq yas-triggers-in-field t))
 
-
+;; Unbind keys for typing German Umlaute
 (map!
  :i "M-a" nil
  :i "M-o" nil
