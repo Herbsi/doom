@@ -17,6 +17,3 @@
       scroll-bar-mode nil
       show-help-function nil
       show-paren-delay 0)
-
-;; Maximize on startup
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
