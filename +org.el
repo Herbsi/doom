@@ -51,9 +51,6 @@ Sets up everything the way I want it to be when journaling."
  (:prefix ("n" . "notes")
   :desc "Org Journal" "j" #'org-journal-new-entry))
 
-;; org-roam
-(setq org-roam-directory (expand-file-name "Cerebro" (getenv "HOME")))
-
 ;; org-toggl
 (use-package! org-toggl
   :after org-journal
