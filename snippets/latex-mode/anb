@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: Bilinear Form
-# key: sp
+# key: anb
 # condition: t
 # --
-\langle ${1:x}, ${2:y}\rangle $0
+\anb{${1:x}}{${2:y}}$0

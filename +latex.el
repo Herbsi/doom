@@ -65,6 +65,7 @@
         ;; private commands
         ("|{1}|" ("abs"))
         ("‖{1}‖" ("norm"))
+        ("❬{1}, {2}❭" ("anb")) ; explititly using narrower unicode angle brackets
         ("⌊{1}⌋" ("floor"))
         ("⌈{1}⌉" ("ceil"))
         ("⌊{1}⌉" ("round"))
