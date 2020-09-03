@@ -90,7 +90,7 @@
  magit
  ;; make
  ;; pass
- pdf
+ ;; pdf
  ;; prodigy
  ;; rgb
  ;; taskrunner
