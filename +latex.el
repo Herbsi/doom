@@ -41,6 +41,7 @@
         ("≤" ("le"))
         ("≥" ("ge"))
         ("≠" ("ne"))
+        ("∇") ("nabla")
         ;; conviniance shorts -- these don't work nicely ATM
         ;; ("‹" ("left"))
         ;; ("›" ("right"))
