@@ -70,12 +70,12 @@
 
  :checkers
  syntax
- (spell +aspell)
+ ;; (spell +aspell)
  ;; grammar
 
  :tools
  ;; ansible
- biblio
+ ;; biblio
  ;; debugger
  direnv
  ;; docker
@@ -133,13 +133,11 @@
  ;; lean
  ;; ledger
  ;; lua
- markdown
+ ;; markdown
  ;; nim
  ;; nix
  ;; ocaml
- (org
-  +dragndrop
-  +journal)
+ (org +dragndrop)
  ;; perl
  ;; php
  ;; plantuml
