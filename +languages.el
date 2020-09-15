@@ -11,7 +11,7 @@
 ;; Rust
 (setq rustic-lsp-server 'rust-analyzer)
 (after! rustic
-  (setq ;; rustic-lsp-server 'rust-analyzer
+  (setq rustic-lsp-server 'rust-analyzer
         rustic-lsp-client 'eglot))
 
 ;; Scheme

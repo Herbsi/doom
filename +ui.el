@@ -1,10 +1,9 @@
 ;;; +ui.el -*- lexical-binding: t; -*-
 
 ;; Font
-(setq doom-font (font-spec :family "Fira Code" :size 14.0)
-      doom-big-font (font-spec :family "Fira Code" :size 18.0)
-      doom-variable-pitch-font (font-spec :family "Overpass" :size 14.0)
-      zenburn-use-variable-pitch t)
+(setq doom-font (font-spec :family "Fira Mono" :size 14.0)
+      doom-variable-pitch-font (font-spec :family "Overpass" :size 14.0))
+
 
 ;; Theme
 (setq doom-theme (if (string= "herwig" user-login-name) 'doom-nord 'doom-molokai))

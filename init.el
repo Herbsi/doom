@@ -6,10 +6,11 @@
  ;; japanese
 
  :completion
- company
+ (company +childframe)
  ;; helm
  ;; ido
  (ivy
+  +childframe
   +prescient
   +fuzzy)
 
@@ -55,10 +56,9 @@
  ;; word-wrap
 
  :emacs
- (dired
-  +ranger)
- electric
- ibuffer
+ ;; (dired +ranger)
+ ;; electric
+ ;; ibuffer
  (undo +tree)
  vc
 
@@ -83,9 +83,7 @@
  ;; ein
  (eval +overlay)
  ;; gist
- (lookup
-  +dictionary
-  +docsets)
+ ;; (lookup +dictionary +docsets)
  lsp
  magit
  ;; make
@@ -100,7 +98,7 @@
 
  :os
  macos
- tty
+ ;; tty
 
  :lang
  ;; agda
@@ -144,7 +142,7 @@
  ;; purescript
  (python +lsp)
  ;; qt
- ;; racket
+ racket
  ;; rest
  ;; rst
  ;; ruby
