@@ -12,6 +12,10 @@
 (after! company
   (setq company-idle-delay nil))
 
+;; Make autocompletion more consistent with macos
+(map!
+ :i "M-ESC" #'+company/complete)
+
 ;; Hercules
 (use-package! hercules
   :config

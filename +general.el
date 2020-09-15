@@ -1,7 +1,7 @@
 ;;; +general.el -*- lexical-binding: t; -*-
 
 ;; Personal Information
-(setq user-full-name "Herwig Hoehenberger"
+(setq user-full-name "Herwig"
       user-mail-address "herwig.hoehenberger@gmail.com"
       epa-file-encrypt-to "9C167EE7C9D3CA5D8C35807A1DCF474EE53A950D")
 
