@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: xstar
+# key: xast
+# condition: t
+# --
+x^\ast $0

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: C^k
+# key: fck
+# condition: t
+# --
+${1:f} \in \mathcal{C}^{${2:k}} (${3:X}) $0

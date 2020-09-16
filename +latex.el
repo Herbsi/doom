@@ -19,6 +19,7 @@
     ;; (+default/new-buffer)
     (find-file "~/flashcards.tex")
     (anki-editor-mode)
+    (spell-fu-mode -1)
     (setq herwig/proof-lv nil)))
 
 (defun herwig/push-cards ()

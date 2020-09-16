@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Gradient
+# key: grad
+# condition: t
+# --
+\nabla ${1:f}$0
