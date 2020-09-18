@@ -61,10 +61,17 @@
 
 ;; Unbind keys for typing German Umlaute
 (map!
- :i "M-a" nil
- :i "M-o" nil
- :i "M-u" nil
- :i "M-s" nil
- :i "M-A" nil
- :i "M-O" nil
- :i "M-U" nil)
+ :i "M-u a" (cmd! (insert-char #x00E4))
+ :i "M-u o" (cmd! (insert-char #x00F6))
+ :i "M-u u" (cmd! (insert-char #x00FC))
+ :i "M-u A" (cmd! (insert-char #x00C4))
+ :i "M-u O" (cmd! (insert-char #x00D6))
+ :i "M-u U" (cmd! (insert-char #x00DC))
+ :i "M-s" (cmd! (insert-char #x00DF)))
+
+;; Typographic Keybindings
+(map!
+ :i "M-]" (cmd! (insert-char #x2018))
+ :i "M-}" (cmd! (insert-char #x2019))
+ :i "M-[" (cmd! (insert-char #x201C))
+ :i "M-{" (cmd! (insert-char #x201D)))
