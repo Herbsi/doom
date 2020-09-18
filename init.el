@@ -47,7 +47,7 @@
  fold
  (format +onsave)
  ;; god
- ;; lispy
+ lispy
  multiple-cursors
  ;; objed
  ;; parinfer
