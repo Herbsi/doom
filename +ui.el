@@ -4,7 +4,6 @@
 (setq doom-font (font-spec :family "Fira Mono" :size 14.0)
       doom-variable-pitch-font (font-spec :family "Overpass" :size 14.0))
 
-
 ;; Theme
 (setq doom-theme (if (string= "herwig" user-login-name) 'doom-nord 'doom-molokai))
 
