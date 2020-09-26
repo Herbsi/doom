@@ -114,7 +114,7 @@
  ;; elm
  emacs-lisp
  ;; erlang
- ;; ess
+ ess
  ;; faust
  ;; fsharp
  ;; fstar
