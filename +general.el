@@ -17,7 +17,6 @@
 (setq sentence-end-double-space t                 ; the only correct choice
       auto-save-default t
       confirm-kill-emacs nil                      ; Don't ask me if I want to quit
-      default-input-method "german-postfix"       ; for when I need to type ä, ö, ü or ß
       evil-want-fine-undo t                       ; the finer the undo, the better
       inhibit-compacting-font-caches t            ; when there are a lot of glyphs, keep them in memory
       undo-limit 80000000                         ; the more the undo, the better
