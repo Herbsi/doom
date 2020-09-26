@@ -38,7 +38,7 @@
  vc-gutter
  ;; vi-tilde-fringe
  (window-select +numbers)
- workspaces
+ ;; workspaces
  ;; zen
 
  :editor
