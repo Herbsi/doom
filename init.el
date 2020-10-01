@@ -142,7 +142,7 @@
  ;; purescript
  (python +lsp)
  ;; qt
- ;; racket
+ racket
  ;; rest
  ;; rst
  ;; ruby
