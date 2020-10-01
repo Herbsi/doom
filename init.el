@@ -15,7 +15,7 @@
   +fuzzy)
 
  :ui
- ;; deft
+ deft
  doom
  ;; doom-dashboard
  ;; doom-quit
@@ -131,7 +131,7 @@
  ;; lean
  ;; ledger
  ;; lua
- ;; markdown
+ markdown
  ;; nim
  ;; nix
  ;; ocaml
