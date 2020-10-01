@@ -21,3 +21,7 @@
   (org-crypt-use-before-save-magic)
   (setq org-tags-exclude-from-inheritance (quote ("crypt"))
         org-crypt-key "F1653669C24076F7"))
+
+
+;; org-roam
+(setq org-roam-directory (expand-file-name "Cerebro" org-directory))
