@@ -24,4 +24,15 @@
 
 
 ;; org-roam
-(setq org-roam-directory (expand-file-name "Cerebro" org-directory))
+(setq org-roam-directory (expand-file-name "Cerebro" org-directory)
+      org-roam-file-extensions '("org" "md")
+      org-roam-title-sources '((mdtitle title mdheadline headline) (mdalias alias))
+      org-roam-tag-sources '(prop md-frontmatter)
+      org-roam-auto-replace-fuzzy-links nil)
+
+(use-package! md-roam ; load immediately, before org-roam
+  :config
+  (setq md-roam-file-extension-single "md"
+        md-roam-use-org-extract-ref nil
+        md-roam-use-org-file-links nil
+        md-roam-verbose nil))
