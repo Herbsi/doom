@@ -59,7 +59,7 @@
  ;; (dired +ranger)
  ;; electric
  ;; ibuffer
- (undo +tree)
+ undo
  vc
 
  :term
