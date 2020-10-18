@@ -46,6 +46,9 @@
   :after magit
   :hook (magit-mode . magit-delta-mode))
 
+;; Markdown
+(add-hook! markdown-mode #'mixed-pitch-mode)
+
 ;; Split windows to the right and bottom
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
