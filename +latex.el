@@ -4,7 +4,15 @@
       TeX-show-compilation t
       TeX-command-extra-options "-shell-escape"
       font-latex-fontify-script nil ; Don't raise/lower super/subscripts
-      +latex-viewers '(skim pdf-tools))
+      preview-auto-cache-preamble t ; Don't ask, just cache
+      +latex-viewers '(skim))
+(setq-default TeX-engine 'xetex)
+
+(after! latex
+  (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t)))
+
+(set-popup-rule! "^\\*TeX \\(?:Help\\|errors\\)"
+  :size 0.3 :select t :ttl nil)
 
 ;; LaTeX Auto Activating Snippets
 (use-package auto-activating-snippets
