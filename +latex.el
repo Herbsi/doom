@@ -6,11 +6,13 @@
       font-latex-fontify-script nil ; Don't raise/lower super/subscripts
       +latex-viewers '(skim pdf-tools))
 
-;; Auto LaTeX Snippets
-(use-package! auto-latex-snippets
-  :hook (LaTeX-mode . auto-latex-snippets-mode)
-  :config
-  (add-hook 'als-post-snippet-expand-hook #'+latex-fold-last-macro-a))
+;; LaTeX Auto Activating Snippets
+(use-package auto-activating-snippets
+  :hook (LaTeX-mode . auto-activating-snippets-mode))
+
+(use-package! latex-auto-activating-snippets
+  :after latex ; auctex's LaTeX package
+  :config)
 
 (defun herwig/setup-flashcards ()
   "Sets up current buffer for writing math flashcards."
