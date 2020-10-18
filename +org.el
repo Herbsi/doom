@@ -34,5 +34,5 @@
   :config
   (setq md-roam-file-extension-single "md"
         md-roam-use-org-extract-ref nil
-        md-roam-use-org-file-links nil
+        ;; md-roam-use-org-file-links nil
         md-roam-verbose nil))
