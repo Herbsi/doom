@@ -5,7 +5,20 @@
       doom-variable-pitch-font (font-spec :family "Century Supra T4" :size 14.0))
 
 ;; Theme
-(setq doom-theme (if (string= "herwig" user-login-name) 'doom-nord 'doom-molokai))
+(defun set-system-dark-mode ()
+  (interactive)
+  (if (string-equal "true" (ns-do-applescript "tell application \"System Events\"
+	tell appearance preferences
+		if (dark mode) then
+			return \"true\"
+		else
+			return \"false\"
+		end if
+	end tell
+end tell"))
+      (setq doom-theme 'doom-nord)
+    (setq doom-theme 'doom-solarized-light)))
+(set-system-dark-mode)
 
 ;; Misc
 (setq display-line-numbers-type nil
