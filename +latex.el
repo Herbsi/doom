@@ -40,7 +40,13 @@
     (anki-editor-push-notes)
     (LaTeX-mode)))
 
-(add-hook! latex-mode #'mixed-pitch-mode)
+;; All hail mixed-pitch-mode
+(add-hook! LaTeX-mode #'mixed-pitch-mode)
+
+;; Please compile on save
+(add-hook! 'LaTeX-mode-hook
+  (add-hook! 'after-save-hook :local
+    (TeX-command "LatexMk" 'TeX-master-file)))
 
 ;; Kindly borrowed from @tecosaur (pretty much all of the below)
 (after! latex
