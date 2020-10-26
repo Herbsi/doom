@@ -43,11 +43,6 @@
 ;; All hail mixed-pitch-mode
 (add-hook! LaTeX-mode #'mixed-pitch-mode)
 
-;; Please compile on save
-(add-hook! 'LaTeX-mode-hook
-  (add-hook! 'after-save-hook :local
-    (TeX-command "LatexMk" 'TeX-master-file)))
-
 ;; Kindly borrowed from @tecosaur (pretty much all of the below)
 (after! latex
   (setcar (assoc "⋆" LaTeX-fold-math-spec-list) "★")) ;; make \star bigger
