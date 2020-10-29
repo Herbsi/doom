@@ -6,4 +6,3 @@
 (load! "+org.el")
 (load! "+packages.el")
 (load! "+ui.el")
-(load! "+bindings.el")
