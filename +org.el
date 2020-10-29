@@ -10,6 +10,8 @@
  org-export-in-background t
  org-list-allow-alphabetical t)
 
+(add-hook! org-mode #'mixed-pitch-mode)
+
 ;; Anki
 (use-package anki-editor
   :after org
