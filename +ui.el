@@ -17,7 +17,7 @@
 	end tell
 end tell"))
       (setq doom-theme 'doom-nord)
-    (setq doom-theme 'doom-solarized-light)))
+    (setq doom-theme 'doom-nord-light)))
 (set-system-dark-mode)
 
 ;; Misc
