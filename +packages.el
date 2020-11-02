@@ -16,13 +16,6 @@
 (map!
  :i "M-ESC" #'+company/complete)
 
-;; Deft
-(after! deft
-  (add-to-list 'deft-extensions "taskpaper")
-  (setq deft-recursive t
-        deft-use-filename-as-title t
-        deft-file-naming-rules '()))
-
 ;; Hercules
 (use-package! hercules
   :config
