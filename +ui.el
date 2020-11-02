@@ -2,7 +2,7 @@
 
 ;; Font
 (setq doom-font (font-spec :family "Triplicate T4c" :size 14.0)
-      doom-variable-pitch-font (font-spec :family "Concourse T4" :size 14.0))
+      doom-variable-pitch-font (font-spec :family "Triplicate T4p" :size 14.0))
 
 ;; Theme
 (defun set-system-dark-mode ()
