@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: Linear Program
-# key: lp
-# condition: t
-# --
-\min_{${1:x} \in \RR^{${2:n}}} c \cdot $1 sd ${3:A}$1 = ${4:b}, $1 \geq 0 $0

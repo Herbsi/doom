@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: Hesse Matrix
-# key: hesse
-# condition: t
-# --
-\nabla^2 ${1:f}$0

@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: sup
-# key: sup
-# condition: t
-# --
-\sup$0
