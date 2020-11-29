@@ -69,9 +69,6 @@
         ("𝑑" ("dd"))
         ;; known commands
         ("" ("phantom"))
-        (,(lambda (num den) (if (and (TeX-string-single-token-p num) (TeX-string-single-token-p den))
-                                (concat num "／" den)
-                              (concat "❪" num "／" den "❫"))) ("frac"))
         (,(lambda (arg) (concat "√" (TeX-fold-parenthesize-as-neccesary arg))) ("sqrt"))
         (,(lambda (arg) (concat "⭡" (TeX-fold-parenthesize-as-neccesary arg))) ("vec"))
         ("‘{1}’" ("text"))
