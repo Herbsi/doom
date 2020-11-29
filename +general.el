@@ -58,10 +58,6 @@
   :after '(evil-window-split evil-window-vsplit)
   (+ivy/switch-buffer))
 
-;; Use hard line wrap
-(remove-hook 'text-mode-hook #'visual-line-mode)
-(add-hook 'text-mode-hook #'auto-fill-mode)
-
 (after! lispyville
   (lispyville-set-key-theme '(text-objects)))
 
