@@ -10,4 +10,4 @@
 (package! literate-calc-mode)
 (package! magit-delta :pin "d988abd99882c6b89f21f2746f721a4d7ece6ad4")
 (package! mixed-pitch)
-(package! md-roam :recipe (:host github :repo "nobiot/md-roam"))
+(package! md-roam :recipe (:host github :repo "nobiot/md-roam" :branch "main"))
