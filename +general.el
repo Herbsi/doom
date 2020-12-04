@@ -36,11 +36,6 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
-;; Deft
-(setq deft-directory "~/Notes"
-      deft-default-extension "md"
-      deft-recursive t)
-
 ;; Git
 (after! git-timemachine
   (evil-make-overriding-map git-timemachine-mode-map 'normal)
