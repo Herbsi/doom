@@ -1,15 +1,11 @@
 ;;; +latex.el -*- lexical-binding: t; -*-
 
 (setq TeX-save-query nil ; don't ask, just save
-      TeX-show-compilation t
       TeX-command-extra-options "-shell-escape"
       font-latex-fontify-script nil ; Don't raise/lower super/subscripts
       preview-auto-cache-preamble t ; Don't ask, just cache
       +latex-viewers '(skim))
 (setq-default TeX-engine 'xetex)
-
-(after! latex
-  (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t)))
 
 (set-popup-rule! "^\\*TeX \\(?:Help\\|errors\\)"
   :size 0.3 :select t :ttl nil)
