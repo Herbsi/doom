@@ -1,8 +1,8 @@
 ;;; +ui.el -*- lexical-binding: t; -*-
 
 ;; Font
-(setq doom-font (font-spec :family "Triplicate T4c" :size 14.0)
-      doom-variable-pitch-font (font-spec :family "Triplicate T4p" :size 14.0))
+(setq doom-font (font-spec :family "Triplicate T4c" :size 13.0)
+      doom-variable-pitch-font (font-spec :family "Triplicate T4p" :size 13.0))
 
 ;; Theme
 (defun set-system-dark-mode ()
