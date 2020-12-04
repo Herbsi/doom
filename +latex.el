@@ -19,7 +19,7 @@
   :hook (LaTeX-mode . auto-activating-snippets-mode))
 
 (use-package! latex-auto-activating-snippets
-  :after latex ; auctex's LaTeX package
+  :after latex                          ; auctex's LaTeX package
   :config)
 
 (defun herwig/setup-flashcards ()
