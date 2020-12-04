@@ -26,6 +26,11 @@
 (global-subword-mode 1)                           ; Iterate through CamelCase words
 (global-hl-line-mode 1)                           ; Highlight cursor line
 
+;; Use hard line breaks in text-mode (LaTeX in particular)
+;; because it makes it easier to navigate
+(remove-hook 'text-mode-hook #'visual-line-mode)
+(add-hook 'text-mode-hook #'auto-fill-mode)
+
 ;; Save auto-customisations in separate file
 (setq-default custom-file (expand-file-name ".custom.el" doom-private-dir))
 (when (file-exists-p custom-file)
