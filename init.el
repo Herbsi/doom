@@ -135,7 +135,7 @@
  ;; nim
  ;; nix
  ;; ocaml
- (org +dragndrop +roam)
+ (org +dragndrop)
  ;; perl
  ;; php
  ;; plantuml
