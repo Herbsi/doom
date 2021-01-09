@@ -16,14 +16,16 @@
 
 (use-package! latex-auto-activating-snippets
   :after latex                          ; auctex's LaTeX package
-  :config)
+  :config
+  ;; Don’t automatically add a space after snippet expansion
+  (remove-hook 'LaTeX-mode-hook #'laas-add-space-after-expand-h))
 
 (defun herwig/setup-flashcards ()
   "Sets up current buffer for writing math flashcards."
   (interactive)
   (progn
     ;; (+default/new-buffer)
-    (find-file "~/flashcards.tex")
+    (find-file "~/University/flashcards.tex")
     (anki-editor-mode)
     (spell-fu-mode -1)
     (setq herwig/proof-lv nil)))
