@@ -4,21 +4,12 @@
 (setq doom-font (font-spec :family "Triplicate T4c" :size 13.0)
       doom-variable-pitch-font (font-spec :family "Triplicate T4p" :size 13.0))
 
-;; Theme
-(defun set-system-dark-mode ()
-  (interactive)
-  (if (string-equal "true" (ns-do-applescript "tell application \"System Events\"
-	tell appearance preferences
-		if (dark mode) then
-			return \"true\"
-		else
-			return \"false\"
-		end if
-	end tell
-end tell"))
-      (setq doom-theme 'doom-nord)
-    (setq doom-theme 'doom-nord-light)))
-(set-system-dark-mode)
+;; Change Theme based on macOS System Theme
+(add-hook 'ns-system-appearance-change-functions
+          (lambda (appearance)
+            (pcase appearance
+              ('light (load-theme 'doom-nord-light t))
+              ('dark (load-theme 'doom-dracula t)))))
 
 ;; Misc
 (setq display-line-numbers-type nil
