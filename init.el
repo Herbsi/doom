@@ -10,8 +10,8 @@
  ;; helm
  ;; ido
  (ivy
-  +childframe
-  +prescient
+  ;; +childframe
+  ;; +prescient
   +fuzzy)
 
  :ui
@@ -35,7 +35,7 @@
  ;; tabs
  treemacs
  ;; unicode
- vc-gutter
+ ;; vc-gutter
  ;; vi-tilde-fringe
  (window-select +numbers)
  workspaces
@@ -45,7 +45,7 @@
  (evil +everywhere)
  file-templates
  fold
- (format +onsave)
+ format
  ;; god
  lispy
  multiple-cursors
@@ -56,9 +56,9 @@
  ;; word-wrap
 
  :emacs
- ;; (dired +ranger)
- ;; electric
- ;; ibuffer
+ (dired +ranger)
+ electric
+ ibuffer
  undo
  vc
 
