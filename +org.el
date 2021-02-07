@@ -18,6 +18,11 @@
   :init
   (setq-default anki-editor-use-math-jax t))
 
+;; Deft
+(setq deft-directory (expand-file-name "References/Notes" (getenv "HOME"))
+      deft-new-file-format "1%Y%m%d"
+      deft-use-filename-as-title t)
+
 ;; org-crypt
 (after! org
   (org-crypt-use-before-save-magic)

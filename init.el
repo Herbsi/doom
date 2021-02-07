@@ -15,7 +15,7 @@
   +fuzzy)
 
  :ui
- ;; deft
+ deft
  doom
  ;; doom-dashboard
  ;; doom-quit
