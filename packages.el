@@ -1,7 +1,7 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; ~/.config/doom/packages.el
 
-(package! anki-editor)
+(package! anki-editor :pin "546774a453ef4617b1bcb0d1626e415c67cc88df")
 (package! auto-activating-snippets
   :recipe (:host github :repo "ymarco/auto-activating-snippets"))
 (package! auto-latex-snippets
