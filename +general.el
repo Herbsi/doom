@@ -41,6 +41,14 @@
   (evil-make-overriding-map git-timemachine-mode-map 'normal)
   (add-hook! git-timemachine-mode-hook #'evil-normalize-keymaps))
 
+;; hledger-mode
+(use-package hledger-mode
+  :mode ("\\.journal\\'" "\\.hledger\\'")
+  :init
+  (setq hledger-file (getenv "LEDGER_FILE"))
+  :config
+  (add-to-list 'company-backends 'hledger-company))
+
 ;; Magit-Delta
 (use-package! magit-delta
   :after magit
