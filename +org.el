@@ -28,3 +28,11 @@
   (org-crypt-use-before-save-magic)
   (setq org-tags-exclude-from-inheritance (quote ("crypt"))
         org-crypt-key "F1653669C24076F7"))
+;; org-journal
+(after! org-journal
+  (setq org-journal-dir (expand-file-name "Cerebro/Journal" (getenv "HOME"))
+        org-journal-file-type 'monthly
+        org-journal-file-format "1%Y/%m %B.org" ;; e.g. 12021/01 January.org
+        org-journal-date-format "1%Y-%m-%d"
+        org-journal-time-format "** "))
+
