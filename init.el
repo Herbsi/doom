@@ -83,7 +83,7 @@
  ;; ein
  (eval +overlay)
  ;; gist
- ;; (lookup +dictionary +docsets)
+ (lookup +dictionary +docsets +dictionary)
  lsp
  magit
  ;; make
