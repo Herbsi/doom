@@ -52,9 +52,6 @@
         ("≥" ("ge"))
         ("≠" ("ne"))
         ("∇") ("nabla")
-        ;; conviniance shorts -- these don't work nicely ATM
-        ;; ("‹" ("left"))
-        ;; ("›" ("right"))
         ;; private macros
         ("ℝ" ("RR"))
         ("ℕ" ("NN"))
@@ -87,7 +84,6 @@
         (,(lambda (word) (string-offset-roman-chars 120367 word)) ("mathtt")))
       TeX-fold-macro-spec-list
       '(
-        ;; as the defaults
         ("[f]" ("footnote" "marginpar"))
         ("[c]" ("cite"))
         ("[l]" ("label"))
@@ -96,21 +92,10 @@
         ("..." ("dots"))
         ("{1}" ("emph" "textit" "textsl" "textmd" "textrm" "textsf" "texttt"
                 "textbf" "textsc" "textup"))
-        ;; tweaked defaults
         ("©" ("copyright"))
         ("®" ("textregistered"))
         ("™"  ("texttrademark"))
-        ("[1]:||►" ("item"))
-        ("❡❡ {1}" ("part" "part*"))
-        ("❡ {1}" ("chapter" "chapter*"))
-        ("§ {1}" ("section" "section*"))
-        ("§§ {1}" ("subsection" "subsection*"))
-        ("§§§ {1}" ("subsubsection" "subsubsection*"))
-        ("¶ {1}" ("paragraph" "paragraph*"))
-        ("¶¶ {1}" ("subparagraph" "subparagraph*"))
-        ;; extra
-        ("⬖ {1}" ("begin"))
-        ("⬗ {1}" ("end"))))
+        ("[1]:||►" ("item"))))
 
 (defun string-offset-roman-chars (offset word)
   "Shift the codepoint of each charachter in WORD by OFFSET with an extra -6 shift if the letter is lowercase"

@@ -12,6 +12,10 @@
 
 (add-hook! org-mode #'mixed-pitch-mode)
 
+;; Export to LaTeX
+;; Use latexm instead of pdflatex
+(setq org-latex-pdf-process '("latexmk -%latex -shell-escape -interaction=nonstopmode -f -pdf -output-directory=%o %f"))
+
 ;; Anki
 (use-package anki-editor
   :after org
