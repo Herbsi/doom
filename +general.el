@@ -41,6 +41,14 @@
   (evil-make-overriding-map git-timemachine-mode-map 'normal)
   (add-hook! git-timemachine-mode-hook #'evil-normalize-keymaps))
 
+;; hledger-mode
+(use-package hledger-mode
+  :mode ("\\.journal\\'" "\\.hledger\\'")
+  :init
+  (setq hledger-file (getenv "LEDGER_FILE"))
+  :config
+  (add-to-list 'company-backends 'hledger-company))
+
 ;; Magit-Delta
 (use-package! magit-delta
   :after magit
@@ -60,6 +68,14 @@
 
 (after! lispyville
   (lispyville-set-key-theme '(text-objects)))
+
+;; Automatically save files
+(use-package super-save
+  :defer 1
+  :diminish super-save-mode
+  :config
+  (super-save-mode +1)
+  (setq super-save-auto-save-when-idle t))
 
 ;; Allow nested snippet expansion
 (after! yasnippet

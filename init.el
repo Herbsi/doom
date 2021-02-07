@@ -15,7 +15,7 @@
   +fuzzy)
 
  :ui
- ;; deft
+ deft
  doom
  ;; doom-dashboard
  ;; doom-quit
@@ -135,7 +135,7 @@
  ;; nim
  ;; nix
  ;; ocaml
- (org +dragndrop)
+ (org +dragndrop +journal +roam)
  ;; perl
  ;; php
  ;; plantuml
