@@ -69,6 +69,14 @@
 (after! lispyville
   (lispyville-set-key-theme '(text-objects)))
 
+;; Automatically save files
+(use-package super-save
+  :defer 1
+  :diminish super-save-mode
+  :config
+  (super-save-mode +1)
+  (setq super-save-auto-save-when-idle t))
+
 ;; Allow nested snippet expansion
 (after! yasnippet
   (setq yas-triggers-in-field t))

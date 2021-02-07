@@ -11,3 +11,4 @@
 (package! literate-calc-mode)
 (package! magit-delta :pin "d988abd99882c6b89f21f2746f721a4d7ece6ad4")
 (package! mixed-pitch)
+(package! super-save :pin "886b5518c8a8b4e1f5e59c332d5d80d95b61201d")
