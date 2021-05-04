@@ -29,7 +29,8 @@
           ("r" "Roam" plain #'org-roam-capture "")
           ("w" "Working Memory" entry
            (file "~/Desktop/Working Memory.org")
-           "* %T %?"))))
+           "* %T %?")))
+  (add-hook 'org-capture-prepare-finalize-hook #'org-id-store-link))
 
 (add-hook! org-mode #'mixed-pitch-mode)
 (add-hook! org-mode #'(turn-off-smartparens-mode electric-pair-mode))
