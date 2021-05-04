@@ -10,12 +10,22 @@
  org-export-in-background t
  org-list-allow-alphabetical t)
 
+(defun herwig/create-notes-file ()
+  "Create an org file in `org-directory`"
+  (interactive)
+  (let ((name (read-string "Name: ")))
+    (expand-file-name (format "%s %s.org"
+                              (format-time-string "1%Y%m%d" (current-time))
+                              name)
+                      org-directory)))
+
 (after! org
-  (setq org-hide-emphasis-markers t             ; hide org markup syntax
-        org-insert-heading-respect-content nil  ; insert heading at point, not after current subtree
-        org-cycle-separator-lines 0             ; don’t leave empty lines between subtrees in collapsed view
+  (setq org-hide-emphasis-markers t     ; hide org markup syntax
+        org-insert-heading-respect-content nil ; insert heading at point, not after current subtree
+        org-cycle-separator-lines 0 ; don’t leave empty lines between subtrees in collapsed view
         org-capture-templates
-        '(("n" "Note" plain #'+default/find-in-notes)
+        '(("n" "Note" plain (file herwig/create-notes-file)
+           "#+TITLE: %?")
           ("r" "Roam" plain #'org-roam-capture "")
           ("w" "Working Memory" entry
            (file "~/Desktop/Working Memory.org")
