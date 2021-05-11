@@ -35,13 +35,6 @@
 (add-hook! org-mode #'mixed-pitch-mode)
 (add-hook! org-mode #'(turn-off-smartparens-mode electric-pair-mode))
 
-;;; org-crypt
-(after! org
-  (org-crypt-use-before-save-magic)
-  (setq org-tags-exclude-from-inheritance (quote ("crypt"))
-        org-crypt-key "F1653669C24076F7"))
-
-
 ;;; org-id
 (after! org-id
   ;; Do not create ID if a CUSTOM_ID exists
