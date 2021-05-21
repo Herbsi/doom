@@ -10,9 +10,6 @@
 ;; All hail mixed-pitch-mode
 (add-hook! LaTeX-mode #'mixed-pitch-mode)
 
-;; Disable Smartparens in LaTeX Mode for performance
-(add-hook 'LaTeX-mode-hook #'turn-off-smartparens-mode)
-
 ;; Some useful Keybinings
 (after! tex
   (map!
@@ -20,8 +17,7 @@
    :ei [C-return] #'LaTeX-insert-item)
   ;; Allows to use $ to enter \( \) math mode
   ;; Needs the closing string because I disable smartparens in LaTeX Mode
-  (setq TeX-electric-math '("\\(" . "\\)")
-        LaTeX-electric-left-right-brace t))
+  (setq TeX-electric-math '("\\(" . "")))
 
 ;;; Auto Activating Snippets
 (use-package aas
@@ -32,8 +28,7 @@
 (use-package! laas
   :hook ((LaTeX-mode org-mode) . laas-mode)
   :config
-  ;; Don’t automatically add a space after snippet expansion
-  (remove-hook! (LaTeX-mode org-mode) #'laas-add-space-after-expand-h)
+  (setq laas-enable-auto-space nil)
   (aas-set-snippets 'laas-mode
                     :cond #'texmathp
                     "mn1" "_{m-1}"
