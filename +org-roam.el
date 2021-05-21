@@ -1,30 +1,26 @@
 ;;; +org-roam.el -*- lexical-binding: t; -*-
 
-(setq org-roam-directory (file-truename (expand-file-name "Cerebro" (getenv "HOME")))
+(setq org-roam-directory org-directory
       org-roam-db-location (expand-file-name "org-roam.db" org-roam-directory)
-      org-roam-file-exclude-regexp "Journal/.*"
-      org-roam-capture-templates '(("t" "thought" plain #'org-roam-capture--get-point "%?"
-                                    :file-name "Personal/1%<%Y%m%d%H%M%S>-T ${title}"
-                                    :head "#+TITLE: ${title}\n\n"
-                                    :unarrowed t)
-                                   ("n" "note" plain #'org-roam-capture--get-point "%?"
-                                    :file-name "Personal/1%<%Y%m%d%H%M%S>-N ${title}"
+      org-roam-file-exclude-regexp "\(\.archive\|Journal\|Hook\)/.*"
+      org-roam-capture-templates '(("n" "note" plain #'org-roam-capture--get-point "%?"
+                                    :file-name "Personal/${title}"
                                     :head "#+TITLE: ${title}\n\n"
                                     :unarrowed t)
                                    ("T" "math thought" plain #'org-roam-capture--get-point "%?"
-                                    :file-name "Mathematics/1%<%Y%m%d%H%M%S>-T ${title}"
+                                    :file-name "Mathematics/${title}"
                                     :head "#+TITLE: ${title}\n\n"
                                     :unarrowed t)
                                    ("N" "math note" plain #'org-roam-capture--get-point "%?"
-                                    :file-name "Mathematics/1%<%Y%m%d%H%M%S>-N ${title}"
+                                    :file-name "Mathematics/${title}"
                                     :head "#+TITLE: ${title}\n\n"
                                     :unarrowed t))
       org-roam-capture-ref-templates '(("r" "ref" plain #'org-roam-capture--get-point "%?"
-                                        :file-name "Personal/1%<%Y%m%d%H%M%S>-R ${title}"
+                                        :file-name "Personal/${title}"
                                         :head "#+TITLE: ${title}\n#+roam_key: ${ref}n\n"
                                         :unarrowed t)
                                        ("R" "math ref" plain #'org-roam-capture--get-point "%?"
-                                        :file-name "Mathematics/1%<%Y%m%d%H%M%S>-R ${title}"
+                                        :file-name "Mathematics/${title}"
                                         :head "#+TITLE: ${title}\n#+roam_key: ${ref}n\n"
                                         :unarrowed t)))
 
