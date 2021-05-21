@@ -41,13 +41,6 @@
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
 
-;; Automatically save files
-(use-package super-save
-  :defer 1
-  :diminish super-save-mode
-  :config
-  (super-save-mode +1))
-
 
 ;;; UI
 (setq display-line-numbers-type nil)     ; Don’t display line numbers for performance
